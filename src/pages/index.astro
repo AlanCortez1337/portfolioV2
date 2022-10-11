@@ -1,12 +1,12 @@
 ---
 // Component Imports
-import MainHead from '../components/MainHead.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
-import PortfolioPreview from '../components/PortfolioPreview.astro';
+import MainHead from "../components/MainHead.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import PortfolioPreview from "../components/PortfolioPreview.astro";
 
 // Data Fetching: List all Markdown posts in the repo.
-const projects = await Astro.glob('./project/**/*.md');
+const projects = await Astro.glob("./project/**/*.md");
 const featuredProject = projects[0];
 
 // Full Astro Component Syntax:
@@ -14,238 +14,83 @@ const featuredProject = projects[0];
 ---
 
 <html lang="en">
-	<head>
-		<MainHead
-			title="Jeanine White: Personal Site"
-			description="Jeanine White: Developer, Speaker, and Writer..."
-		/>
-		<style>
-			.wrapper {
-				margin-top: 2em;
-				margin-bottom: 2em;
-			}
+  <head>
+    <MainHead
+      title="Jeanine White: Personal Site"
+      description="Jeanine White: Developer, Speaker, and Writer..."
+    />
+    <style>
+      .hero {
+        width: 100%;
+        height: 100vh;
+        background-color: var(--green3);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
 
-			.hero {
-				position: relative;
-				overflow: hidden;
-			}
+      .hero-grid > * {
+        position: relative;
+      }
 
-			@media (min-width: 750px) {
-				.hero {
-					height: 45vw;
-				}
-			}
+      .hero-grid h2 {
+        font-size: 32px;
+        transform: rotate(-3deg);
+        text-align: end;
+        padding-bottom: 30px;
+        --start-pos: -5%;
+        --end-pos: 0%;
+        animation: textBounce 3s infinite ease-in-out;
+      }
 
-			.img {
-				display: block;
-				width: 100%;
-				height: auto;
-			}
-
-			.gradient,
-			.gradient2 {
-				background-image: url('/assets/mesh-gradient.jpg');
-				background-size: cover;
-				pointer-events: none;
-				mix-blend-mode: screen;
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				top: 0;
-				left: 0;
-				z-index: 2;
-			}
-
-			.gradient2 {
-				mix-blend-mode: multiply;
-				background-size: cover;
-			}
-
-			.overlay {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				z-index: 10;
-				display: flex;
-				flex-direction: column;
-				align-items: flex-start;
-				justify-content: center;
-				padding-left: 2rem;
-			}
-
-			@media (min-width: 750px) {
-				.overlay {
-					padding-left: 4rem;
-				}
-			}
-
-			.title {
-				font-weight: 900;
-				font-size: var(--f-u6);
-				margin-bottom: 0.5rem;
-				margin-top: 0;
-			}
-
-			@media (min-width: 750px) {
-				.title {
-					font-size: var(--f-u12);
-				}
-			}
-
-			.grid {
-				display: grid;
-				grid-gap: 2rem;
-			}
-
-			@media (min-width: 1200px) {
-				.grid {
-					grid-template-columns: 2fr 1fr;
-				}
-			}
-
-			.sectionTitle {
-				font-weight: 700;
-				font-size: var(--f-u8);
-				margin-top: 4rem;
-				margin-bottom: 2rem;
-			}
-
-			.roles {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 0.5em;
-				font-size: var(--f-d1);
-			}
-
-			.role {
-				position: relative;
-				display: inline-block;
-				white-space: nowrap;
-				font-weight: 900;
-				color: var(--t-bg);
-				background-color: var(--t-fg);
-				padding: 0.25em 0.5em;
-				z-index: 2;
-			}
-
-			@media (min-width: 750px) {
-				.role {
-					font-size: var(--f-u3);
-				}
-			}
-
-			.role:nth-of-type(1) .invert {
-				background-color: var(--c-pink);
-			}
-
-			.role:nth-of-type(2) .invert {
-				background-color: var(--c-blue);
-			}
-
-			.role:nth-of-type(3) .invert {
-				background-color: var(--c-green);
-			}
-
-			.role:hover .invert {
-				clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-			}
-
-			.invert {
-				position: absolute;
-				color: var(--t-fg);
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				width: 100%;
-				height: 100%;
-				top: 0;
-				left: 0;
-				pointer-events: none;
-				clip-path: polygon(0% 100%, 100% 100%, 100% 200%, 0% 200%);
-				transition: clip-path cubic-bezier(0.4, 0, 0.5, 1) 150ms;
-			}
-
-			.desc {
-				font-size: var(--f-u1);
-				margin-top: 1.5rem;
-				margin-bottom: 0;
-			}
-
-			.subtitle {
-				display: block;
-				font-weight: 400;
-				font-size: var(--f-d6);
-				letter-spacing: -0.0625em;
-			}
-
-			.bio {
-				line-height: 2;
-				margin-bottom: 2rem;
-			}
-
-			.bio > span:first-of-type {
-				line-height: 1;
-				margin-bottom: 0.5em;
-				display: block;
-				font-weight: 700;
-				font-size: var(--f-u4);
-			}
-
-			.buttonContainer {
-				text-align: center;
-				margin-top: 2em;
-			}
-		</style>
-	</head>
-	<body>
-		<Nav />
-		<header class="hero">
-			<img
-				width="1600"
-				height="1131"
-				class="img"
-				src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&q=75"
-				srcset="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&q=75 800w,https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&q=75 1200w,https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=75 1600w,https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=2400&q=75 2400w"
-				sizes="(max-width: 800px) 800px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (max-width: 2400px) 2400px, 1200px"
-			/>
-			<div class="gradient"></div>
-			<div class="gradient2"></div>
-			<div class="overlay">
-				<h1 class="title">
-					<small class="subtitle">The personal site of</small>Jeanine White
-				</h1>
-				<div class="roles">
-					<span class="role">👩‍💻 Developer <span class="invert">👩‍💻 Developer</span></span>
-					<span class="role">🎤 Speaker <span class="invert">🎤 Speaker</span></span>
-					<span class="role">✏️ Writer <span class="invert">✏️ Writer</span></span>
-				</div>
-				<p class="desc">Lover of dogs, roadtrips, and poetry.</p>
-			</div>
-		</header>
-		<main class="wrapper">
-			<div class="grid">
-				<div class="section">
-					<h3 class="sectionTitle">Selected Work</h3>
-					<PortfolioPreview project={featuredProject} />
-					<div class="buttonContainer">
-						<a href="/projects/" class="button">View All</a>
-					</div>
-				</div>
-				<div class="section">
-					<h3 class="sectionTitle">About me</h3>
-					<p class="bio">
-						<span>Hello!</span> I’m Jeanine, and this is my website. It was made using{' '}
-						<a href="https://github.com/withastro/astro" target="_blank" rel="nofollow"> Astro</a>,
-						a new way to build static sites. This is just an example template for you to modify.
-					</p>
-					<p>
-						<a href="/about">Read more</a>
-					</p>
-				</div>
-			</div>
-		</main>
-		<Footer />
-	</body>
+      .hero-grid h1 {
+        font-size: 72px;
+        transform: rotate(2deg);
+        text-align: center;
+        padding-bottom: 30px;
+        --start-pos: 0%;
+        --end-pos: 7%;
+        animation: textBounce 2.5s infinite ease-in-out;
+      }
+      .hero-grid h3 {
+        font-size: 24px;
+        transform: rotate(-2deg);
+        text-align: start;
+        --start-pos: -2%;
+        --end-pos: 5%;
+        animation: textBounce 3.5s infinite ease-in-out;
+      }
+      .div-wave {
+        --start-pos: -3%;
+        --end-pos: 2%;
+        position: absolute;
+        top: 80%;
+        animation: waveBounce 3s infinite ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <Nav />
+    <header class="hero">
+      <div class="hero-grid">
+        <h2>i am alan cortez</h2>
+        <h1>UI/UX Frontend Developer</h1>
+        <h3>let's chat</h3>
+      </div>
+      <svg
+        class="div-wave"
+        viewBox="0 0 1512 386"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 79.089C0 79.089 396.293 95.5318 648.5 79.089C878.711 64.0802 1003.92 -23.116 1231.5 5.85372C1346.32 20.4693 1512 79.089 1512 79.089V297C1512 297 828.5 270.5 660 297C491.5 323.5 401.664 398.931 256.5 383C147.219 371.007 0 297 0 297L0 79.089Z"
+          fill="#3B617D"></path>
+      </svg>
+    </header>
+    <!-- dividing wave -->
+    <main class="wrapper"></main>
+    <Footer />
+  </body>
 </html>
