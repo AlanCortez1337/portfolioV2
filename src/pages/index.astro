@@ -3,7 +3,6 @@
 import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-import PortfolioPreview from "../components/PortfolioPreview.astro";
 
 // Data Fetching: List all Markdown posts in the repo.
 const projects = await Astro.glob("./project/**/*.md");
@@ -16,12 +15,52 @@ const featuredProject = projects[0];
 <html lang="en">
   <head>
     <MainHead
-      title="Jeanine White: Personal Site"
-      description="Jeanine White: Developer, Speaker, and Writer..."
+      title="Alan Cortez"
+      description="Hi my name is Alan Cortez and I am an aspiring full stack web developer, this website is a portfolio of my work and how you are able to contact me."
     />
+  </head>
+  <body>
+    <Nav />
+    <header class="hero">
+      <div class="hero-grid">
+        <h2>i am alan cortez</h2>
+        <h1>UI/UX Frontend Developer</h1>
+        <h3>let's chat</h3>
+      </div>
+      <svg
+        class="div-wave"
+        viewBox="0 0 1512 386"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 79.089C0 79.089 396.293 95.5318 648.5 79.089C878.711 64.0802 1003.92 -23.116 1231.5 5.85372C1346.32 20.4693 1512 79.089 1512 79.089V297C1512 297 828.5 270.5 660 297C491.5 323.5 401.664 398.931 256.5 383C147.219 371.007 0 297 0 297L0 79.089Z"
+          fill="var(--purple3)"></path>
+      </svg>
+    </header>
+    <!-- dividing wave -->
+    <main class="wrapper">
+      <div class="about-blurb">
+        <h2>About Me</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,
+          reprehenderit.
+        </p>
+        <button>more about me</button>
+      </div>
+      <div class="spotlight">
+        <h2>acm-quiz</h2>
+      </div>
+      <div class="more-info">
+        <h3>see more projects</h3>
+        <h3>see more figma</h3>
+      </div>
+    </main>
+    <Footer />
     <style>
+      /* hero */
       .hero {
-        width: 100%;
+        width: 100vw;
         height: 100vh;
         background-color: var(--green3);
         display: flex;
@@ -62,35 +101,42 @@ const featuredProject = projects[0];
         animation: textBounce 3.5s infinite ease-in-out;
       }
       .div-wave {
+        width: 100vw;
         --start-pos: -3%;
         --end-pos: 2%;
         position: absolute;
         top: 80%;
         animation: waveBounce 3s infinite ease-in-out;
       }
+      /* main */
+      .wrapper {
+        width: 100vw;
+        height: 800px;
+        background-color: var(--purple2);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+      }
+      .wrapper .about-blurb {
+        grid-column: 2;
+        grid-row: 1 / span 3;
+        justify-self: center;
+        align-self: center;
+      }
+      .wrapper .spotlight {
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: center;
+        align-self: center;
+      }
+      .wrapper .more-info {
+        grid-column: 1;
+        grid-row: 3;
+        display: flex;
+        gap: 20px;
+        justify-self: center;
+        align-self: center;
+      }
     </style>
-  </head>
-  <body>
-    <Nav />
-    <header class="hero">
-      <div class="hero-grid">
-        <h2>i am alan cortez</h2>
-        <h1>UI/UX Frontend Developer</h1>
-        <h3>let's chat</h3>
-      </div>
-      <svg
-        class="div-wave"
-        viewBox="0 0 1512 386"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0 79.089C0 79.089 396.293 95.5318 648.5 79.089C878.711 64.0802 1003.92 -23.116 1231.5 5.85372C1346.32 20.4693 1512 79.089 1512 79.089V297C1512 297 828.5 270.5 660 297C491.5 323.5 401.664 398.931 256.5 383C147.219 371.007 0 297 0 297L0 79.089Z"
-          fill="#3B617D"></path>
-      </svg>
-    </header>
-    <!-- dividing wave -->
-    <main class="wrapper"></main>
-    <Footer />
   </body>
 </html>

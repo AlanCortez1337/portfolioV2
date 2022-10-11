@@ -20,7 +20,7 @@
     --end-pos: 30%;
 }
 
-h1, h2, h3, ul, li, body {
+h1, h2, h3, ul, li, body, svg {
 	margin: 0;
 	color: var(--text-color);
 }
@@ -45,6 +45,7 @@ h1, h2, h3, ul, li, body {
 
 body {
 	font-family: 'Nunito', sans-serif;
+	overflow-x: hidden;
 }
 
 img {
