@@ -10,12 +10,19 @@
       fill="var(--nav-bar-color)"></path>
   </svg>
   <div class="nav-items">
-    <h1>lol</h1>
+    <svg class="logo" viewBox="0 0 202 212" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M75.0294 15.9123C86.5809 -4.0643 115.419 -4.06434 126.971 15.9122L196.965 136.957C206.006 152.592 199.283 172.614 182.637 179.623L112.643 209.097C105.197 212.232 96.8025 212.232 89.3573 209.097L19.363 179.623C2.71724 172.614 -4.00624 152.592 5.03501 136.957L75.0294 15.9123Z" fill="url(#paint0_linear_405_11)"/>
+      <defs>
+      <linearGradient id="paint0_linear_405_11" x1="101" y1="-29" x2="100.899" y2="295.308" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#464D77"/>
+      <stop offset="1" stop-color="#02C39A"/>
+      </linearGradient>
+      </defs>
+      </svg>
     <ul>
-      <!-- turn this into links -->
-      <li>About</li>
-      <li>Projects</li>
-      <li>Contact</li>
+      <a href="/"><li>About</li></a>
+      <a href="/"><li>Projects</li></a>
+      <a href="/"><li>Contact</li></a>
     </ul>
   </div>
 </nav>
@@ -35,22 +42,31 @@
   }
 
   .nav-items {
-    width: 80%;
-    padding: 10px 10%;
+    padding: 50px 10%;
     position: relative;
     z-index: 5;
     display: flex;
     justify-content: space-between;
   }
 
+  .logo {
+    width: 100px;
+  }
+
   ul {
     display: flex;
-    gap: 20px;
+    gap: 50px;
     justify-content: center;
     align-items: center;
   }
 
   li {
     list-style: none;
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  a {
+    text-decoration: none;
   }
 </style>
