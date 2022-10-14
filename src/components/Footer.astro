@@ -27,13 +27,15 @@ const currentYear = new Date().getFullYear();
 </footer>
 <style>
   footer {
+    overflow: hidden;
+    position: relative;
+    height: 300px;
     width: 100vw;
-    /* height: 300px; */
     background-color: var(--purple2);
   }
   .footer-wave {
     position: absolute;
-    width: 100vw;
+    width: 3000px;
     --start-pos: 0%;
     --end-pos: 5%;
     animation: waveBounce 3.25s infinite ease-in-out;

@@ -1,4 +1,4 @@
-import { IoDocumentText, IoLogoLinkedin, IoLogoGithub } from "react-icons/io5";
+import { IoDocumentText, IoLogoLinkedin, IoLogoGithub } from "react-icons/io5/index.js";
 
 export default function icons({iconName}) {
 

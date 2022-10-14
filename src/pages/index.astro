@@ -20,13 +20,16 @@ const featuredProject = projects[0];
     />
   </head>
   <body>
-    <Nav />
+    <!-- <Nav /> -->
     <header class="hero">
       <div class="hero-grid">
         <h2>i am alan cortez</h2>
         <h1>UI/UX Frontend Developer</h1>
         <h3>let's chat</h3>
       </div>
+    </header>
+    <!-- dividing wave -->
+    <div class="wave">
       <svg
         class="div-wave"
         viewBox="0 0 1512 386"
@@ -37,8 +40,7 @@ const featuredProject = projects[0];
           d="M0 79.089C0 79.089 396.293 95.5318 648.5 79.089C878.711 64.0802 1003.92 -23.116 1231.5 5.85372C1346.32 20.4693 1512 79.089 1512 79.089V297C1512 297 828.5 270.5 660 297C491.5 323.5 401.664 398.931 256.5 383C147.219 371.007 0 297 0 297L0 79.089Z"
           fill="var(--purple3)"></path>
       </svg>
-    </header>
-    <!-- dividing wave -->
+    </div>
     <main class="wrapper">
       <div class="about-blurb">
         <h2>About Me</h2>
@@ -60,13 +62,15 @@ const featuredProject = projects[0];
     <style>
       /* hero */
       .hero {
+
         width: 100vw;
-        height: 100vh;
+        height: 1080px;
         background-color: var(--green3);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: relative;
       }
 
       .hero-grid > * {
@@ -100,12 +104,17 @@ const featuredProject = projects[0];
         --end-pos: 5%;
         animation: textBounce 3.5s infinite ease-in-out;
       }
+      .wave {
+        position: relative;
+        height: 300px;
+    width: 100vw;
+      }
       .div-wave {
-        width: 100vw;
+        position: absolute;
+        width: 1920px;
         --start-pos: -3%;
         --end-pos: 2%;
-        position: absolute;
-        top: 80%;
+        top: 800px;
         animation: waveBounce 3s infinite ease-in-out;
       }
       /* main */
