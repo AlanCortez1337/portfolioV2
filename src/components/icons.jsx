@@ -3,27 +3,27 @@ import { IoDocumentText, IoLogoLinkedin, IoLogoGithub } from "react-icons/io5/in
 export default function icons({iconName}) {
 
     return(
-        <>
+        <div>
             {iconName === "resume" ?
                 <IoDocumentText 
                     size={"3em"}
-                    color={"#f8f8f8"}
+                    color={"var(--icon-colors)"}
                 />
                 :
                 <>
                     {iconName === "github" ?
                         <IoLogoGithub 
                             size={"3em"}
-                            color={"#f8f8f8"}
+                            color={"var(--icon-colors)"}
                         />
                         :
                         <IoLogoLinkedin 
                             size={"3em"} 
-                            color={"#f8f8f8"}
+                            color={"var(--icon-colors)"}
                         />
                     }
                 </>
             }
-        </>
+        </div>
     );
 }

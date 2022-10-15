@@ -16,19 +16,21 @@ const currentYear = new Date().getFullYear();
       fill="#464D77"></path>
   </svg>
   <div class="footer-items">
-    <h3>designed and developed by alan cortez: {currentYear}</h3>
-    <div class="icons">
-      <a
-        href="https://docs.google.com/document/d/1WgFxvm5z1IBIdMeri4NDSyZzI855fQZRAZP5GZUopmc/edit"
-        target="_blank"
-        ><Icons iconName={"resume"} />
-      </a>
-      <a href="https://github.com/AlanCortez1337" target="_blank"
-        ><Icons iconName={"github"} />
-      </a>
-      <a href="https://www.linkedin.com/in/alancortez1337/" target="_blank"
-        ><Icons iconName={"linkedIn"} />
-      </a>
+    <div class="footer-wrapper">
+      <h3>designed and developed by alan cortez: {currentYear}</h3>
+      <div class="icons">
+        <a
+          href="https://docs.google.com/document/d/1WgFxvm5z1IBIdMeri4NDSyZzI855fQZRAZP5GZUopmc/edit"
+          target="_blank"
+          ><Icons iconName={"resume"} />
+        </a>
+        <a href="https://github.com/AlanCortez1337" target="_blank"
+          ><Icons iconName={"github"} />
+        </a>
+        <a href="https://www.linkedin.com/in/alancortez1337/" target="_blank"
+          ><Icons iconName={"linkedIn"} />
+        </a>
+      </div>
     </div>
   </div>
 </footer>
@@ -53,8 +55,14 @@ const currentYear = new Date().getFullYear();
     position: relative;
     z-index: 5;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: end;
+  }
+  .footer-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
   .icons {
     display: flex;
@@ -63,11 +71,12 @@ const currentYear = new Date().getFullYear();
     gap: 20px;
   }
 
-  a > * {
-    color: var(--text-color);
+  a {
+    color: var(--icon-colors);
+    transition: all 500ms ease-in-out;
   }
 
-  a:hover > * {
-    color: var(--green3);
+  a:hover {
+    color: var(--green1);
   }
 </style>
