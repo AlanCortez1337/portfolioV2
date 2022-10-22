@@ -3,6 +3,7 @@
 import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import Card from "../components/project-card";
 
 // Data Fetching: List all Markdown posts in the repo.
 const projects = await Astro.glob("./project/**/*.md");
@@ -49,11 +50,12 @@ const featuredProject = projects[0];
         <button>more about me</button>
       </div>
       <div class="spotlight">
-        <h2>acm-quiz</h2>
+        <h2>Spotlight: ACM Team Quiz</h2>
+        <Card project={"quiz"}/>
       </div>
       <div class="more-info">
-        <h3>see more projects</h3>
-        <h3>see more figma</h3>
+        <button>more developed projects</button>
+        <button>more Figma projects</button>
       </div>
     </main>
     <Footer />
@@ -119,6 +121,10 @@ const featuredProject = projects[0];
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
       }
+      .about-blurb, .spotlight, .more-info {
+        width: 100%;
+      }
+
       .wrapper .about-blurb {
         grid-column: 2;
         grid-row: 1 / span 3;
