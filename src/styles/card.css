@@ -2,16 +2,31 @@
     position: relative;
     width: 55%;
     height: 400px;
-    background-color: var(--purple3);
     border: var(--purple1) 9px solid;
-    border-radius: 50px;
+    border-radius: 50px 20px;
+    --start-pos: -0px;
+    --end-pos: -25px;
+    --rotation: -3deg;
+    animation: waveBounce 3.25s infinite ease-in-out;
+    transition: all 350ms ease-in-out;
+}
+
+.card-title {
+    position: absolute;
+    top: -1px;
+    border-radius: 20px 0;
+    background-color: var(--purple1);
+    padding: 5px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 img {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    border-radius: 40px;
+    border-radius: 40px 10px;
 }
 
 .card-icons {
@@ -20,10 +35,10 @@ img {
     width: 150px;
     height: 58px;
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 72%;
     display: flex;
-    gap: 10px;
     justify-content: center;
     align-items: center;
+    gap: 10px;
 }

@@ -6,8 +6,12 @@ export default function Card({project}) {
 
     return(
         <div className="card">
-            <img src="../../public/assets/teamQuizDemo.gif" alt="spotlight" />
+            {/* replace it with project name metadata */}
+            <h2 className="card-title">Spotlight: ACM Team Quiz</h2>
+            {/* replace it with project demo metadata */}
+            <img src="/assets/teamQuizDemo.gif" alt="spotlight" />
             <div className="card-icons">
+                {/* make into a tags that redirects using meta data */}
                 <BiLinkExternal 
                     size={"3em"}
                     color={"var(--icon-colors)"}

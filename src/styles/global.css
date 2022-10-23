@@ -10,6 +10,7 @@
   	--purple3: #2F7483;
   	--purple2: #3B617D;
   	--purple1: #464D77;
+  	--purple0: #3f466e;
 	--text-color: #f8f8f8;
 	--nav-bar-color: yellow;
 	--icon-colors: #f8f8f8;
@@ -19,6 +20,7 @@
 	/* keyframe start and end positions */
 	--start-pos: -10%;
     --end-pos: 30%;
+	--rotation: 0;
 }
 
 h1, h2, h3, ul, li, body, svg {
@@ -58,30 +60,33 @@ img {
 /* Animation Keyframes */
 
 @keyframes waveBounce {
+	/* Why am i using translate and not bottom????? */
     0% {
-      transform: translateY(var(--start-pos));
+      transform: translateY(var(--start-pos)) rotate(var(--rotation));
     }
 
     50% {
-      transform: translateY(var(--end-pos));
+      transform: translateY(var(--end-pos)) rotate(var(--rotation));
     }
 
     100% {
-      transform: translateY(var(--start-pos));
+      transform: translateY(var(--start-pos)) rotate(var(--rotation));
     }
   }
 
   @keyframes textBounce {
     0% {
       bottom: var(--start-pos);
+      transform: rotate(var(--rotation));
     }
 
     50% {
 	  bottom: var(--end-pos);
+      transform: rotate(var(--rotation));
     }
 
     100% {
 	  bottom: var(--start-pos);
-
+      transform: rotate(var(--rotation));
     }
   }

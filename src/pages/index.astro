@@ -47,15 +47,15 @@ const featuredProject = projects[0];
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,
           reprehenderit.
         </p>
-        <button>more about me</button>
+        <button id="button-one">more about me</button>
       </div>
       <div class="spotlight">
-        <h2>Spotlight: ACM Team Quiz</h2>
+        <!-- <h2>Spotlight: ACM Team Quiz</h2> -->
         <Card project={"quiz"}/>
       </div>
       <div class="more-info">
-        <button>more developed projects</button>
-        <button>more Figma projects</button>
+        <button id="button-two">more developed projects</button>
+        <button id="button-three">more Figma projects</button>
       </div>
     </main>
     <Footer />
@@ -144,6 +144,41 @@ const featuredProject = projects[0];
         gap: 20px;
         justify-self: center;
         align-self: center;
+      }
+
+
+      #button-one {
+        --rotation: -4%;
+        --start-pos: -11%;
+        --end-pos: 0%;
+      }
+      #button-two {
+        --rotation: 4%;
+        --start-pos: 15%;
+        --end-pos: 1%;        
+      }
+      #button-three {
+        --rotation: 2%;
+        --start-pos: 0%;
+        --end-pos: 14%;        
+      }
+      button {
+        position: relative;
+        font-size: 18px;
+        color: var(--text-color);
+        background-color: var(--purple1);
+        border: var(--purple1) 5px solid;
+        padding: 5px 15px;
+        border-radius: 15px;
+        transition: all 350ms ease-in-out;
+        
+        animation: textBounce 1.25s infinite linear;
+
+      }
+      button:hover {
+        background-color: var(--purple0);
+        border-color: var(--purple0);
+        border-radius: 10px;
       }
     </style>
   </body>
