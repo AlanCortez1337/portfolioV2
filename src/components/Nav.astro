@@ -26,10 +26,9 @@
 
 <style>
   nav {
-    --nav-bar-color: var(--green2);
-    --start-pos: -5%;
-    --end-pos: 0%;
     position: absolute;
+    --nav-bar-color: var(--green2);
+    
     z-index: 3;
     width: 100vw;
   }
@@ -37,11 +36,14 @@
   .nav-bg {
     position: absolute;
     width: 3000px;
-    animation: waveBounce 5s infinite ease-in-out;
+    /* bottom: 0; */
+    --start-pos: -225px;
+    --end-pos: -200px;
+    animation: bounce 5s infinite ease-in-out;
   }
 
   .nav-items {
-    padding: 50px 10%;
+    padding: 30px 10%;
     position: relative;
     z-index: 5;
     display: flex;

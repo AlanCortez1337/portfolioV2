@@ -3,7 +3,7 @@ import { BiLinkExternal } from "react-icons/bi";
 import "../styles/card.css";
 
 export default function Card({project}) {
-
+    // need to make metadata file for project
     return(
         <div className="card">
             {/* replace it with project name metadata */}

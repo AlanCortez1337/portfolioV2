@@ -1,6 +1,6 @@
 .card {
     position: relative;
-    width: 55%;
+    width: 650px;
     height: 400px;
     border: var(--purple1) 9px solid;
     border-radius: 50px 20px;
@@ -36,7 +36,7 @@ img {
     height: 58px;
     position: absolute;
     bottom: -1px;
-    left: 72%;
+    left: 77%;
     display: flex;
     justify-content: center;
     align-items: center;

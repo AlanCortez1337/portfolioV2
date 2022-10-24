@@ -26,7 +26,7 @@ const featuredProject = projects[0];
       <div class="hero-grid">
         <h2>i am alan cortez</h2>
         <h1>UI/UX Frontend Developer</h1>
-        <h3>let's chat</h3>
+        <h3>check out my resume!</h3>
       </div>
       <svg
         class="div-wave"
@@ -44,10 +44,25 @@ const featuredProject = projects[0];
       <div class="about-blurb">
         <h2>About Me</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,
-          reprehenderit.
+          How's it going, <span class="highlight-text">I am Alan Cortez</span> a web 
+          developer based in Southern California. My goal is to make your web experience 
+          easier and a amusing adventure. My own journy thus far has led me to dabbling 
+          with <span class="highlight-text">React, Svelte, and Astro</span>. 
+          
         </p>
-        <button id="button-one">more about me</button>
+        <p>
+          On the side, I am a Supplemental Instruction Leader teaching 
+          <span class="highlight-text">C++ Object Oriented Programming</span>
+          concepts to a range of students. Additionally, I am the Design President
+          in the largest computer science club on campus, ACM at CSUF, passing down
+          <span class="highlight-text"> UI/UX and Frontend development</span> 
+          practices to students of all levels.
+        </p>
+        <p>
+          That is just the tip of the iceberg, if you would love to learn more about me and my hobbies
+          <button id="button-one"><span class="highlight-text">click here</span></button> or let my 
+          projects do all the talking.
+        </p>
       </div>
       <div class="spotlight">
         <!-- <h2>Spotlight: ACM Team Quiz</h2> -->
@@ -79,38 +94,38 @@ const featuredProject = projects[0];
 
       .hero-grid h2 {
         font-size: 32px;
-        transform: rotate(-3deg);
         text-align: end;
         padding-bottom: 30px;
+        --rotation: -3deg;
         --start-pos: -5%;
         --end-pos: 0%;
-        animation: textBounce 3s infinite ease-in-out;
+        animation: bounce 3s infinite ease-in-out;
       }
 
       .hero-grid h1 {
         font-size: 72px;
-        transform: rotate(2deg);
         text-align: center;
         padding-bottom: 30px;
+        --rotation: 2deg;
         --start-pos: 0%;
         --end-pos: 7%;
-        animation: textBounce 2.5s infinite ease-in-out;
+        animation: bounce 2.5s infinite ease-in-out;
       }
       .hero-grid h3 {
         font-size: 24px;
-        transform: rotate(-2deg);
         text-align: start;
+        --rotation: -2deg;
         --start-pos: -2%;
         --end-pos: 5%;
-        animation: textBounce 3.5s infinite ease-in-out;
+        animation: bounce 3.5s infinite ease-in-out;
       }
       .div-wave {
         position: absolute;
         width: 1920px;
-        top: 800px;
-        --start-pos: -3%;
-        --end-pos: 2%;
-        animation: waveBounce 3s infinite ease-in-out;
+        bottom: 0;
+        --start-pos: -200px;
+        --end-pos: -150px;
+        animation: bounce 4.5s infinite ease-in-out;
       }
       /* main */
       .wrapper {
@@ -120,11 +135,33 @@ const featuredProject = projects[0];
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
       }
-      .about-blurb, .spotlight, .more-info {
-        width: 100%;
+      .about-blurb {
+        position: relative;
+        z-index: 5;
+        width: 700px;
       }
+      .about-blurb h2 {
+        width: 350px;
+        font-size: 40px;
+        text-align: center;
+        background-color: var(--purple1);
+        border: var(--purple1) 5px solid;
+        padding: 5px 15px;
+        border-radius: 15px;
 
+      }
+      .about-blurb p {
+        font-size: 24px;
+      }
+      .spotlight {
+        position: relative;
+        --start-pos: 0px;
+        --end-pos: 50px;
+        animation: bounce 5.5s infinite ease-in-out;
+      }
       .wrapper .about-blurb {
         grid-column: 2;
         grid-row: 1 / span 3;
@@ -145,11 +182,9 @@ const featuredProject = projects[0];
         justify-self: center;
         align-self: center;
       }
-
-
       #button-one {
         --rotation: -4%;
-        --start-pos: -11%;
+        --start-pos: -8%;
         --end-pos: 0%;
       }
       #button-two {
@@ -171,14 +206,16 @@ const featuredProject = projects[0];
         padding: 5px 15px;
         border-radius: 15px;
         transition: all 350ms ease-in-out;
-        
-        animation: textBounce 1.25s infinite linear;
-
+        animation: bounce 2.25s infinite linear;
       }
       button:hover {
         background-color: var(--purple0);
         border-color: var(--purple0);
         border-radius: 10px;
+      }
+      .highlight-text {
+        color: var(--green0);
+        font-weight: 700;
       }
     </style>
   </body>

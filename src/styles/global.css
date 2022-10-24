@@ -3,6 +3,7 @@
 /* Global variables */
 :root {
 	/* main colors */
+	--green0: #02F1BD;
 	--green1: #02C39A;
   	--green2: #0DAF94;
   	--green3: #199C8E;
@@ -30,6 +31,7 @@ h1, h2, h3, ul, li, body, svg {
 
 /* scrollbar */
 * {
+	font-family: 'Nunito', sans-serif;
 	scrollbar-color: var(--scrollBarThumb) var(--scrollBarBackground);
 	scrollbar-width: thin;
 	box-sizing: content-box;
@@ -47,7 +49,6 @@ h1, h2, h3, ul, li, body, svg {
 }
 
 body {
-	font-family: 'Nunito', sans-serif;
 	overflow-x: hidden;
 }
 
@@ -59,22 +60,8 @@ img {
 
 /* Animation Keyframes */
 
-@keyframes waveBounce {
-	/* Why am i using translate and not bottom????? */
-    0% {
-      transform: translateY(var(--start-pos)) rotate(var(--rotation));
-    }
 
-    50% {
-      transform: translateY(var(--end-pos)) rotate(var(--rotation));
-    }
-
-    100% {
-      transform: translateY(var(--start-pos)) rotate(var(--rotation));
-    }
-  }
-
-  @keyframes textBounce {
+  @keyframes bounce {
     0% {
       bottom: var(--start-pos);
       transform: rotate(var(--rotation));
