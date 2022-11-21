@@ -2,31 +2,104 @@
 import MainHead from '../components/MainHead.astro';
 import Footer from '../components/Footer.astro';
 import Nav from '../components/Nav.astro';
+import Card from "../components/project-card";
+
 ---
 
 <html lang="en">
 	<head>
 		<MainHead title="About | Jeanine White" description="About Jeanine White Lorem Ipsum" />
 		<style>
-			.heroImg {
-				max-height: 24rem;
-				object-fit: cover;
-				overflow: hidden;
-			}
+			/* main */
+			.wrapper {
+        width: 100vw;
+        height: 800px;
+        background-color: var(--purple2);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+      }
+      .about-blurb {
+        position: relative;
+        z-index: 5;
+        width: 700px;
+      }
+      .about-blurb h2 {
+        width: 350px;
+        font-size: 40px;
+        text-align: center;
+        background-color: var(--purple1);
+        border: var(--purple1) 5px solid;
+        padding: 5px 15px;
+        border-radius: 15px;
 
-			.heroImg img {
-				width: 100%;
-			}
-
-			.bio {
-				font-size: var(--f-u1);
-				line-height: 2;
-				margin-top: 4em;
-			}
-
-			.wrapper.bio {
-				max-width: 50em;
-			}
+      }
+      .about-blurb p {
+        font-size: 24px;
+      }
+      .spotlight {
+        position: relative;
+        --start-pos: 0px;
+        --end-pos: 50px;
+        animation: bounce 5.5s infinite ease-in-out;
+      }
+      .wrapper .about-blurb {
+        grid-column: 2;
+        grid-row: 1 / span 3;
+        justify-self: center;
+        align-self: center;
+      }
+      .wrapper .spotlight {
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: center;
+        align-self: center;
+      }
+      .wrapper .more-info {
+        grid-column: 1;
+        grid-row: 3;
+        display: flex;
+        gap: 20px;
+        justify-self: center;
+        align-self: center;
+      }
+      #button-one {
+        --rotation: -4%;
+        --start-pos: -8%;
+        --end-pos: 0%;
+      }
+      #button-two {
+        --rotation: 4%;
+        --start-pos: 15%;
+        --end-pos: 1%;        
+      }
+      #button-three {
+        --rotation: 2%;
+        --start-pos: 0%;
+        --end-pos: 14%;        
+      }
+      button {
+        position: relative;
+        font-size: 18px;
+        color: var(--text-color);
+        background-color: var(--purple1);
+        border: var(--purple1) 5px solid;
+        padding: 5px 15px;
+        border-radius: 15px;
+        transition: all 350ms ease-in-out;
+        animation: bounce 2.25s infinite linear;
+      }
+      button:hover {
+        background-color: var(--purple0);
+        border-color: var(--purple0);
+        border-radius: 10px;
+      }
+      .highlight-text {
+        color: var(--green0);
+        font-weight: 700;
+      }
 		</style>
 	</head>
 	<body>
@@ -41,36 +114,38 @@ import Nav from '../components/Nav.astro';
 				/>
 			</div>
 			<div class="bio wrapper">
-				<p>
-					Cream cheese say cheese stinking bishop. Brie fondue hard cheese bocconcini feta camembert
-					de normandie babybel airedale. Red leicester swiss manchego mascarpone pepper jack
-					airedale fromage frais ricotta. Cheese and biscuits cauliflower cheese boursin.
-				</p>
-				<p>
-					Pepper jack cheesy feet cheese slices. Halloumi port-salut queso caerphilly roquefort
-					cheese slices cheesy feet rubber cheese. Cheese slices smelly cheese pecorino macaroni
-					cheese feta blue castello roquefort edam. Babybel pepper jack airedale cheddar fromage
-					frais manchego.
-				</p>
-				<p>
-					Cauliflower cheese lancashire macaroni cheese. Cheeseburger babybel cheese on toast
-					airedale cauliflower cheese who moved my cheese roquefort paneer. Stinking bishop cheddar
-					taleggio port-salut port-salut stinking bishop cheesy grin babybel. Blue castello feta
-					everyone loves brie.
-				</p>
-				<p>
-					Goat squirty cheese cut the cheese. Cheese and wine cheddar fondue airedale cottage cheese
-					camembert de normandie feta babybel. Rubber cheese melted cheese pecorino port-salut
-					fondue gouda cheese on toast cheesy feet. Feta edam everyone loves cheese strings
-					camembert de normandie.
-				</p>
-				<p>
-					Caerphilly monterey jack goat. Squirty cheese cheesy grin hard cheese cheese strings
-					cheese and biscuits croque monsieur smelly cheese danish fontina. Swiss cheese triangles
-					everyone loves mascarpone cheese on toast who moved my cheese lancashire cheeseburger.
-					Fromage frais fromage frais cheese and biscuits stinking bishop cauliflower cheese.
-				</p>
+				<div class="about-blurb">
+					<h2>About Me</h2>
+					<p>
+					  How's it going, <span class="highlight-text">I am Alan Cortez</span> a web 
+					  developer based in Southern California. My goal is to make your web experience 
+					  easier and a amusing adventure. My own journy thus far has led me to dabbling 
+					  with <span class="highlight-text">React, Svelte, and Astro</span>. 
+					  
+					</p>
+					<p>
+					  On the side, I am a Supplemental Instruction Leader teaching 
+					  <span class="highlight-text">C++ Object Oriented Programming</span>
+					  concepts to a range of students. Additionally, I am the Design President
+					  in the largest computer science club on campus, ACM at CSUF, passing down
+					  <span class="highlight-text"> UI/UX and Frontend development</span> 
+					  practices to students of all levels.
+					</p>
+					<p>
+					  That is just the tip of the iceberg, if you would love to learn more about me and my hobbies
+					  <button id="button-one"><span class="highlight-text">click here</span></button> or let my 
+					  projects do all the talking.
+					</p>
+					
+				  </div>
 			</div>
+			
+			<div class="spotlight">
+				<Card title="ACM TEAM QUIZ" gif="/assets/teamQuizDemo.gif"/>
+			  </div>
+			  <div class="more-info">
+				<a href="/projects/"><button id="button-two">check out more projects</button></a>
+			  </div>
 		</div>
 		<Footer />
 	</body>

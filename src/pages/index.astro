@@ -2,8 +2,7 @@
 // Component Imports
 import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.astro";
-import Footer from "../components/Footer.astro";
-import Card from "../components/project-card";
+import DownArrow from "../components/icons.jsx";
 
 // Data Fetching: List all Markdown posts in the repo.
 const projects = await Astro.glob("./project/**/*.md");
@@ -22,199 +21,171 @@ const featuredProject = projects[0];
   </head>
   <body>
     <Nav />
-    <header class="hero">
-      <div class="hero-grid">
-        <h2>i am alan cortez</h2>
-        <h1>UI/UX Frontend Developer</h1>
-        <h3>check out my resume!</h3>
+      
+    <header>
+      <div class="hero-text">
+        <h2>I am Alan Cortez</h2>
+        <h1>UI/UX<br>FullStack<br>Web Developer</h1>
+        <p>hava good day</p>
       </div>
-      <svg
-        class="div-wave"
-        viewBox="0 0 1512 386"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0 79.089C0 79.089 396.293 95.5318 648.5 79.089C878.711 64.0802 1003.92 -23.116 1231.5 5.85372C1346.32 20.4693 1512 79.089 1512 79.089V297C1512 297 828.5 270.5 660 297C491.5 323.5 401.664 398.931 256.5 383C147.219 371.007 0 297 0 297L0 79.089Z"
-          fill="var(--purple3)"></path>
+      <svg class="wave" viewBox="0 0 816 169" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path xmlns="http://www.w3.org/2000/svg" d="M0 69.1204C0 69.1204 177.676 58.2568 290.889 45.6487C409.474 32.4423 474.41 -10.0802 593.111 2.20104C684.055 11.6104 816 69.1204 816 69.1204V169H0V69.1204Z" fill="#464D77"/>
       </svg>
+      <div class="project-title">
+        <DownArrow iconName={"downArrow"}/>
+        <h1>PROJECTS</h1>
+      </div>
     </header>
-    <!-- dividing wave -->
-    <main class="wrapper">
-      <div class="about-blurb">
-        <h2>About Me</h2>
-        <p>
-          How's it going, <span class="highlight-text">I am Alan Cortez</span> a web 
-          developer based in Southern California. My goal is to make your web experience 
-          easier and a amusing adventure. My own journy thus far has led me to dabbling 
-          with <span class="highlight-text">React, Svelte, and Astro</span>. 
-          
-        </p>
-        <p>
-          On the side, I am a Supplemental Instruction Leader teaching 
-          <span class="highlight-text">C++ Object Oriented Programming</span>
-          concepts to a range of students. Additionally, I am the Design President
-          in the largest computer science club on campus, ACM at CSUF, passing down
-          <span class="highlight-text"> UI/UX and Frontend development</span> 
-          practices to students of all levels.
-        </p>
-        <p>
-          That is just the tip of the iceberg, if you would love to learn more about me and my hobbies
-          <button id="button-one"><span class="highlight-text">click here</span></button> or let my 
-          projects do all the talking.
-        </p>
-      </div>
-      <div class="spotlight">
-        <Card title="ACM TEAM QUIZ" gif="/assets/teamQuizDemo.gif"/>
-      </div>
-      <div class="more-info">
-        <a href="/projects/"><button id="button-two">check out more projects</button></a>
-      </div>
+
+    <div class="marquee">
+      <ul>
+        <li>Discord Bot</li>
+        <li>•</li>
+        <li>Food Tinder</li>
+        <li>•</li>
+        <li>ACM Team Quiz</li>
+        <li>•</li>
+        <li>Memory Mania</li>
+        <li>•</li>
+        <li>ACM Rebrand</li>
+        <li>•</li>
+        <li>ACM Wiki</li>
+        <li>•</li>
+        <li>Amongus In 3d</li>
+        <li>•</li>
+        <li>Case Clicker</li>
+        <li>•</li>
+        <li>ILXL PPR Community</li>
+        <li>•</li>
+        <li>Howards Appliances</li>
+        <li>•</li>
+        <li>Portfolio V1</li>
+      </ul>
+    </div>
+    <main>
+      <img src="/assets/alanHeadshot.png" alt="picture of alan cortez">
+      <a href="/" class="cta-btn">
+        <button>more me</button>
+      </a>
     </main>
-    <Footer />
+
     <style>
-      /* hero */
-      .hero {
-        /* overflow-x: hidden; */
-        position: relative;
+      body {
         width: 100vw;
-        height: 1080px;
-        background-color: var(--green3);
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0fr 1fr 0fr;
+      }
+
+      header {
+        position: relative;
+        grid-column: 1;
+        grid-row: 2;
+        background-color: var(--cyan);
+        border-right: black 12px solid;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
       }
-
-      .hero-grid > * {
-        position: relative;
-      }
-
-      .hero-grid h2 {
-        font-size: 32px;
-        text-align: end;
-        padding-bottom: 30px;
-        --rotation: -3deg;
-        --start-pos: -5%;
-        --end-pos: 0%;
-        animation: bounce 3s infinite ease-in-out;
-      }
-
-      .hero-grid h1 {
-        font-size: 72px;
-        text-align: center;
-        padding-bottom: 30px;
-        --rotation: 2deg;
-        --start-pos: 0%;
-        --end-pos: 7%;
-        animation: bounce 2.5s infinite ease-in-out;
-      }
-      .hero-grid h3 {
-        font-size: 24px;
-        text-align: start;
-        --rotation: -2deg;
-        --start-pos: -2%;
-        --end-pos: 5%;
-        animation: bounce 3.5s infinite ease-in-out;
-      }
-      .div-wave {
+      
+      .wave {
         position: absolute;
-        width: 1920px;
+        z-index: 1;
         bottom: 0;
-        --start-pos: -200px;
-        --end-pos: -150px;
-        animation: bounce 4.5s infinite ease-in-out;
+        width: 100%;
+        --start-pos: -40px;
+        --end-pos: 0%;
+        animation: bounce 4500ms infinite linear;
       }
-      /* main */
-      .wrapper {
-        width: 100vw;
-        height: 800px;
-        background-color: var(--purple2);
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
+
+      .project-title {
+        position: absolute;
+        z-index: 2;
+        bottom: 1%;
+        right: 5%;
+        display: flex;
         justify-content: center;
         align-items: center;
+        gap: 10px;
       }
-      .about-blurb {
-        position: relative;
-        z-index: 5;
-        width: 700px;
-      }
-      .about-blurb h2 {
-        width: 350px;
-        font-size: 40px;
-        text-align: center;
-        background-color: var(--purple1);
-        border: var(--purple1) 5px solid;
-        padding: 5px 15px;
-        border-radius: 15px;
 
-      }
-      .about-blurb p {
-        font-size: 24px;
-      }
-      .spotlight {
+      .hero-text {
         position: relative;
-        --start-pos: 0px;
-        --end-pos: 50px;
-        animation: bounce 5.5s infinite ease-in-out;
+        z-index: 2;
+        height: 74%;
+        width: 70%;
       }
-      .wrapper .about-blurb {
+
+      .hero-text h1 {
+        font-size: 104px;
+      }
+
+      main {
         grid-column: 2;
-        grid-row: 1 / span 3;
-        justify-self: center;
-        align-self: center;
+        background-color: var(--purple2);
       }
-      .wrapper .spotlight {
-        grid-column: 1;
-        grid-row: 2;
-        justify-self: center;
-        align-self: center;
-      }
-      .wrapper .more-info {
-        grid-column: 1;
-        grid-row: 3;
-        display: flex;
-        gap: 20px;
-        justify-self: center;
-        align-self: center;
-      }
-      #button-one {
-        --rotation: -4%;
-        --start-pos: -8%;
-        --end-pos: 0%;
-      }
-      #button-two {
-        --rotation: 4%;
-        --start-pos: 15%;
-        --end-pos: 1%;        
-      }
-      #button-three {
-        --rotation: 2%;
-        --start-pos: 0%;
-        --end-pos: 14%;        
-      }
-      button {
+      /* Marquee styles */
+      .marquee {
         position: relative;
-        font-size: 18px;
-        color: var(--text-color);
-        background-color: var(--purple1);
-        border: var(--purple1) 5px solid;
-        padding: 5px 15px;
+        z-index: 2;
+        height: 50px;
+        grid-column: 1 / span 2;
+        grid-row: 3;
+        background-color: black;
+      }
+
+      .marquee ul:hover {
+        animation-play-state: paused;
+      }
+
+      .marquee ul {
+        height: 100%;
+        display: flex;
+        /* justify-content: end; */
+        align-items: center;
+        gap: 40px;
+        list-style: none;
+        animation: slide 25s infinite linear;
+      }
+
+      .marquee li {
+        font-size: 24px;
+        flex-shrink: 0;
+      }
+
+      @keyframes slide {
+        from {
+          transform: translateX(100vw);
+        }
+        to {
+          transform: translateX(-125vw);
+        }
+      }
+
+      /* Main Info */
+      main {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+      }
+
+      main img {
+        width: 600px;
+        height: 600px;
+        border: black 8px solid;
+        box-shadow: 6px 6px black;
         border-radius: 15px;
-        transition: all 350ms ease-in-out;
-        animation: bounce 2.25s infinite linear;
       }
-      button:hover {
-        background-color: var(--purple0);
-        border-color: var(--purple0);
-        border-radius: 10px;
+
+      main a {
+        width: 611px;
       }
-      .highlight-text {
-        color: var(--green0);
-        font-weight: 700;
-      }
+      
     </style>
   </body>
 </html>

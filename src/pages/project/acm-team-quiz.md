@@ -1,5 +1,5 @@
 ---
-title: ACM TEAM QUIZ
+title: ACM Team Quiz
 gif: /assets/teamQuizDemo.gif
 cssClass: quiz
 ---
