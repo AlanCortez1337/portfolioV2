@@ -2,17 +2,22 @@
   <div class="nav-items">
     <!-- logo -->
     <a href="/">
-      <svg class="logo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M28 0C12.536 0 0 12.536 0 28V36C0 51.464 12.536 64 28 64H36C51.464 64 64 51.464 64 36V28C64 12.536 51.464 0 36 0H28ZM35.472 11.07C33.9362 8.38477 30.0638 8.38477 28.528 11.07L11.2335 41.3045C10.0446 43.3829 10.9358 46.0331 13.1389 46.971L30.4332 54.3331C31.4343 54.7592 32.5657 54.7592 33.5667 54.3331L50.8611 46.971C53.0642 46.0331 53.9554 43.3829 52.7665 41.3045L35.472 11.07Z" fill="#F8F8F8"/>
+      <svg class="logo" viewBox="0 0 369 394" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M358.975 283.887L207.049 19.2288C197.056 1.82091 171.944 1.82083 161.951 19.2288L10.0254 283.887C2.26252 297.41 8.06637 314.678 22.4212 320.767L174.347 385.211C180.836 387.963 188.164 387.963 194.653 385.211L346.579 320.767C360.934 314.678 366.737 297.41 358.975 283.887Z" fill="url(#paint0_linear_536_69)" stroke="black" stroke-width="16"/>
+        <defs>
+        <linearGradient id="paint0_linear_536_69" x1="184.5" y1="-8" x2="184.336" y2="513.829" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#464D77"/>
+        <stop offset="1" stop-color="#02C39A"/>
+        </linearGradient>
+        </defs>
         </svg>
-        
     </a>
-    <ul>
-      <a href="/about/"><li>About</li></a>
-      <a href="/projects/"><li>Work</li></a>
-      <a href="/"><li>Connect</li></a>
-      <a href="/" class="cta-btn"><button>Resume</button></a>
-    </ul>
+    <div class="nav-items-buttons">
+      <a href="/about/" class="cta-btn"><button>About</button></a>
+      <a href="/projects/" class="cta-btn cta-alt1"><button>Work</button></a>
+      <a href="/" class="cta-btn cta-alt2"><button>Connect</button></a>
+      <a href="/" class="cta-btn cta-alt3"><button>Resume</button></a>
+    </div>
   </div>
 </nav>
 
@@ -25,7 +30,7 @@
   }
 
   .nav-items {
-    padding: 30px 10%;
+    padding: 10px 10%;
     position: relative;
     z-index: 5;
     display: flex;
@@ -33,21 +38,22 @@
   }
 
   .logo {
-    width: 64px;
-    height: 64px;
+    width: 80px;
+    height: 80px;
+    filter: drop-shadow(5px 5px rgb(0 0 0));
+    transition: all 350ms ease-in-out;
   }
 
-  ul {
+  .logo:hover {
+    filter: drop-shadow(10px 10px rgb(0 0 0));
+
+  }
+
+  .nav-items-buttons {
     display: flex;
     gap: 50px;
     justify-content: center;
     align-items: center;
-  }
-
-  li {
-    list-style: none;
-    font-size: 32px;
-    font-weight: 600;
   }
 
   a {

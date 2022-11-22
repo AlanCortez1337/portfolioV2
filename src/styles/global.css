@@ -3,6 +3,9 @@
 /* Global variables */
 :root {
 	/* main colors */
+	--green0-3: #1CD9B0;
+	--green0-2: #14E1B5;
+	--green0-1: #0BEABA;
 	--green0: #02F1BD;
 	--green1: #02C39A;
   	--green2: #0DAF94;
@@ -19,8 +22,10 @@
 	--scrollBarThumb: #576094;
 	--scrollBarBackground: #1F7475;
 	/* keyframe start and end positions */
-	--start-pos: -10%;
-    --end-pos: 30%;
+	--start-bot-pos: 0;
+    --end-bot-pos: 0;
+	--start-left-pos: 0;
+    --end-left-pos: 0;
 	--rotation: 0;
 }
 
@@ -49,44 +54,75 @@ h1, h2, h3, ul, li, body, svg {
 }
 
 body {
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 .cta-btn button{
 	background-color: var(--green0);
 	border: black 6px solid;
 	box-shadow: 4px 4px black;
-	border-radius: 15px;
+	/* border-radius: 15px; */
 	color: black;
 	font-size: 32px;
 	font-weight: 500;
 	padding: 8px 12px;
-	transition: all 200ms ease-in-out;
+	transition: all 300ms ease-in-out;
 }
 
 .cta-btn button:hover {
-	background-color: var(--green0);
-	border: black 6px solid;
+	border: var() 6px solid;
 	box-shadow: 8px 8px black;
-	border-radius: 15px;
+	border-radius: 10px;
 }
 
+.cta-alt1 button{
+	background-color: var(--green0-1);
+}
+
+.cta-alt2 button{
+	background-color: var(--green0-2);
+}
+
+.cta-alt3 button{
+	background-color: var(--green0-3);
+}
+
+.text-hover {
+	transition: all 250ms ease-out;
+}
+
+.text-hover:hover {
+	color: #8DFCE4;
+}
+
+.text-hover-scale {
+	transition: all 450ms ease-out;
+}
+
+.text-hover-scale:hover {
+	transform: scale(1.2);
+	bottom: 2%;
+    right: 8%;
+}
 /* Animation Keyframes */
 
 
   @keyframes bounce {
     0% {
-      bottom: var(--start-pos);
+	  left: var(--start-left-pos);
+      bottom: var(--start-bot-pos);
       transform: rotate(var(--rotation));
     }
 
     50% {
-	  bottom: var(--end-pos);
+      left: var(--end-left-pos);
+	  bottom: var(--end-bot-pos);
       transform: rotate(var(--rotation));
     }
 
     100% {
-	  bottom: var(--start-pos);
+	  left: var(--start-left-pos);
+	  bottom: var(--start-bot-pos);
       transform: rotate(var(--rotation));
     }
   }
