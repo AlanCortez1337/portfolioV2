@@ -27,6 +27,7 @@
 	--start-left-pos: 0;
     --end-left-pos: 0;
 	--rotation: 0;
+	--marquee-length: 0;
 }
 
 h1, h2, h3, ul, li, body, svg {

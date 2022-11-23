@@ -5,8 +5,7 @@ import Nav from "../components/Nav.astro";
 import DownArrow from "../components/icons.jsx";
 
 // Data Fetching: List all Markdown posts in the repo.
-const projects = await Astro.glob("./project/**/*.md");
-const featuredProject = projects[0];
+const projects = await Astro.glob("./project/*.md");
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -14,6 +13,8 @@ const featuredProject = projects[0];
 // const marqueeProjects = document.getElementById("projects");
 // // let marqueeWidth = marqueeProjects.
 // console.log(marqueeProjects.offsetWidth)
+
+
 ---
 
 <html lang="en">
@@ -45,34 +46,16 @@ const featuredProject = projects[0];
       </div>
     </header>
 
-    <div class="marquee">
+    <section class="marquee">
       <ul id="projects">
-        <li>Discord Bot</li>
-        <li>•</li>
-        <li>Food Tinder</li>
-        <li>•</li>
-        <li>ACM Team Quiz</li>
-        <li>•</li>
-        <li>Memory Mania</li>
-        <li>•</li>
-        <li>ACM Rebrand</li>
-        <li>•</li>
-        <li>ACM Wiki</li>
-        <li>•</li>
-        <li>Amongus In 3d</li>
-        <li>•</li>
-        <li>Case Clicker</li>
-        <li>•</li>
-        <li>ILXL PPR Community</li>
-        <li>•</li>
-        <li>Howards Appliances</li>
-        <li>•</li>
-        <li>Portfolio V1</li>
-        <!-- last one -->
-        <li>•</li>
-        <li>[REDACTED]</li>
+        {projects.map((project) => (
+          <li>{project.frontmatter.title}</li>
+          <li>•</li>
+        ))}
+        <li>[REDACTED]</li> 
       </ul>
-    </div>
+    </section>
+
     <main>
       <img class="me" src="/assets/alanHeadshot.png" alt="picture of alan cortez">
       <a href="/" class="cta-btn">
@@ -172,10 +155,10 @@ const featuredProject = projects[0];
       }
       
       .marquee ul {
+        width: fit-content;
         position: relative;
         height: 100%;
         display: flex;
-        /* justify-content: end; */
         align-items: center;
         gap: 40px;
         list-style: none;
@@ -196,7 +179,7 @@ const featuredProject = projects[0];
           left: 100vw;
         }
         to {
-          left: calc(var(--marquee-length));
+          left: calc(0vw + var(--marquee-length))  ;
         }
       }
 
@@ -208,14 +191,14 @@ const featuredProject = projects[0];
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 30px;
+        gap: 50px;
       }
 
       .me {
         position: relative;
         z-index: 2;
-        width: 600px;
-        height: 600px;
+        width: 550px;
+        height: 550px;
         border: black 8px solid;
         box-shadow: 6px 6px black;
         border-radius: 35px;
@@ -232,7 +215,7 @@ const featuredProject = projects[0];
       main a {
         position: relative;
         z-index: 3;
-        width: 611px;
+        width: 566px;
       }
       
       .lua {
@@ -242,8 +225,8 @@ const featuredProject = projects[0];
         left: 40%;
         bottom: -100%;
         z-index: 4;
-        animation: lua-peep 15s infinite linear;
-        animation-delay: 150s;
+        animation: lua-peep 15s 1 linear;
+        animation-delay: 40s;
       }
 
       .wave2 {
