@@ -29,13 +29,13 @@ const projects = await Astro.glob("./project/*.md");
       
     <header>
       <div class="hero-text">
-        <h2 class="text-hover">I am Alan Cortez</h2>
+        <h2 class="text-hover alt-text">I am <span class="name-text">Alan Cortez</span>, a</h2>
         <h1>
           <span class="text-hover">UI/UX</span><br>
           <span class="text-hover">FullStack</span><br>
           <span class="text-hover">Web Developer</span> 
         </h1>
-        <p class="text-hover">Here to make your web experience goofy and an amusing adventure</p>
+        <p class="text-hover alt-text">Here to be the <span class="name-text">unicorn</span>  for your next project.</p>
       </div>
       <svg class="wave" viewBox="0 0 816 169" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path xmlns="http://www.w3.org/2000/svg" d="M0 69.1204C0 69.1204 177.676 58.2568 290.889 45.6487C409.474 32.4423 474.41 -10.0802 593.111 2.20104C684.055 11.6104 816 69.1204 816 69.1204V169H0V69.1204Z" fill="#464D77"/>
@@ -83,6 +83,7 @@ const projects = await Astro.glob("./project/*.md");
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 0fr 1fr 0fr;
+        overflow: hidden;
       }
 
       header {
@@ -125,15 +126,29 @@ const projects = await Astro.glob("./project/*.md");
         display: flex;
         flex-direction: column;
         gap: 30px;
-        padding-bottom: 100px;
+        padding: 50px 0;
+      }
+
+      .hero-text h2 {
+        font-size: 32px;
+        width: fit-content;
       }
 
       .hero-text h1 {
         font-size: 104px;
+        -webkit-text-stroke: 2px black;
+        text-shadow: 6px 6px black;
+        font-weight: 800;
+      }
+
+      .hero-text h1 .text-hover:hover {
+        text-shadow: 12px 12px black;
+
       }
 
       .hero-text p {
-        font-size: 24px;
+        font-weight: 700;
+        font-size: 32px;
       }
 
       main {

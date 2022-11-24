@@ -2,118 +2,180 @@
 import MainHead from '../components/MainHead.astro';
 import Footer from '../components/Footer.astro';
 import Nav from '../components/Nav.astro';
-import Card from "../components/project-card";
 
 ---
 
 <html lang="en">
 	<head>
-		<MainHead title="About | Jeanine White" description="About Jeanine White Lorem Ipsum" />
+		<MainHead title="Alan Cortez | About" description="The ins and outs of Alan Cortez" />
 		<style>
-			/* main */
-			.wrapper {
-        width: 100vw;
-        height: 800px;
-        background-color: var(--purple2);
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        justify-content: center;
-        align-items: center;
+      body {
+        background-color: var(--green0);
       }
-      .about-blurb {
+      /* header */
+      header {
         position: relative;
-        z-index: 5;
-        width: 700px;
+        overflow: hidden;
+        padding: 0 10%;
+        height: 800px;
+        display: grid;
+        grid-template-areas: 
+          "title title"
+          "blurb graphics";
+        gap: 20px;
+        justify-items: start;
+        align-items: flex-start;  
       }
-      .about-blurb h2 {
-        width: 350px;
-        font-size: 40px;
-        text-align: center;
-        background-color: var(--purple1);
-        border: var(--purple1) 5px solid;
-        padding: 5px 15px;
-        border-radius: 15px;
+      header h1 {
+        position: relative;
+        z-index: 2;
+        padding: 5% 0;
+        grid-area: title;
+        width: fit-content;
+        font-size: 96px;
+        -webkit-text-stroke: 3px black;
+        text-shadow: 6px 6px black;
+        font-weight: 800;
+	      transition: all 250ms ease-out;
+      }
+      header h1:hover {
+        text-shadow: 12px 12px black;
 
       }
-      .about-blurb p {
-        font-size: 24px;
-      }
-      .spotlight {
+      header p {
         position: relative;
-        --start-pos: 0px;
-        --end-pos: 50px;
-        animation: bounce 5.5s infinite ease-in-out;
-      }
-      .wrapper .about-blurb {
-        grid-column: 2;
-        grid-row: 1 / span 3;
-        justify-self: center;
-        align-self: center;
-      }
-      .wrapper .spotlight {
-        grid-column: 1;
-        grid-row: 2;
-        justify-self: center;
-        align-self: center;
-      }
-      .wrapper .more-info {
-        grid-column: 1;
-        grid-row: 3;
-        display: flex;
-        gap: 20px;
-        justify-self: center;
-        align-self: center;
-      }
-      #button-one {
-        --rotation: -4%;
-        --start-pos: -8%;
-        --end-pos: 0%;
-      }
-      #button-two {
-        --rotation: 4%;
-        --start-pos: 15%;
-        --end-pos: 1%;        
-      }
-      #button-three {
-        --rotation: 2%;
-        --start-pos: 0%;
-        --end-pos: 14%;        
-      }
-      button {
-        position: relative;
-        font-size: 18px;
-        color: var(--text-color);
-        background-color: var(--purple1);
-        border: var(--purple1) 5px solid;
-        padding: 5px 15px;
-        border-radius: 15px;
+        z-index: 2;
+        grid-area: blurb;
+        width: 60%;
+        padding: 1.5em;
+        background-color: var(--purple3);
+        border: black 10px solid;
+        border-radius: 50px;
+        box-shadow: 5px 5px black;
+        font-size: 32px;
+        font-weight: 500;
         transition: all 350ms ease-in-out;
-        animation: bounce 2.25s infinite linear;
+        text-align: center;
       }
-      button:hover {
-        background-color: var(--purple0);
-        border-color: var(--purple0);
-        border-radius: 10px;
+      header p:hover {
+        box-shadow: 15px 15px black;
+        transform: scale(1.07);
       }
-      .highlight-text {
-        color: var(--green0);
-        font-weight: 700;
+      header .graphic {
+        position: relative;
+        z-index: 2;
+        grid-area: graphics;
+        position: relative;
+        bottom: 10%;
+      }
+      header .graphic img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .funny-shapes {
+        position: absolute;
+      }
+
+      .funny-shapes:nth-child(odd) {
+        --rotate-start: 0deg;
+	      --rotate-end: 360deg;
+        width: 190px;
+        height: 190px;
+        transition: all 350ms ease-in-out;
+        animation: spin 4500ms infinite linear;
+      }
+
+      /* .funny-shapes:nth-child(odd):hover {
+        transform: scale(2.1);
+      } */
+
+      .funny-shapes:nth-child(even) {
+        --rotate-start: -360deg;
+	      --rotate-end: 0deg;
+        width: 160px;
+        height: 160px;
+        animation: spin 4500ms infinite linear;
+      }
+
+      .logo {
+        left: -150px;
+        bottom: 600px;
+      }
+
+      .square-circle {
+        left: 500px;
+        bottom: 100px;
+      }
+
+      .star {
+        left: 350px;
+        bottom: 550px;
+      }
+
+      .hexagon {
+        left: -100px;
+        bottom: 300px;
+      }
+
+      .diamond {
+        left: -200px;
+        bottom: 100px;
+      }
+
+      .background-svg {
+        position: absolute;
+        z-index: 1;
+        height: 100%;
+        left: 0;
+        --start-left-pos: -55px;
+        --end-left-pos: -15px;
+        animation: bounce 4500ms infinite ease-in-out;
       }
 		</style>
 	</head>
 	<body>
 		<Nav />
-		<div class="wrapper">
-			<h1>About Jeanine</h1>
-			<div class="heroImg">
-				<img
-					width="1400"
-					height="350"
-					src="https://images.unsplash.com/photo-1581977012607-4091712d36f9?auto=format&fit=crop&w=1400&h=350&q=75"
-				/>
-			</div>
-			<div class="bio wrapper">
+    <header>
+      <h1>About Me</h1>
+      <p>How's it going, I am Alan Cortez a web developer based in Southern California. My goal is to make your web experience easier and a amusing adventure.</p>
+      <div class="graphic">
+        <img src="/assets/myselfPointingpng.png" alt="myself looking up and pointing in a power stance">
+        <!-- logo shape -->
+        <svg class="funny-shapes logo" viewBox="0 0 180 195" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M164.969 86.6237L50.5295 9.01C35.1779 -1.40153 14.3226 8.79424 13.1098 27.3037L4.06908 165.284C3.12914 179.629 14.9261 191.577 29.2823 190.82L103.855 186.885C110.366 186.541 116.456 183.564 120.727 178.637L169.634 122.205C179.05 111.341 176.867 94.693 164.969 86.6237Z" fill="#3B617D" stroke="black" stroke-width="8"/>
+        </svg>
+        <!-- square circle shape -->
+        <svg class="funny-shapes square-circle" viewBox="0 0 137 137" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M131.738 79.4258L120.277 30.4399C116 12.1559 97.7098 0.801517 79.4258 5.07912L30.4399 16.5396C12.156 20.8172 0.801572 39.107 5.07918 57.3909L16.5396 106.377C20.8172 124.661 39.107 136.015 57.391 131.738L106.377 120.277C124.661 116 136.015 97.7097 131.738 79.4258Z" fill="#248889" stroke="black" stroke-width="8"/>
+        </svg>
+        <!-- star shape -->
+        <svg class="funny-shapes star" viewBox="0 0 158 155" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M45.3564 8.37021L47.2013 4.82107L85.6922 24.8292L127.223 12.2973C131.48 11.0128 135.606 14.6426 134.875 19.0282L127.74 61.8181L152.493 97.4438C155.03 101.095 152.853 106.141 148.456 106.801L105.555 113.238L79.3221 147.788C76.6334 151.329 71.1617 150.818 69.1755 146.84L49.7962 108.029L8.83087 93.7562C4.63213 92.2933 3.42759 86.9314 6.59696 83.8132L37.5202 53.3891L38.4353 10.0182M45.3564 8.37021L38.4353 10.0182M45.3564 8.37021L47.2013 4.82107C43.2563 2.77039 38.5291 5.57294 38.4353 10.0182M45.3564 8.37021L38.4353 10.0182M50.5642 108.296C50.5634 108.296 50.5627 108.296 50.5619 108.296L50.5642 108.296ZM49.4344 107.304C49.4339 107.303 49.4334 107.302 49.4329 107.301L49.4344 107.304Z" fill="#464D77" stroke="black" stroke-width="8"/>
+        </svg>
+        <!-- hexagon shape -->
+        <svg class="funny-shapes hexagon" viewBox="0 0 175 155" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M132.075 9.25165L130.984 7.21575L128.676 7.14191L50.716 4.64798L48.4078 4.57414L47.1898 6.5362L6.0499 72.8047L4.83184 74.7667L5.922 76.8026L42.7423 145.565L43.8324 147.601L46.1406 147.675L124.101 150.169L126.409 150.243L127.627 148.28L168.767 82.012L169.985 80.05L168.895 78.0141L132.075 9.25165Z" fill="#02C39A" stroke="black" stroke-width="8"/>
+        </svg>
+        <!-- diamond shape -->
+        <svg class="funny-shapes diamond" viewBox="0 0 136 211" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M130.271 132.096L125.271 132.135L130.271 132.096L129.422 20.7856C129.333 9.07407 116.456 1.9782 106.507 8.15834L12.7832 66.3805C8.34307 69.1388 5.65901 74.0095 5.69886 79.2365L6.54755 190.547C6.63685 202.259 19.5137 209.355 29.4623 203.175L123.186 144.952C127.627 142.194 130.311 137.323 130.271 132.096Z" fill="#3B617D" stroke="black" stroke-width="10"/>
+        </svg>
+      </div>
+      <svg class="background-svg" viewBox="0 0 796 746" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-1 0H744.319C744.319 0 814.326 188.268 791.382 307.5C766.623 436.165 583.867 460.507 613.696 588C632.203 667.1 744.319 746 744.319 746H-1V0Z" fill="#03DCAE"/>
+        </svg>
+    </header>
+    <section class="skills">
+      bru
+    </section>
+    <sections class="experience">
+
+    </sections>
+    <section class="hobbies"> 
+    
+    </section>
+			<!-- <div class="bio wrapper">
 				<div class="about-blurb">
 					<h2>About Me</h2>
 					<p>
@@ -138,15 +200,7 @@ import Card from "../components/project-card";
 					</p>
 					
 				  </div>
-			</div>
-			
-			<div class="spotlight">
-				<Card title="ACM TEAM QUIZ" gif="/assets/teamQuizDemo.gif"/>
-			  </div>
-			  <div class="more-info">
-				<a href="/projects/"><button id="button-two">check out more projects</button></a>
-			  </div>
-		</div>
-		<Footer />
+			</div> -->
+		<!-- <Footer /> -->
 	</body>
 </html>
