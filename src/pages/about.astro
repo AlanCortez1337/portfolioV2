@@ -2,6 +2,9 @@
 import MainHead from '../components/MainHead.astro';
 import Footer from '../components/Footer.astro';
 import Nav from '../components/Nav.astro';
+// import ExpCard from '../layouts/exp-card.astro'
+
+// const experiences = await Astro.glob("./experience/*.md")
 
 const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro", "Git", "Figma"];
 ---
@@ -244,7 +247,10 @@ const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro"
     </section>
 
     <sections class="experience">
-
+      <h1 class="title">Exciting Experiences</h1>
+      <!-- {experiences.map((exp) => (
+        <ExpCard title={exp.frontmatter.title}/>
+      ))} -->
     </sections>
     <section class="hobbies"> 
     
