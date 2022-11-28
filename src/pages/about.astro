@@ -3,6 +3,7 @@ import MainHead from '../components/MainHead.astro';
 import Footer from '../components/Footer.astro';
 import Nav from '../components/Nav.astro';
 
+const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro", "Git", "Figma"];
 ---
 
 <html lang="en">
@@ -11,6 +12,17 @@ import Nav from '../components/Nav.astro';
 		<style>
       body {
         background-color: var(--green0);
+      }
+      .title {
+        width: fit-content;
+        font-size: 96px;
+        -webkit-text-stroke: 3px black;
+        text-shadow: 6px 6px black;
+        font-weight: 800;
+	      transition: all 250ms ease-out;
+      }
+      .title:hover {
+        text-shadow: 12px 12px black;
       }
       /* header */
       header {
@@ -31,16 +43,6 @@ import Nav from '../components/Nav.astro';
         z-index: 2;
         padding: 5% 0;
         grid-area: title;
-        width: fit-content;
-        font-size: 96px;
-        -webkit-text-stroke: 3px black;
-        text-shadow: 6px 6px black;
-        font-weight: 800;
-	      transition: all 250ms ease-out;
-      }
-      header h1:hover {
-        text-shadow: 12px 12px black;
-
       }
       header p {
         position: relative;
@@ -132,12 +134,74 @@ import Nav from '../components/Nav.astro';
         --end-left-pos: -15px;
         animation: bounce 4500ms infinite ease-in-out;
       }
+
+      /* SKills */
+      .skill-section {
+        overflow: hidden;
+        position: relative;
+        height: 500px;
+        background-color: var(--purple3);
+        border-top: 8px solid black;
+        display: flex;
+        flex-direction: column;
+        padding: 0 10% 5% 10%;
+      }
+      .hop {
+        padding-top: 5%;
+        position: relative;
+        z-index: 2;
+      }
+
+      .skill-section ul {
+        padding: 0;
+        position: relative;
+        z-index: 2;
+        margin-top: 3%;
+        width: 100%;
+        list-style: none;
+        display: flex;
+        gap: 6%;
+        flex-wrap: wrap;
+      }
+      .skill-item {
+        margin: 30px 0;
+        position: relative;
+        z-index: 2;
+        background-color: var(--green0);
+        border: black 6px solid;
+        box-shadow: 4px 4px black;
+        color: black;
+        font-size: 40px;
+        font-weight: 600;
+        padding: 8px 12px;
+        transition: all 500ms ease-in-out;
+      }
+      .skill-item:hover {
+        border: var() 6px solid;
+        box-shadow: 8px 8px black;
+        border-radius: 10px;
+        transform: scale(1.3);
+
+      }
+      .skill-item:active {
+        transform: rotate(180deg) scale(0.8);
+      }
+      .skills-wave {
+        height: 100%;
+        padding: 0;
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        --start-left-pos: -55px;
+        --end-left-pos: -15px;
+        animation: right-bounce 4500ms infinite ease-in-out;
+      }
 		</style>
 	</head>
 	<body>
 		<Nav />
     <header>
-      <h1>About Me</h1>
+      <h1 class="title">About Me</h1>
       <p>How's it going, I am Alan Cortez a web developer based in Southern California. My goal is to make your web experience easier and a amusing adventure.</p>
       <div class="graphic">
         <img src="/assets/myselfPointingpng.png" alt="myself looking up and pointing in a power stance">
@@ -166,9 +230,19 @@ import Nav from '../components/Nav.astro';
         <path d="M-1 0H744.319C744.319 0 814.326 188.268 791.382 307.5C766.623 436.165 583.867 460.507 613.696 588C632.203 667.1 744.319 746 744.319 746H-1V0Z" fill="#03DCAE"/>
         </svg>
     </header>
-    <section class="skills">
-      bru
+    
+    <section class="skill-section">
+      <h1 class="title hop">Silly Skills</h1>
+      <ul>
+        {skills.map((skill) => (
+          <li class="skill-item">{skill}</li>
+        ))}
+      </ul>
+      <svg class="skills-wave" viewBox="0 0 666 522" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4.00025 0H666V522H4.00025C4.00025 522 40.1441 457.586 55.0003 413C73.9869 356.017 88.8422 321.112 81.5003 261.5C73.1635 193.811 15.6519 172.198 4.00025 105C-3.0052 64.5978 4.00025 0 4.00025 0Z" fill="#256A79"/>
+      </svg>
     </section>
+
     <sections class="experience">
 
     </sections>

@@ -54,7 +54,7 @@ h1, h2, h3, ul, li, body, svg {
 	background-color: var(--scrollBarThumb);
 }
 
-.cta-btn button{
+.cta-btn button {
 	background-color: var(--green0);
 	border: black 6px solid;
 	box-shadow: 4px 4px black;
@@ -127,6 +127,20 @@ h1, h2, h3, ul, li, body, svg {
 	  left: var(--start-left-pos);
 	  bottom: var(--start-bot-pos);
       transform: rotate(var(--rotation));
+    }
+  }
+
+  @keyframes right-bounce {
+    0% {
+	  right: var(--start-left-pos);
+    }
+
+    50% {
+	  right: var(--end-left-pos);
+    }
+
+    100% {
+	  right: var(--start-left-pos);
     }
   }
 
