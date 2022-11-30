@@ -58,7 +58,6 @@ h1, h2, h3, ul, li, body, svg {
 	background-color: var(--green0);
 	border: black 6px solid;
 	box-shadow: 4px 4px black;
-	/* border-radius: 15px; */
 	color: black;
 	font-size: 32px;
 	font-weight: 600;

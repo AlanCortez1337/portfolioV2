@@ -2,9 +2,8 @@
 import MainHead from '../components/MainHead.astro';
 import Footer from '../components/Footer.astro';
 import Nav from '../components/Nav.astro';
-// import ExpCard from '../layouts/exp-card.astro'
 
-// const experiences = await Astro.glob("./experience/*.md")
+const experiences = await Astro.glob("./experience/*.md")
 
 const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro", "Git", "Figma"];
 ---
@@ -149,7 +148,7 @@ const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro"
         flex-direction: column;
         padding: 0 10% 5% 10%;
       }
-      .hop {
+      .skill-section h1 {
         padding-top: 5%;
         position: relative;
         z-index: 2;
@@ -199,6 +198,102 @@ const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro"
         --end-left-pos: -15px;
         animation: right-bounce 4500ms infinite ease-in-out;
       }
+      /* Experiences */
+      .experience {
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        background-color: var(--purple2);
+        border-top: 8px solid black;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "title title"
+        "one two";
+        column-gap: 5%;
+        padding: 0 10% 5% 10%;
+      }
+      .experience h1 {
+        grid-area: title;
+        padding-top: 5%;
+        position: relative;
+        z-index: 2;
+      }
+      .exp-card {
+        position: relative;
+        z-index: 2;
+        height: 400px;
+        margin-top: 8%;
+        border: black 9px solid;
+        border-radius: 25px;
+	      box-shadow: 6px 6px black;
+        display: flex;
+        flex-direction: column;
+        transition: all 300ms ease-in-out;
+      }
+      .exp-card:nth-child(n + 1) {
+        background-color: var(--cyan);
+      }
+      .exp-card:nth-child(2n + 1) {
+        background-color: var(--purple3);
+      }
+      .exp-card:nth-child(3n + 1) {
+        background-color: var(--purple2);
+      }
+      .exp-card:hover {
+        transform: scale(1.05);
+	      box-shadow: 12px 12px black;
+      }
+      .exp-card h3 {
+        padding: 4% 10% 0 10%;
+        text-align: center;
+        font-size: 40px;
+        border-radius: 15px 15px 0 0;
+      }
+      .exp-card p {
+        text-align: center;
+      }
+      .exp-card ul {
+        height: 100%;
+        padding: 0 10% 4% 10%;
+        font-size: 20px;
+        font-weight: 400;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 0 15px 15px;
+        gap: 30px;
+        text-align: center;
+      }
+      .exp-card button {
+        background-color: var(--green0);
+	      border: black 6px solid;
+        color: black;
+        font-size: 24px;
+        font-weight: 600;
+        padding: 8px 12px;
+        border-radius: 10px;
+        transition: all 300ms ease-in-out;
+      }
+      .exp-card button:hover {
+        border-radius: 0px;
+        transform: scale(1.1);
+      }
+      .exp-card button:active {
+        transform: scale(0.8);
+      }
+      .exp-wave {
+        width: 100%;
+        padding: 0;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        --start-bot-pos: -55px;
+        --end-bot-pos: -15px;
+        animation: bounce 4500ms infinite ease-in-out;
+      }
 		</style>
 	</head>
 	<body>
@@ -235,7 +330,7 @@ const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro"
     </header>
     
     <section class="skill-section">
-      <h1 class="title hop">Silly Skills</h1>
+      <h1 class="title">Silly Skills</h1>
       <ul>
         {skills.map((skill) => (
           <li class="skill-item">{skill}</li>
@@ -248,9 +343,20 @@ const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro"
 
     <sections class="experience">
       <h1 class="title">Exciting Experiences</h1>
-      <!-- {experiences.map((exp) => (
-        <ExpCard title={exp.frontmatter.title}/>
-      ))} -->
+      {experiences.map((exp) => (
+      <div class="exp-card">
+          <h3>{exp.frontmatter.title}</h3>
+          <p>{exp.frontmatter.time}</p>
+          <ul>
+              <li>{exp.frontmatter.highlights[0]}</li>
+              <li>{exp.frontmatter.highlights[1]}</li>
+              <a href={exp.url}><button>Learn More</button></a>
+          </ul>
+        </div>
+      ))}
+      <svg class="exp-wave" viewBox="0 0 1512 368" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 31C0 31 162.555 105.952 274 112.5C423.587 121.29 495.663 18.1113 645.5 16.5C795.346 14.8887 869.935 119.863 1019 104.5C1133.44 92.7054 1180.27 10.0134 1295 1.50003C1380.29 -4.82871 1512 31 1512 31V368H0V31Z" fill="#2E5471"/>
+      </svg>
     </sections>
     <section class="hobbies"> 
     
