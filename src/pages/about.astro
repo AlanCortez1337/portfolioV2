@@ -70,7 +70,7 @@ const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro"
         z-index: 2;
         grid-area: graphics;
         position: relative;
-        bottom: 10%;
+        bottom: 0;
       }
       header .graphic img {
         width: 100%;
@@ -89,10 +89,6 @@ const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro"
         transition: all 350ms ease-in-out;
         animation: spin 4500ms infinite linear;
       }
-
-      /* .funny-shapes:nth-child(odd):hover {
-        transform: scale(2.1);
-      } */
 
       .funny-shapes:nth-child(even) {
         --rotate-start: -360deg;
@@ -294,6 +290,57 @@ const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro"
         --end-bot-pos: -15px;
         animation: bounce 4500ms infinite ease-in-out;
       }
+      /* Hobbies */
+      .hobbies {
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        background-color: var(--purple1);
+        border-top: 8px solid black;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "title title title"
+        "one two three";
+        column-gap: 5%;
+        padding: 0 10% 5% 10%;
+      }
+      .hobbies h1 {
+        grid-area: title;
+        padding-top: 5%;
+        position: relative;
+        z-index: 2;
+      }
+      .hobby-card {
+        position: relative;
+        justify-self: center;
+        background-color: red;
+        width: 250px;
+        height: 250px;
+        transition: all 350ms ease-in-out;
+      }
+      .hobby-card p {
+        margin: 0;
+        opacity: 0;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transition: all 350ms ease-in-out;
+        transform: translate(-50%, -50%);
+      }
+      .hobby-card img {
+        width: 100%;
+        height: 100%;
+      }
+      .hobby-card:hover {
+        transform: scale(1.1);
+      }
+      .hobby-card:hover p {
+        opacity: 1;
+      }
+      .hobby-card:hover img {
+        opacity: 0.5;
+      }
 		</style>
 	</head>
 	<body>
@@ -302,7 +349,7 @@ const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro"
       <h1 class="title">About Me</h1>
       <p>How's it going, I am Alan Cortez a web developer based in Southern California. My goal is to make your web experience easier and a amusing adventure.</p>
       <div class="graphic">
-        <img src="/assets/myselfPointingpng.png" alt="myself looking up and pointing in a power stance">
+        <img src="/assets/headerPic.png" alt="myself looking up and pointing in a power stance">
         <!-- logo shape -->
         <svg class="funny-shapes logo" viewBox="0 0 180 195" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M164.969 86.6237L50.5295 9.01C35.1779 -1.40153 14.3226 8.79424 13.1098 27.3037L4.06908 165.284C3.12914 179.629 14.9261 191.577 29.2823 190.82L103.855 186.885C110.366 186.541 116.456 183.564 120.727 178.637L169.634 122.205C179.05 111.341 176.867 94.693 164.969 86.6237Z" fill="#3B617D" stroke="black" stroke-width="8"/>
@@ -358,35 +405,14 @@ const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro"
         <path d="M0 31C0 31 162.555 105.952 274 112.5C423.587 121.29 495.663 18.1113 645.5 16.5C795.346 14.8887 869.935 119.863 1019 104.5C1133.44 92.7054 1180.27 10.0134 1295 1.50003C1380.29 -4.82871 1512 31 1512 31V368H0V31Z" fill="#2E5471"/>
       </svg>
     </sections>
+
     <section class="hobbies"> 
-    
+      <h1 class="title">Humble Hobbies</h1>
+      <div class="hobby-card">
+        <p>Hobby</p>
+        <img src="/assets/hobbies/bread.webp" alt="image of baked bread which Alan created to represent that baking is a hobby.">
+      </div>
     </section>
-			<!-- <div class="bio wrapper">
-				<div class="about-blurb">
-					<h2>About Me</h2>
-					<p>
-					  How's it going, <span class="highlight-text">I am Alan Cortez</span> a web 
-					  developer based in Southern California. My goal is to make your web experience 
-					  easier and a amusing adventure. My own journy thus far has led me to dabbling 
-					  with <span class="highlight-text">React, Svelte, and Astro</span>. 
-					  
-					</p>
-					<p>
-					  On the side, I am a Supplemental Instruction Leader teaching 
-					  <span class="highlight-text">C++ Object Oriented Programming</span>
-					  concepts to a range of students. Additionally, I am the Design President
-					  in the largest computer science club on campus, ACM at CSUF, passing down
-					  <span class="highlight-text"> UI/UX and Frontend development</span> 
-					  practices to students of all levels.
-					</p>
-					<p>
-					  That is just the tip of the iceberg, if you would love to learn more about me and my hobbies
-					  <button id="button-one"><span class="highlight-text">click here</span></button> or let my 
-					  projects do all the talking.
-					</p>
-					
-				  </div>
-			</div> -->
-		<!-- <Footer /> -->
+			
 	</body>
 </html>
