@@ -3,19 +3,9 @@ import Icons from "./icons";
 ---
 
 <footer>
-  <svg
-    class="footer-wave"
-    viewBox="0 0 1511 296"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M0 65C0 65 295.675 102.786 486 101.5C774.718 99.5498 931.938 -25.9366 1219 5.00004C1334.75 17.4739 1511 65 1511 65V296H0V65Z"
-      fill="#464D77"></path>
-  </svg>
   <div class="footer-items">
     <div class="footer-wrapper">
-      <h3>designed and developed by alan cortez</h3>
+      <h3>Designed and developed by Alan Cortez</h3>
       <div class="icons">
         <a
           href="https://docs.google.com/document/d/1WgFxvm5z1IBIdMeri4NDSyZzI855fQZRAZP5GZUopmc/edit"
@@ -36,31 +26,20 @@ import Icons from "./icons";
   footer {
     overflow: hidden;
     position: relative;
-    height: 300px;
-    width: 100vw;
-    background-color: var(--purple2);
+    width: 100%;
+    background-color: black;
   }
-  .footer-wave {
-    position: absolute;
-    width: 3000px;
-    bottom: -300px;
-    --start-pos: -300px;
-    --end-pos: -275px;
-    animation: bounce 3.25s infinite ease-in-out;
-  }
+
   .footer-items {
-    height: calc(100% - 30px);
-    padding-bottom: 30px;
-    position: relative;
-    z-index: 5;
+    padding: 15px 10%;
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: center;
   }
   .footer-wrapper {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
   }
   .icons {
@@ -68,6 +47,10 @@ import Icons from "./icons";
     justify-content: center;
     align-items: center;
     gap: 20px;
+  }
+
+  h3 {
+    font-size: 24px;
   }
 
   a {

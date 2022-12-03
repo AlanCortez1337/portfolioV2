@@ -1,17 +1,51 @@
 ---
-import MainHead from '../components/MainHead.astro';
-import Footer from '../components/Footer.astro';
-import Nav from '../components/Nav.astro';
+import MainHead from "../components/MainHead.astro";
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
 
-const experiences = await Astro.glob("./experience/*.md")
+const experiences = await Astro.glob("./experience/*.md");
 
-const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro", "Git", "Figma"];
+const skills = [
+  "HTML5",
+  "CSS3",
+  "C++",
+  "JavaScript",
+  "React",
+  "Svelte",
+  "Astro",
+  "Git",
+  "Figma",
+];
+
+const hobbies = [
+  {
+    title: "Baking Bread",
+    url: "/assets/hobbies/bread.png",
+    description:
+      "image of baked bread which Alan created to represent that baking is a hobby.",
+  },
+  {
+    title: "Partying with Parrot",
+    url: "/assets/hobbies/lua.png",
+    description:
+      "image of my lovebird extending her neck, trying to bite the camera.",
+  },
+  {
+    title: "Dungeonin' some Dragons",
+    url: "/assets/hobbies/dnd.png",
+    description:
+      "image of black twenty sided dice meant to play dungeons and dragons.",
+  },
+];
 ---
 
 <html lang="en">
-	<head>
-		<MainHead title="Alan Cortez | About" description="The ins and outs of Alan Cortez" />
-		<style>
+  <head>
+    <MainHead
+      title="Alan Cortez | About"
+      description="The ins and outs of Alan Cortez"
+    />
+    <style>
       body {
         background-color: var(--green0);
       }
@@ -21,7 +55,7 @@ const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro"
         -webkit-text-stroke: 3px black;
         text-shadow: 6px 6px black;
         font-weight: 800;
-	      transition: all 250ms ease-out;
+        transition: all 250ms ease-out;
       }
       .title:hover {
         text-shadow: 12px 12px black;
@@ -33,12 +67,12 @@ const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro"
         padding: 0 10%;
         height: 800px;
         display: grid;
-        grid-template-areas: 
+        grid-template-areas:
           "title title"
           "blurb graphics";
         gap: 20px;
         justify-items: start;
-        align-items: flex-start;  
+        align-items: flex-start;
       }
       header h1 {
         position: relative;
@@ -83,7 +117,7 @@ const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro"
 
       .funny-shapes:nth-child(odd) {
         --rotate-start: 0deg;
-	      --rotate-end: 360deg;
+        --rotate-end: 360deg;
         width: 190px;
         height: 190px;
         transition: all 350ms ease-in-out;
@@ -92,7 +126,7 @@ const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro"
 
       .funny-shapes:nth-child(even) {
         --rotate-start: -360deg;
-	      --rotate-end: 0deg;
+        --rotate-end: 0deg;
         width: 160px;
         height: 160px;
         animation: spin 4500ms infinite linear;
@@ -179,7 +213,6 @@ const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro"
         box-shadow: 8px 8px black;
         border-radius: 10px;
         transform: scale(1.3);
-
       }
       .skill-item:active {
         transform: rotate(180deg) scale(0.8);
@@ -203,9 +236,9 @@ const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro"
         border-top: 8px solid black;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-areas: 
-        "title title"
-        "one two";
+        grid-template-areas:
+          "title title"
+          "one two";
         column-gap: 5%;
         padding: 0 10% 5% 10%;
       }
@@ -222,7 +255,7 @@ const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro"
         margin-top: 8%;
         border: black 9px solid;
         border-radius: 25px;
-	      box-shadow: 6px 6px black;
+        box-shadow: 6px 6px black;
         display: flex;
         flex-direction: column;
         transition: all 300ms ease-in-out;
@@ -238,7 +271,7 @@ const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro"
       }
       .exp-card:hover {
         transform: scale(1.05);
-	      box-shadow: 12px 12px black;
+        box-shadow: 12px 12px black;
       }
       .exp-card h3 {
         padding: 4% 10% 0 10%;
@@ -265,7 +298,7 @@ const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro"
       }
       .exp-card button {
         background-color: var(--green0);
-	      border: black 6px solid;
+        border: black 6px solid;
         color: black;
         font-size: 24px;
         font-weight: 600;
@@ -295,13 +328,14 @@ const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro"
         height: 100%;
         overflow: hidden;
         position: relative;
+        z-index: 0;
         background-color: var(--purple1);
         border-top: 8px solid black;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas: 
-        "title title title"
-        "one two three";
+        grid-template-areas:
+          "title title title"
+          "one two three";
         column-gap: 5%;
         padding: 0 10% 5% 10%;
       }
@@ -309,110 +343,223 @@ const skills = ["HTML5", "CSS3", "C++", "JavaScript", "React", "Svelte", "Astro"
         grid-area: title;
         padding-top: 5%;
         position: relative;
-        z-index: 2;
+        z-index: 3;
       }
       .hobby-card {
+        margin-top: 8%;
         position: relative;
         justify-self: center;
-        background-color: red;
         width: 250px;
         height: 250px;
         transition: all 350ms ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 8px solid black;
+        box-shadow: 6px 6px black;
+        background-color: var(--purple0);
       }
       .hobby-card p {
+        text-align: center;
+        padding: 5% 10%;
+        font-size: 40px;
+        font-weight: 700;
         margin: 0;
         opacity: 0;
         position: absolute;
-        left: 50%;
-        top: 50%;
+        z-index: 3;
         transition: all 350ms ease-in-out;
-        transform: translate(-50%, -50%);
       }
       .hobby-card img {
         width: 100%;
         height: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        transition: all 350ms ease-in-out;
       }
       .hobby-card:hover {
         transform: scale(1.1);
+        border-radius: 25px;
       }
       .hobby-card:hover p {
         opacity: 1;
       }
       .hobby-card:hover img {
         opacity: 0.5;
+        border-radius: 15px;
       }
-		</style>
-	</head>
-	<body>
-		<Nav />
+      .hobby-wave {
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        top: 0;
+        --start-bot-pos: -55px;
+        --end-bot-pos: -15px;
+        animation: top-bounce 4500ms infinite ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <Nav />
     <header>
       <h1 class="title">About Me</h1>
-      <p>How's it going, I am Alan Cortez a web developer based in Southern California. My goal is to make your web experience easier and a amusing adventure.</p>
+      <p>
+        How's it going, I am Alan Cortez a web developer based in Southern
+        California. My goal is to make your web experience easier and a amusing
+        adventure.
+      </p>
       <div class="graphic">
-        <img src="/assets/headerPic.png" alt="myself looking up and pointing in a power stance">
+        <img
+          src="/assets/headerPic.png"
+          alt="myself looking up and pointing in a power stance"
+        />
         <!-- logo shape -->
-        <svg class="funny-shapes logo" viewBox="0 0 180 195" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M164.969 86.6237L50.5295 9.01C35.1779 -1.40153 14.3226 8.79424 13.1098 27.3037L4.06908 165.284C3.12914 179.629 14.9261 191.577 29.2823 190.82L103.855 186.885C110.366 186.541 116.456 183.564 120.727 178.637L169.634 122.205C179.05 111.341 176.867 94.693 164.969 86.6237Z" fill="#3B617D" stroke="black" stroke-width="8"/>
+        <svg
+          class="funny-shapes logo"
+          viewBox="0 0 180 195"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M164.969 86.6237L50.5295 9.01C35.1779 -1.40153 14.3226 8.79424 13.1098 27.3037L4.06908 165.284C3.12914 179.629 14.9261 191.577 29.2823 190.82L103.855 186.885C110.366 186.541 116.456 183.564 120.727 178.637L169.634 122.205C179.05 111.341 176.867 94.693 164.969 86.6237Z"
+            fill="#3B617D"
+            stroke="black"
+            stroke-width="8"></path>
         </svg>
         <!-- square circle shape -->
-        <svg class="funny-shapes square-circle" viewBox="0 0 137 137" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M131.738 79.4258L120.277 30.4399C116 12.1559 97.7098 0.801517 79.4258 5.07912L30.4399 16.5396C12.156 20.8172 0.801572 39.107 5.07918 57.3909L16.5396 106.377C20.8172 124.661 39.107 136.015 57.391 131.738L106.377 120.277C124.661 116 136.015 97.7097 131.738 79.4258Z" fill="#248889" stroke="black" stroke-width="8"/>
+        <svg
+          class="funny-shapes square-circle"
+          viewBox="0 0 137 137"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M131.738 79.4258L120.277 30.4399C116 12.1559 97.7098 0.801517 79.4258 5.07912L30.4399 16.5396C12.156 20.8172 0.801572 39.107 5.07918 57.3909L16.5396 106.377C20.8172 124.661 39.107 136.015 57.391 131.738L106.377 120.277C124.661 116 136.015 97.7097 131.738 79.4258Z"
+            fill="#248889"
+            stroke="black"
+            stroke-width="8"></path>
         </svg>
         <!-- star shape -->
-        <svg class="funny-shapes star" viewBox="0 0 158 155" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M45.3564 8.37021L47.2013 4.82107L85.6922 24.8292L127.223 12.2973C131.48 11.0128 135.606 14.6426 134.875 19.0282L127.74 61.8181L152.493 97.4438C155.03 101.095 152.853 106.141 148.456 106.801L105.555 113.238L79.3221 147.788C76.6334 151.329 71.1617 150.818 69.1755 146.84L49.7962 108.029L8.83087 93.7562C4.63213 92.2933 3.42759 86.9314 6.59696 83.8132L37.5202 53.3891L38.4353 10.0182M45.3564 8.37021L38.4353 10.0182M45.3564 8.37021L47.2013 4.82107C43.2563 2.77039 38.5291 5.57294 38.4353 10.0182M45.3564 8.37021L38.4353 10.0182M50.5642 108.296C50.5634 108.296 50.5627 108.296 50.5619 108.296L50.5642 108.296ZM49.4344 107.304C49.4339 107.303 49.4334 107.302 49.4329 107.301L49.4344 107.304Z" fill="#464D77" stroke="black" stroke-width="8"/>
+        <svg
+          class="funny-shapes star"
+          viewBox="0 0 158 155"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M45.3564 8.37021L47.2013 4.82107L85.6922 24.8292L127.223 12.2973C131.48 11.0128 135.606 14.6426 134.875 19.0282L127.74 61.8181L152.493 97.4438C155.03 101.095 152.853 106.141 148.456 106.801L105.555 113.238L79.3221 147.788C76.6334 151.329 71.1617 150.818 69.1755 146.84L49.7962 108.029L8.83087 93.7562C4.63213 92.2933 3.42759 86.9314 6.59696 83.8132L37.5202 53.3891L38.4353 10.0182M45.3564 8.37021L38.4353 10.0182M45.3564 8.37021L47.2013 4.82107C43.2563 2.77039 38.5291 5.57294 38.4353 10.0182M45.3564 8.37021L38.4353 10.0182M50.5642 108.296C50.5634 108.296 50.5627 108.296 50.5619 108.296L50.5642 108.296ZM49.4344 107.304C49.4339 107.303 49.4334 107.302 49.4329 107.301L49.4344 107.304Z"
+            fill="#464D77"
+            stroke="black"
+            stroke-width="8"></path>
         </svg>
         <!-- hexagon shape -->
-        <svg class="funny-shapes hexagon" viewBox="0 0 175 155" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M132.075 9.25165L130.984 7.21575L128.676 7.14191L50.716 4.64798L48.4078 4.57414L47.1898 6.5362L6.0499 72.8047L4.83184 74.7667L5.922 76.8026L42.7423 145.565L43.8324 147.601L46.1406 147.675L124.101 150.169L126.409 150.243L127.627 148.28L168.767 82.012L169.985 80.05L168.895 78.0141L132.075 9.25165Z" fill="#02C39A" stroke="black" stroke-width="8"/>
+        <svg
+          class="funny-shapes hexagon"
+          viewBox="0 0 175 155"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M132.075 9.25165L130.984 7.21575L128.676 7.14191L50.716 4.64798L48.4078 4.57414L47.1898 6.5362L6.0499 72.8047L4.83184 74.7667L5.922 76.8026L42.7423 145.565L43.8324 147.601L46.1406 147.675L124.101 150.169L126.409 150.243L127.627 148.28L168.767 82.012L169.985 80.05L168.895 78.0141L132.075 9.25165Z"
+            fill="#02C39A"
+            stroke="black"
+            stroke-width="8"></path>
         </svg>
         <!-- diamond shape -->
-        <svg class="funny-shapes diamond" viewBox="0 0 136 211" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M130.271 132.096L125.271 132.135L130.271 132.096L129.422 20.7856C129.333 9.07407 116.456 1.9782 106.507 8.15834L12.7832 66.3805C8.34307 69.1388 5.65901 74.0095 5.69886 79.2365L6.54755 190.547C6.63685 202.259 19.5137 209.355 29.4623 203.175L123.186 144.952C127.627 142.194 130.311 137.323 130.271 132.096Z" fill="#3B617D" stroke="black" stroke-width="10"/>
+        <svg
+          class="funny-shapes diamond"
+          viewBox="0 0 136 211"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M130.271 132.096L125.271 132.135L130.271 132.096L129.422 20.7856C129.333 9.07407 116.456 1.9782 106.507 8.15834L12.7832 66.3805C8.34307 69.1388 5.65901 74.0095 5.69886 79.2365L6.54755 190.547C6.63685 202.259 19.5137 209.355 29.4623 203.175L123.186 144.952C127.627 142.194 130.311 137.323 130.271 132.096Z"
+            fill="#3B617D"
+            stroke="black"
+            stroke-width="10"></path>
         </svg>
       </div>
-      <svg class="background-svg" viewBox="0 0 796 746" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M-1 0H744.319C744.319 0 814.326 188.268 791.382 307.5C766.623 436.165 583.867 460.507 613.696 588C632.203 667.1 744.319 746 744.319 746H-1V0Z" fill="#03DCAE"/>
-        </svg>
+      <svg
+        class="background-svg"
+        viewBox="0 0 796 746"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M-1 0H744.319C744.319 0 814.326 188.268 791.382 307.5C766.623 436.165 583.867 460.507 613.696 588C632.203 667.1 744.319 746 744.319 746H-1V0Z"
+          fill="#03DCAE"></path>
+      </svg>
     </header>
-    
+
     <section class="skill-section">
       <h1 class="title">Silly Skills</h1>
       <ul>
-        {skills.map((skill) => (
-          <li class="skill-item">{skill}</li>
-        ))}
+        {skills.map((skill) => <li class="skill-item">{skill}</li>)}
       </ul>
-      <svg class="skills-wave" viewBox="0 0 666 522" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M4.00025 0H666V522H4.00025C4.00025 522 40.1441 457.586 55.0003 413C73.9869 356.017 88.8422 321.112 81.5003 261.5C73.1635 193.811 15.6519 172.198 4.00025 105C-3.0052 64.5978 4.00025 0 4.00025 0Z" fill="#256A79"/>
+      <svg
+        class="skills-wave"
+        viewBox="0 0 666 522"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4.00025 0H666V522H4.00025C4.00025 522 40.1441 457.586 55.0003 413C73.9869 356.017 88.8422 321.112 81.5003 261.5C73.1635 193.811 15.6519 172.198 4.00025 105C-3.0052 64.5978 4.00025 0 4.00025 0Z"
+          fill="#256A79"></path>
       </svg>
     </section>
 
     <sections class="experience">
       <h1 class="title">Exciting Experiences</h1>
-      {experiences.map((exp) => (
-      <div class="exp-card">
-          <h3>{exp.frontmatter.title}</h3>
-          <p>{exp.frontmatter.time}</p>
-          <ul>
+      {
+        experiences.map((exp) => (
+          <div class="exp-card">
+            <h3>{exp.frontmatter.title}</h3>
+            <p>{exp.frontmatter.time}</p>
+            <ul>
               <li>{exp.frontmatter.highlights[0]}</li>
               <li>{exp.frontmatter.highlights[1]}</li>
-              <a href={exp.url}><button>Learn More</button></a>
-          </ul>
-        </div>
-      ))}
-      <svg class="exp-wave" viewBox="0 0 1512 368" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 31C0 31 162.555 105.952 274 112.5C423.587 121.29 495.663 18.1113 645.5 16.5C795.346 14.8887 869.935 119.863 1019 104.5C1133.44 92.7054 1180.27 10.0134 1295 1.50003C1380.29 -4.82871 1512 31 1512 31V368H0V31Z" fill="#2E5471"/>
+              <a href={exp.url}>
+                <button>Learn More</button>
+              </a>
+            </ul>
+          </div>
+        ))
+      }
+      <svg
+        class="exp-wave"
+        viewBox="0 0 1512 368"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 31C0 31 162.555 105.952 274 112.5C423.587 121.29 495.663 18.1113 645.5 16.5C795.346 14.8887 869.935 119.863 1019 104.5C1133.44 92.7054 1180.27 10.0134 1295 1.50003C1380.29 -4.82871 1512 31 1512 31V368H0V31Z"
+          fill="#2E5471"></path>
       </svg>
     </sections>
 
-    <section class="hobbies"> 
+    <section class="hobbies">
       <h1 class="title">Humble Hobbies</h1>
-      <div class="hobby-card">
-        <p>Hobby</p>
-        <img src="/assets/hobbies/bread.webp" alt="image of baked bread which Alan created to represent that baking is a hobby.">
-      </div>
+      {
+        hobbies.map((hobby) => (
+          <div class="hobby-card">
+            <p>{hobby.title}</p>
+            <img src={hobby.url} alt={hobby.description} />
+          </div>
+        ))
+      }
+      <svg
+        class="hobby-wave"
+        viewBox="0 0 1512 488"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0H1512V417C1512 417 1364.66 373.806 1267.5 370C1164.91 365.982 1109.15 403.201 1006.5 401.5C860.528 399.081 786.407 309.944 641 323C483.147 337.173 428.467 484.912 270 487.5C161.038 489.28 0 417 0 417V0Z"
+          fill="#383F6A"></path>
+      </svg>
     </section>
-			
-	</body>
+    <Footer />
+  </body>
 </html>

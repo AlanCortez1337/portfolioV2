@@ -129,6 +129,26 @@ h1, h2, h3, ul, li, body, svg {
     }
   }
 
+  @keyframes top-bounce {
+    0% {
+	  left: var(--start-left-pos);
+      top: var(--start-bot-pos);
+      transform: rotate(var(--rotation));
+    }
+
+    50% {
+      left: var(--end-left-pos);
+	  top: var(--end-bot-pos);
+      transform: rotate(var(--rotation));
+    }
+
+    100% {
+	  left: var(--start-left-pos);
+	  top: var(--start-bot-pos);
+      transform: rotate(var(--rotation));
+    }
+  }
+
   @keyframes right-bounce {
     0% {
 	  right: var(--start-left-pos);
