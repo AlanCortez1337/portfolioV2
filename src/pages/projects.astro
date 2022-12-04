@@ -3,7 +3,6 @@
 import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-import Card from "../components/project-card";
 
 // Data Fetching: List all Markdown posts in the repo.
 const projects = await Astro.glob("./project/*.md");
@@ -19,53 +18,42 @@ const projects = await Astro.glob("./project/*.md");
   <body>
     <Nav />
     <!-- dividing wave -->
-    <main class="wrapper">
-      <h2 class="project-title">Projects</h2>
-      {projects.map((project) => (
-        <div class={`project-${project.frontmatter.cssClass}`}>
-          <Card title={project.frontmatter.title} gif={project.frontmatter.gif}/>
-        </div>
+    <main>
+      <section class="proj-hero">
+        <h1>blah</h1>
+      </section>
+      {projects.map((project)=>(
+        <section class="project">
+          <div class="display">
+            <img src={project.frontmatter.gif} alt={`${project.frontmatter.title} demo display`}>
+          </div>
+          <div class="info">
+            <h3>{project.frontmatter.title}</h3>
+            <div class="tag-container">
+              {project.frontmatter.tags.map((tag)=>(
+                <p class="tag-card">{tag}</p>
+              ))}
+            </div>
+            <p>{project.frontmatter.blurb}</p>
+            <a href={project.url}><button>more info</button></a>
+          </div>
+        </section>
       ))}
     </main>
     <Footer />
     <style>
-      .wrapper {
-        width: 80%;
-        padding: 400px 10% 0 10%;
-        display: grid;
-        grid-template-areas: 
-          "title title"
-          "quiz quiz"
-          "rebrand wiki"
-          "discbot fTinder"
-          "clicker clicker"
-          "memory amongus"
-          "howards acmFlyers";
-        gap: 20px;
-        justify-items: center;
-        align-items: center;
+      body {
+        background-color: var(--purple0);
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+      }
+      .proj-hero {
+        height: 400px;
+        background-color: black;
       }
 
-      .project-title {
-        justify-self: end;
-        grid-area: title;
-        width: 200px;
-        font-size: 40px;
-        text-align: center;
-        background-color: var(--purple1);
-        border: var(--purple1) 5px solid;
-        padding: 5px 15px;
-        border-radius: 15px;
-      }
-      .project-quiz {
-        grid-area: quiz;
-      }
-      .project-discbot {
-        grid-area: discbot;
-      }
-      .project-fTinder {
-        grid-area: fTinder;
-      }
     </style>
   </body>
 </html>
