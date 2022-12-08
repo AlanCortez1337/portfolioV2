@@ -2,21 +2,24 @@
   <div class="nav-items">
     <!-- logo -->
     <a href="/">
-      <svg class="logo" viewBox="0 0 369 394" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M358.975 283.887L207.049 19.2288C197.056 1.82091 171.944 1.82083 161.951 19.2288L10.0254 283.887C2.26252 297.41 8.06637 314.678 22.4212 320.767L174.347 385.211C180.836 387.963 188.164 387.963 194.653 385.211L346.579 320.767C360.934 314.678 366.737 297.41 358.975 283.887Z" fill="url(#paint0_linear_536_69)" stroke="black" stroke-width="16"/>
-        <defs>
-        <linearGradient id="paint0_linear_536_69" x1="184.5" y1="-8" x2="184.336" y2="513.829" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#464D77"/>
-        <stop offset="1" stop-color="#02C39A"/>
-        </linearGradient>
-        </defs>
-        </svg>
+      <svg
+        class="logo"
+        viewBox="0 0 369 394"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M207.049 19.2288C197.056 1.82091 171.944 1.82083 161.951 19.2288L10.0254 283.887C2.26252 297.41 8.06637 314.678 22.4212 320.767L174.347 385.211C180.836 387.963 188.164 387.963 194.653 385.211L346.579 320.767C360.934 314.678 366.737 297.41 358.975 283.887L207.049 19.2288Z"
+          fill="#2E5471"
+          stroke="black"
+          stroke-width="12"></path>
+      </svg>
     </a>
     <div class="nav-items-buttons">
-      <a href="/about/" class="cta-btn"><button>About</button></a>
-      <a href="/projects/" class="cta-btn"><button>Work</button></a>
-      <a href="/" class="cta-btn"><button>Connect</button></a>
-      <a href="/" class="cta-btn"><button>Resume</button></a>
+      <a href="/about/"><button>About</button></a>
+      <a href="/projects/"><button>Work</button></a>
+      <a href="/"><button>Connect</button></a>
+      <a href="/"><button>Resume</button></a>
     </div>
   </div>
 </nav>
@@ -32,7 +35,7 @@
   }
 
   .nav-items {
-    padding: 10px 10%;
+    padding: 0 0 0 10%;
     position: relative;
     z-index: 5;
     display: flex;
@@ -40,31 +43,66 @@
   }
 
   .logo {
-    width: 80px;
-    height: 80px;
+    margin: 10px 0;
+    width: 55px;
+    height: 55px;
     filter: drop-shadow(5px 5px rgb(0 0 0));
     transition: all 350ms ease-in-out;
   }
 
   .logo:hover {
     filter: drop-shadow(10px 10px rgb(0 0 0));
-
   }
 
   .nav-items-buttons {
     display: flex;
-    gap: 50px;
+    /* gap: 50px; */
     justify-content: center;
     align-items: center;
   }
-
-  a {
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 500ms ease-in-out;
+  .nav-items-buttons > * {
+    border-left: 6px solid black;
   }
 
-  a:hover {
-    color: var(--green1);
+  .nav-items-buttons a {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 550ms ease-in-out;
+  }
+
+  .nav-items-buttons a button {
+    background-color: var(--green3);
+    color: var(--text-color);
+    font-weight: 700;
+    padding: 0 30px;
+    border: none;
+    height: 100%;
+    width: 100%;
+    font-size: 32px;
+    transition: all 550ms ease-in-out;
+  }
+
+  .nav-items-buttons a button:hover {
+    background-color: var(--purple0);
+  }
+
+  .nav-items-buttons a:nth-child(4) {
+    padding: 0 35px;
+    background-color: black;
+  }
+  .nav-items-buttons a:nth-child(4) button {
+    background-color: black;
+  }
+
+  .nav-items-buttons a:nth-child(4):hover {
+    background-color: var(--green0);
+  }
+  .nav-items-buttons a:nth-child(4):hover button {
+    color: black;
+    background-color: var(--green0);
   }
 </style>

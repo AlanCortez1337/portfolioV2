@@ -65,9 +65,10 @@ const hobbies = [
       header {
         position: relative;
         overflow: hidden;
-        padding: 0 10%;
+        padding: 0 0 0 10%;
         height: 800px;
         display: grid;
+        grid-template-columns: 1fr 1fr;
         grid-template-areas:
           "title title"
           "blurb graphics";
@@ -78,14 +79,14 @@ const hobbies = [
       header h1 {
         position: relative;
         z-index: 2;
-        padding: 5% 0;
+        padding: 5% 0 0 0;
         grid-area: title;
       }
       header p {
         position: relative;
         z-index: 2;
         grid-area: blurb;
-        width: 60%;
+        width: 400px;
         padding: 1.5em;
         background-color: var(--purple3);
         border: black 10px solid;
@@ -108,6 +109,8 @@ const hobbies = [
         bottom: 0;
       }
       header .graphic img {
+        position: relative;
+        bottom: 0;
         width: 100%;
         height: 100%;
       }
@@ -126,7 +129,7 @@ const hobbies = [
       }
 
       .funny-shapes:nth-child(even) {
-        --rotate-start: -360deg;
+        --rotate-start: 360deg;
         --rotate-end: 0deg;
         width: 160px;
         height: 160px;
@@ -134,7 +137,7 @@ const hobbies = [
       }
 
       .logo {
-        left: -150px;
+        left: -10px;
         bottom: 600px;
       }
 
@@ -155,7 +158,7 @@ const hobbies = [
 
       .diamond {
         left: -200px;
-        bottom: 100px;
+        bottom: 30px;
       }
 
       .background-svg {

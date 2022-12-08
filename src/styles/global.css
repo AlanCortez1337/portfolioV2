@@ -98,7 +98,7 @@ h1, h2, h3, ul, li, body, svg {
 
 .alt-text:hover .name-text {
 	text-shadow: 5px 5px black;
-	font-size: 48px;
+	font-size: 1.25em;
 	color: var(--text-color);
 }
 
@@ -108,7 +108,6 @@ h1, h2, h3, ul, li, body, svg {
     right: 8%;
 }
 /* Animation Keyframes */
-
 
   @keyframes bounce {
     0% {

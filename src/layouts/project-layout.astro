@@ -1,234 +1,247 @@
 ---
-import MainHead from '../components/MainHead.astro';
-import Footer from '../components/Footer.astro';
-import Nav from '../components/Nav.astro'
+import MainHead from "../components/MainHead.astro";
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
 
 const { content } = Astro.props;
 ---
 
-<html lang={content.lang || 'en'}>
-	<head>
-		<MainHead title={content.title} description={content.blurb} />
-		<style>
-			body {
-				background-color: var(--cyan);
-			}
-			header {
-				width: 100%;
-				height: 500px;
-				position: relative;
-				border-bottom: 8px solid black;
-				background-color: var(--purple2);
-				z-index: 3;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				flex-direction: column;
-				gap: 30px;
-			}
-			.title {
-				position: relative;
-				z-index: 2;
-				width: fit-content;
-				font-size: 96px;
-				-webkit-text-stroke: 3px black;
-				text-shadow: 6px 6px black;
-				font-weight: 800;
-				transition: all 250ms ease-out;
-			}
-			.title:hover {
-				text-shadow: 12px 12px black;
-			}
-			.buttons {
-				display: flex;
-				gap: 30px;
-			}
-			.buttons a button {
-				position: relative;
-				z-index: 2;
-				background-color: var(--green0);
-				border: black 6px solid;
-				box-shadow: 1px 1px black;
-				color: black;
-				font-size: 24px;
-				font-weight: 600;
-				padding: 8px 12px;
-				border-radius: 10px;
-				transition: all 300ms ease-in-out;
-			}
-			.buttons a button:hover {
-				border-radius: 0px;
-				transform: scale(1.1);
-				box-shadow: 4px 4px black;
-			}
-			.buttons a button:active {
-				transform: scale(0.8);
-			}
-			.header-wave {
-				position: absolute;
-				z-index: 1;
-				width: 100%;
-				bottom: 0;
-				--start-bot-pos: -55px;
-				--end-bot-pos: -15px;
-				animation: bounce 4500ms infinite ease-in-out;
-			}
-			/* Content */
-			.layout {
-				position: relative;
-				width: 100%;
-				padding: 100px 0;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				flex-direction: column;
-			}
-			.info  {
-				position: relative;
-				z-index: 2;
-				width: 600px;
-				display: flex;
-				flex-direction: column;
-				gap: 40px;
-			}
-			.img-container {
-				widows: 100%;
-				height: 400px;
-				overflow: hidden;
-				border: 8px black solid;
-				box-shadow: 6px 6px black;
-				transition: all 350ms ease-in-out;
-			}
-			.info img {
-				width: 100%;
-				height: 100%;
-				transition: all 350ms ease-in-out;
-			}
-			.img-container:hover img{
-				transform: scale(1.1);
-			}
-			.img-container:hover {
-				box-shadow: 10px 10px black;
-			}
-			.fun-fact {
-				width: calc(100% - 80px);
-				background-color: var(--green0);
-				border: 8px black solid;
-				border-radius: 40px;
-				box-shadow: 6px 6px black;
-				padding: 25px 40px;
-				transition: all 350ms ease-in-out;
-			}
-			.fun-fact:hover {
-				transform: scale(1.1);
-				box-shadow: 12px 12px black;
-
-			}
-			.fun-fact h3 {
-				color: black;
-				font-size: 32px;
-			}
-			.fun-fact p {
-				color: black;
-				font-size: 16px;
-			}
-			.tag-card {
-				cursor: default;
-				user-select: none;
-				padding: 8px 12px;
-				border: 5px black solid;
-				font-weight: 500;
-				transition: all 350ms ease-in-out;
-			}
-			.tag-container {
-				display: flex;
-				font-size: 24px;
-				gap: 30px;
-				justify-content: center;
-				align-items: center;
-			}
-			.tag-card:hover {
-				transform: scale(1.2);
-			}
-			.tag-card:active {
-				transform: scale(0.8)
-			}
-			.tag-card:nth-child(n + 1) {
-				background-color: var(--green3);
-			}
-			.tag-card:nth-child(2n) {
-				background-color: var(--cyan);
-			}
-			.tag-card:nth-child(3n + 1) {
-				background-color: var(--purple3);
-			}
-			.view-more {
-				margin-top: 30px;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-			.view-more button {
-				text-decoration: none;
-				background-color: var(--cyan);
-				padding: 8px 12px;
-				border: 5px black solid;
-				font-weight: 500;
-				transition: all 350ms ease-in-out;
-			}
-			.layout-wave {
-				width: 100%;
-				position: absolute;
-				z-index: 1;
-				top: 0;
-				--start-bot-pos: -55px;
-				--end-bot-pos: -15px;
-				animation: top-bounce 4500ms infinite ease-in-out;
-			}
-		</style>
-	</head>
-	<body>
-		<Nav />
-		<header>
-			<h1 class="title">{content.title}</h1>
-			<div class="buttons">
-				<a href={content.githubLink} target="_blank">
-					<button>GitHub</button>
-				</a>
-				{content.demoLink !== "N/A" && 
-					<a href={content.demoLink} target="_blank">
-						<button class="demo-text">live demo!</button>
-					</a>
-				}
-			</div>
-			<!-- <svg class="header-wave" viewBox="0 0 1512 204" fill="none" xmlns="http://www.w3.org/2000/svg">
+<html lang={content.lang || "en"}>
+  <head>
+    <MainHead title={content.title} description={content.blurb} />
+    <style>
+      body {
+        background-color: var(--cyan);
+      }
+      header {
+        width: 100%;
+        height: 500px;
+        position: relative;
+        border-bottom: 8px solid black;
+        background-color: var(--purple2);
+        z-index: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+      }
+      .title {
+        position: relative;
+        z-index: 2;
+        width: fit-content;
+        font-size: 96px;
+        -webkit-text-stroke: 3px black;
+        text-shadow: 6px 6px black;
+        font-weight: 800;
+        transition: all 250ms ease-out;
+      }
+      .title:hover {
+        text-shadow: 12px 12px black;
+      }
+      .buttons {
+        display: flex;
+        gap: 30px;
+      }
+      .buttons a button {
+        position: relative;
+        z-index: 2;
+        background-color: var(--green0);
+        border: black 6px solid;
+        box-shadow: 1px 1px black;
+        color: black;
+        font-size: 24px;
+        font-weight: 600;
+        padding: 8px 12px;
+        border-radius: 10px;
+        transition: all 300ms ease-in-out;
+      }
+      .buttons a button:hover {
+        border-radius: 0px;
+        transform: scale(1.1);
+        box-shadow: 4px 4px black;
+      }
+      .buttons a button:active {
+        transform: scale(0.8);
+      }
+      .header-wave {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        bottom: 0;
+        --start-bot-pos: -55px;
+        --end-bot-pos: -15px;
+        animation: bounce 4500ms infinite ease-in-out;
+      }
+      /* Content */
+      .layout {
+        position: relative;
+        width: 100%;
+        padding: 100px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .info {
+        position: relative;
+        z-index: 2;
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+      .img-container {
+        widows: 100%;
+        height: 400px;
+        overflow: hidden;
+        border: 8px black solid;
+        box-shadow: 6px 6px black;
+        transition: all 350ms ease-in-out;
+      }
+      .info img {
+        width: 100%;
+        height: 100%;
+        transition: all 350ms ease-in-out;
+      }
+      .img-container:hover img {
+        transform: scale(1.1);
+      }
+      .img-container:hover {
+        box-shadow: 10px 10px black;
+      }
+      .fun-fact {
+        width: calc(100% - 80px);
+        background-color: var(--green0);
+        border: 8px black solid;
+        border-radius: 40px;
+        box-shadow: 6px 6px black;
+        padding: 25px 40px;
+        transition: all 350ms ease-in-out;
+      }
+      .fun-fact:hover {
+        transform: scale(1.1);
+        box-shadow: 12px 12px black;
+      }
+      .fun-fact h3 {
+        color: black;
+        font-size: 32px;
+      }
+      .fun-fact p {
+        color: black;
+        font-size: 16px;
+      }
+      .tag-card {
+        cursor: default;
+        user-select: none;
+        padding: 8px 12px;
+        border: 5px black solid;
+        font-weight: 500;
+        transition: all 350ms ease-in-out;
+      }
+      .tag-container {
+        display: flex;
+        font-size: 24px;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+      }
+      .tag-card:hover {
+        box-shadow: 4px 4px black;
+        transform: scale(1.2);
+      }
+      .tag-card:active {
+        transform: scale(0.8);
+      }
+      .tag-card:nth-child(n + 1) {
+        background-color: var(--green3);
+      }
+      .tag-card:nth-child(2n) {
+        background-color: var(--cyan);
+      }
+      .tag-card:nth-child(3n + 1) {
+        background-color: var(--purple3);
+      }
+      .view-more {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+      }
+      .view-more button {
+        font-size: 18px;
+        background-color: var(--green0);
+        padding: 8px 12px;
+        border: 5px black solid;
+        font-weight: 500;
+        transition: all 350ms ease-in-out;
+      }
+      .view-more button:hover {
+        box-shadow: 4px 4px black;
+        transform: scale(1.1);
+      }
+      .view-more button:active {
+        transform: scale(0.8);
+      }
+      .layout-wave {
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        --start-bot-pos: -55px;
+        --end-bot-pos: -15px;
+        animation: top-bounce 4500ms infinite ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <Nav />
+    <header>
+      <h1 class="title">{content.title}</h1>
+      <div class="buttons">
+        <a href={content.githubLink} target="_blank">
+          <button>GitHub</button>
+        </a>
+        {
+          content.demoLink !== "N/A" && (
+            <a href={content.demoLink} target="_blank">
+              <button class="demo-text">live demo!</button>
+            </a>
+          )
+        }
+      </div>
+      <!-- <svg class="header-wave" viewBox="0 0 1512 204" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M0 13.9999C0 13.9999 161.408 -1.12134 265 0.999893C427.019 4.31755 514.527 49.3921 676.5 54.4999C890.447 61.2467 1007.95 1.96931 1222 0.999893C1335.36 0.486477 1512 13.9999 1512 13.9999V204H0V13.9999Z" fill="#2E5471"/>
 			</svg> -->
-		</header>
-		<main class="layout">
-			<svg class="layout-wave" viewBox="0 0 1512 349" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M0 0H1512V279C1512 279 1301.83 315.432 1166 314.5C1011.8 313.442 928.693 260.916 774.5 263C593.406 265.448 499.391 356.42 318.5 347.5C191.428 341.234 0 279 0 279V0Z" fill="#2F7483"/>
-			</svg>
-			<div class="info">
-				<div class="img-container">
-					<img src={content.gif} alt={`${content.title} demo display`}>
-				</div>
-				<div class="tag-container">
-					{
-					  content.tags.map((tag)=>(
-						<p class="tag-card">{tag}</p>
-					  ))
-					}
-				</div>
+    </header>
+    <main class="layout">
+      <svg
+        class="layout-wave"
+        viewBox="0 0 1512 349"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0H1512V279C1512 279 1301.83 315.432 1166 314.5C1011.8 313.442 928.693 260.916 774.5 263C593.406 265.448 499.391 356.42 318.5 347.5C191.428 341.234 0 279 0 279V0Z"
+          fill="#2F7483"></path>
+      </svg>
+      <div class="info">
+        <div class="img-container">
+          <img src={content.gif} alt={`${content.title} demo display`} />
+        </div>
+        <div class="tag-container">
+          {content.tags.map((tag) => <p class="tag-card">{tag}</p>)}
+        </div>
 
-				<slot/>
-				<div class="fun-fact">
-					<h3>Fun Fact</h3>
-					<p>{content.funFact}</p>
-				</div>
-				<a href="/projects/" class="view-more"><button>view more</button></a>
-			</div>
-		</main>
-		<Footer />
-	</body>
+        <slot />
+        <div class="fun-fact">
+          <h3>Fun Fact</h3>
+          <p>{content.funFact}</p>
+        </div>
+        <a href="/projects/" class="view-more"><button>view more</button></a>
+      </div>
+    </main>
+    <Footer />
+  </body>
 </html>
