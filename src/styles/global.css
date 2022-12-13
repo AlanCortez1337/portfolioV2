@@ -35,7 +35,9 @@ h1, h2, h3, ul, li, body, svg {
 	color: var(--text-color);
 }
 
-
+header {
+	margin-top: 76px;
+}
 /* scrollbar */
 * {
 	font-family: 'Fira Sans', sans-serif;
@@ -55,6 +57,7 @@ h1, h2, h3, ul, li, body, svg {
 	background-color: var(--scrollBarThumb);
 }
 
+/* Buttons */
 .cta-btn button {
 	background-color: var(--green0);
 	border: black 6px solid;

@@ -68,10 +68,10 @@ const { content } = Astro.props;
         position: absolute;
         z-index: 1;
         width: 100%;
-        bottom: 0;
+        top: 0;
         --start-bot-pos: -55px;
         --end-bot-pos: -15px;
-        animation: bounce 4500ms infinite ease-in-out;
+        animation: top-bounce 4500ms infinite ease-in-out;
       }
       /* Content */
       .layout {
@@ -193,6 +193,15 @@ const { content } = Astro.props;
         --end-bot-pos: -15px;
         animation: top-bounce 4500ms infinite ease-in-out;
       }
+      .bottom-wave {
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        --start-bot-pos: -15px;
+        --end-bot-pos: -55px;
+        animation: bounce 4900ms infinite ease-in-out;
+      }
     </style>
   </head>
   <body>
@@ -211,9 +220,9 @@ const { content } = Astro.props;
           )
         }
       </div>
-      <!-- <svg class="header-wave" viewBox="0 0 1512 204" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M0 13.9999C0 13.9999 161.408 -1.12134 265 0.999893C427.019 4.31755 514.527 49.3921 676.5 54.4999C890.447 61.2467 1007.95 1.96931 1222 0.999893C1335.36 0.486477 1512 13.9999 1512 13.9999V204H0V13.9999Z" fill="#2E5471"/>
-			</svg> -->
+      <svg class="header-wave" viewBox="0 0 1512 187" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0H1512V153.813C1512 153.813 1386 179.318 1301 178.749C1187.33 177.988 1142.82 125.601 1029.5 129.809C926.851 133.62 898.837 184.43 796 186.906C702.565 189.155 663.55 150.478 570 149.851C506.821 149.427 474.676 164.469 411.5 164.999C307.66 165.871 259.952 125.539 156.5 129.809C92.4096 132.454 0 153.813 0 153.813V0Z" fill="#2F5978"/>
+      </svg>
     </header>
     <main class="layout">
       <svg
@@ -241,6 +250,9 @@ const { content } = Astro.props;
         </div>
         <a href="/projects/" class="view-more"><button>view more</button></a>
       </div>
+      <svg class="bottom-wave" viewBox="0 0 1512 239" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 34.5728C0 34.5728 457.163 0.159884 751.5 0.000559518C1049.34 -0.160661 1512 34.5728 1512 34.5728V239H0V34.5728Z" fill="#0DAF94"/>
+      </svg>
     </main>
     <Footer />
   </body>

@@ -1,19 +1,8 @@
 <nav>
   <div class="nav-items">
     <!-- logo -->
-    <a href="/">
-      <svg
-        class="logo"
-        viewBox="0 0 369 394"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M207.049 19.2288C197.056 1.82091 171.944 1.82083 161.951 19.2288L10.0254 283.887C2.26252 297.41 8.06637 314.678 22.4212 320.767L174.347 385.211C180.836 387.963 188.164 387.963 194.653 385.211L346.579 320.767C360.934 314.678 366.737 297.41 358.975 283.887L207.049 19.2288Z"
-          fill="#2E5471"
-          stroke="black"
-          stroke-width="12"></path>
-      </svg>
+    <a href="/" class="home">
+      <h1>ALAN <span class="alt-color">CORTEZ</span></h1>
     </a>
     <div class="nav-items-buttons">
       <a href="/about/"><button>About</button></a>
@@ -26,9 +15,10 @@
 
 <style>
   nav {
-    position: relative;
+    position: fixed;
     z-index: 20;
-    grid-column: 1 / span 2;
+    top: 0;
+    /* grid-column: 1 / span 2; */
     background-color: var(--green2);
     border-bottom: black 8px solid;
     width: 100%;
@@ -42,17 +32,37 @@
     justify-content: space-between;
   }
 
-  .logo {
-    margin: 10px 0;
-    width: 55px;
-    height: 55px;
-    filter: drop-shadow(5px 5px rgb(0 0 0));
-    transition: all 350ms ease-in-out;
+  .home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
   }
 
-  .logo:hover {
-    filter: drop-shadow(10px 10px rgb(0 0 0));
+  .home h1 {
+    font-size: 40px;
+    transform: scale(1.5, 1);
+    padding: 10px 0;
+    -webkit-text-stroke: 1.5px black;
+    text-shadow: 1px 1px black;
+    transition: all 650ms ease-in-out;
   }
+
+  .alt-color {
+    color: var(--text-highlight);
+    transition: all 650ms ease-in-out;
+  }
+
+  .home h1:hover {
+    transform: scale(1.2, 1.1);
+    text-shadow: 4px 4px black;
+    color: var(--text-highlight);
+  }
+
+  .home h1:hover .alt-color {
+    color: var(--text-color);
+  }
+  
 
   .nav-items-buttons {
     display: flex;
