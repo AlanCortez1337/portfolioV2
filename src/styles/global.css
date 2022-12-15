@@ -38,6 +38,10 @@ h1, h2, h3, ul, li, body, svg {
 header {
 	margin-top: 76px;
 }
+
+a {
+	text-decoration: none;
+}
 /* scrollbar */
 * {
 	font-family: 'Fira Sans', sans-serif;
@@ -70,11 +74,22 @@ header {
 }
 
 .cta-btn button:hover {
-	border: var() 6px solid;
+	background-color: var(--purple3);
+	color: var(--text-color);
 	box-shadow: 8px 8px black;
 	border-radius: 10px;
 }
-
+/* fancy text */
+.title {
+	width: fit-content;
+	-webkit-text-stroke: 3px black;
+	text-shadow: 6px 6px black;
+	font-weight: 800;
+	transition: all 250ms ease-out;
+}
+.title:hover {
+text-shadow: 12px 12px black;
+}
 .text-hover {
 	transition: all 250ms ease-out;
 }

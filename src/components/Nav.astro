@@ -2,12 +2,15 @@
   <div class="nav-items">
     <!-- logo -->
     <a href="/" class="home">
-      <h1>ALAN <span class="alt-color">CORTEZ</span></h1>
+      <h1>AC</h1>
+      <svg class="home-bg" viewBox="0 0 585 558" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M279.816 5.59663C286.835 -1.37432 298.165 -1.37432 305.184 5.59663L422.829 122.432C424.139 123.733 425.642 124.826 427.285 125.67L574.757 201.453C583.555 205.974 587.056 216.749 582.596 225.579L507.833 373.57C507 375.218 506.426 376.986 506.131 378.809L479.628 542.481C478.047 552.246 468.881 558.905 459.105 557.391L295.254 532.02C293.429 531.737 291.571 531.737 289.746 532.02L125.895 557.391C116.119 558.905 106.953 552.246 105.372 542.481L78.8694 378.809C78.5741 376.986 77.9999 375.218 77.167 373.57L2.40434 225.579C-2.05636 216.749 1.44459 205.974 10.2434 201.453L157.715 125.67C159.358 124.826 160.861 123.733 162.171 122.432L279.816 5.59663Z" fill="#149587"/>
+      </svg>
     </a>
     <div class="nav-items-buttons">
       <a href="/about/"><button>About</button></a>
       <a href="/projects/"><button>Work</button></a>
-      <a href="/"><button>Connect</button></a>
+      <a href="/contact/"><button>Connect</button></a>
       <a href="/"><button>Resume</button></a>
     </div>
   </div>
@@ -18,7 +21,6 @@
     position: fixed;
     z-index: 20;
     top: 0;
-    /* grid-column: 1 / span 2; */
     background-color: var(--green2);
     border-bottom: black 8px solid;
     width: 100%;
@@ -33,6 +35,7 @@
   }
 
   .home{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,29 +43,34 @@
   }
 
   .home h1 {
-    font-size: 40px;
-    transform: scale(1.5, 1);
+    position: relative;
+    z-index: 2;
+    font-size: 48px;
+    font-weight: 700;
     padding: 10px 0;
-    -webkit-text-stroke: 1.5px black;
+    -webkit-text-stroke: 1px black;
     text-shadow: 1px 1px black;
     transition: all 650ms ease-in-out;
   }
 
-  .alt-color {
-    color: var(--text-highlight);
-    transition: all 650ms ease-in-out;
-  }
-
   .home h1:hover {
-    transform: scale(1.2, 1.1);
     text-shadow: 4px 4px black;
+    transform: scale(1.1);
     color: var(--text-highlight);
   }
 
-  .home h1:hover .alt-color {
-    color: var(--text-color);
+  .home h1:active {
+    transform: scale(0.8);
   }
-  
+
+  .home-bg {
+    position: absolute;
+    width: 65px;
+    z-index: 1;
+    --rotate-start: 0deg;
+    --rotate-end: 360deg;
+    animation: spin 14500ms infinite linear;
+  }
 
   .nav-items-buttons {
     display: flex;

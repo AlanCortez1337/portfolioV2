@@ -26,8 +26,8 @@ const projects = await Astro.glob("./project/*.md");
         flex-direction: column;
       }
       .proj-hero {
+        margin-top: 76px;
         position: relative;
-        height: 400px;
         background-color: var(--purple2);
         border-bottom: black 8px solid;
         display: flex;
@@ -37,6 +37,8 @@ const projects = await Astro.glob("./project/*.md");
       }
       .proj-hero h1 {
         position: relative;
+        
+        padding: 45px 0;
         z-index: 1;
       }
       .project {
@@ -205,7 +207,7 @@ const projects = await Astro.glob("./project/*.md");
     <!-- dividing wave -->
     <main>
       <section class="proj-hero">
-        <h1>Le Projects</h1>
+        <h1 class="title">Le Projects</h1>
         <svg class="hero-wave" viewBox="0 0 1512 187" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 0H1512V153.813C1512 153.813 1386 179.318 1301 178.749C1187.33 177.988 1142.82 125.601 1029.5 129.809C926.851 133.62 898.837 184.43 796 186.906C702.565 189.155 663.55 150.478 570 149.851C506.821 149.427 474.676 164.469 411.5 164.999C307.66 165.871 259.952 125.539 156.5 129.809C92.4096 132.454 0 153.813 0 153.813V0Z" fill="#2F5978"/>
         </svg>
