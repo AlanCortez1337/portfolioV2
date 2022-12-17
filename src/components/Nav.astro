@@ -1,22 +1,27 @@
+---
+import Hamburger from "./hamburger";
+---
+
 <nav>
   <div class="nav-items">
     <!-- logo -->
-    <a href="/" class="home">
-      <!-- <svg class="logo" viewBox="0 0 112 117" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M106.145 72.1183L71.6009 12.0938C64.6783 0.0650167 47.3217 0.0650454 40.3991 12.0939L5.85477 72.1183C0.462964 81.4872 4.48659 93.4619 14.4418 97.674L48.9861 112.29C53.4696 114.187 58.5304 114.187 63.0139 112.29L97.5582 97.674C107.513 93.4619 111.537 81.4872 106.145 72.1183Z" fill="#2E5471" stroke="black" stroke-width="6"/>
-      </svg> -->
-      <button>Home</button>
-    </a>
+    <a href="/" class="home"><button>Home</button></a>
     <div class="nav-items-buttons">
       <a href="/about/"><button>About</button></a>
       <a href="/projects/"><button>Work</button></a>
       <a href="/contact/"><button>Connect</button></a>
       <a href="/"><button>Resume</button></a>
     </div>
+    <div class="hamburger">
+      <Hamburger client:load/>
+    </div>
   </div>
 </nav>
 
 <style>
+  .hamburger {
+    display: none;
+  }
   nav {
     position: fixed;
     z-index: 20;
@@ -110,5 +115,14 @@
   .nav-items-buttons a:nth-child(4):hover button {
     background-color: var(--green3);
 
+  }
+
+  @media screen and (max-width: 1000px) {
+    .nav-items-buttons {
+      display: none;
+    }
+    .hamburger {
+      display: block;
+    }
   }
 </style>

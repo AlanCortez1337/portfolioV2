@@ -1,0 +1,23 @@
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transform: translateY(-50vh);
+    transition: 850ms;
+}
+
+.background.active {
+    transform: translateY(0vh);
+    transition: 350ms;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--green2);
+    border-bottom: 8px solid black;
+}

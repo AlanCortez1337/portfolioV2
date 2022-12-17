@@ -3,6 +3,7 @@
 import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.astro";
 import DownArrow from "../components/icons.jsx";
+import "../styles/homepage.css"
 
 // Data Fetching: List all Markdown posts in the repo.
 const projects = await Astro.glob("./project/*.md");
@@ -31,6 +32,12 @@ const projects = await Astro.glob("./project/*.md");
       <svg class="wave" viewBox="0 0 816 169" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path xmlns="http://www.w3.org/2000/svg" d="M0 69.1204C0 69.1204 177.676 58.2568 290.889 45.6487C409.474 32.4423 474.41 -10.0802 593.111 2.20104C684.055 11.6104 816 69.1204 816 69.1204V169H0V69.1204Z" fill="#464D77"/>
       </svg>
+      <svg class="jax" viewBox="0 0 456 403" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M202.083 18.3856C211.57 -4.81829 244.43 -4.8183 253.917 18.3856L327.117 197.409C328.075 199.753 329.347 201.956 330.898 203.958L449.337 356.862C464.688 376.681 448.259 405.138 423.42 401.752L231.781 375.633C229.272 375.291 226.728 375.291 224.219 375.633L32.5804 401.752C7.74144 405.138 -8.68813 376.681 6.66321 356.862L125.102 203.958C126.653 201.956 127.925 199.753 128.883 197.409L202.083 18.3856Z" fill="#1A8384"/>
+      </svg>
+      <svg class="square" viewBox="0 0 246 246" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="246" height="246" rx="52" fill="#1A8384"/>
+      </svg>
       <div class="project-title text-hover-scale">
         <DownArrow iconName={"downArrow"}/>
         <h1>PROJECTS</h1>
@@ -48,20 +55,19 @@ const projects = await Astro.glob("./project/*.md");
     </section>
 
     <main>
-      <img class="me" src="/assets/alanHeadshot.png" alt="picture of alan cortez">
-      <a href="/about/" class="cta-btn">
-        <button>more me</button>
-      </a>
+      <div class="image-container">
+        <img class="me" src="/assets/alanHeadshot.png" alt="picture of alan cortez">
+        <a href="/about/" class="cta-btn"><button>more me</button></a>
+      </div>
       <svg class="wave2" viewBox="0 0 340 793" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 793H213C213 793 309.685 703.518 333 627C380.281 471.827 168.449 410.125 163 248C159.681 149.257 213 0 213 0H0V793Z" fill="#2F7483"/>
       </svg>
-      <!-- funny shapes -->
       <svg class="logo" viewBox="0 0 178 190" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M71.405 10.2927C79.0874 -3.12061 98.4326 -3.12064 106.115 10.2927L174.838 130.282C180.792 140.678 176.333 153.94 165.308 158.628L96.5851 187.845C91.5849 189.971 85.9351 189.971 80.935 187.845L12.2118 158.628C1.18662 153.94 -3.27233 140.678 2.68181 130.282L71.405 10.2927Z" fill="#2D5B7D"/>
       </svg>
       <svg class="hexa" viewBox="0 0 193 182" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M96.5 0L192.081 69.4438L155.572 181.806H37.4276L0.918823 69.4438L96.5 0Z" fill="#2D5B7D"/>
-        </svg>
+      </svg>
       <img class="lua" src="/assets/lua.png" alt="image of lua looking all cute and such">
     </main>
 
@@ -75,255 +81,35 @@ const projects = await Astro.glob("./project/*.md");
     </script>
 
     <style>
-      body {
-        width: 100vw;
-        height: 100vh;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 0fr;
-        overflow: hidden;
-      }
-
-      header {
-        position: relative;
-        z-index: 2;
-        grid-column: 1;
-        grid-row: 1;
-        background-color: var(--cyan);
-        border-right: black 8px solid;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      
-      .wave {
-        position: absolute;
-        z-index: 1;
-        bottom: 0;
-        width: 100%;
-        --start-bot-pos: -55px;
-        --end-bot-pos: -15px;
-        animation: bounce 4500ms infinite linear;
-      }
-
-      .project-title {
-        position: absolute;
-        z-index: 2;
-        bottom: 1%;
-        right: 5%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .hero-text {
-        position: relative;
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        padding: 50px 0;
-      }
-
-      .hero-text h2 {
-        font-size: 2em;
-        width: fit-content;
-      }
-
-      .hero-text h1 {
-        font-size: 6em;
-        -webkit-text-stroke: 2px black;
-        text-shadow: 6px 6px black;
-        font-weight: 800;
-      }
-
-      .hero-text h1 .text-hover:hover {
-        text-shadow: 12px 12px black;
-
-      }
-
-      .hero-text p {
-        font-weight: 700;
-        font-size: 2.5em;
-      }
-
-      main {
-        grid-column: 2;
-        background-color: var(--purple2);
-      }
-      /* Marquee styles */
-      .marquee {
-        position: relative;
-        z-index: 2;
-        height: 50px;
-        grid-column: 1 / span 2;
-        grid-row: 3;
-        background-color: black;
-      }
-
-      #projects {
-        --marquee-length: -10px;
-      }
-      
-      .marquee ul {
-        width: fit-content;
-        position: relative;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        gap: 40px;
-        list-style: none;
-        animation: slide 25s infinite linear;
-      }
-
-      .marquee ul a {
-        text-decoration: none;
-      }
-      
-      .marquee ul:hover {
-        animation-play-state: paused;
-      }
-
-      .marquee li {
-        font-size: 24px;
-        flex-shrink: 0;
-      }
-
-      @keyframes slide {
-        from {
-          left: 100vw;
+      @media screen and (orientation:portrait) {
+        body {
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 0fr 600px;
+          overflow: visible;
         }
-        to {
-          left: calc(0vw + var(--marquee-length))  ;
-        }
-      }
+        header {
+          font-size: smaller;
+          position: relative;
+          z-index: 2;
+          grid-column: 1;
+          grid-row: 1;
+          border-right: none;
 
-      /* Main Info */
-      main {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 50px;
-      }
-
-      .me {
-        position: relative;
-        z-index: 2;
-        width: 55%;
-        height: 60%;
-        border: black 8px solid;
-        box-shadow: 6px 6px black;
-        border-radius: 35px;
-        animation: image-move 3000ms infinite linear;
-        transition: all 200ms ease-in-out;
-      }
-
-      .me:hover {
-        animation-play-state: paused;
-        box-shadow: 18px 18px black;
-        border-radius: 0px;
-      }
-
-      main a {
-        position: relative;
-        z-index: 3;
-        width: 566px;
-      }
-      
-      .lua {
-        width: 677px;
-        height: 700px;
-        position: absolute;
-        left: 30%;
-        bottom: -200%;
-        z-index: 4;
-        animation: lua-peep 15s 1 linear;
-        animation-delay: 40s;
-      }
-
-      .wave2 {
-        position: absolute;
-        left: 0;
-        z-index: 1;
-        height: 100%;
-        overflow-x: hidden;
-        --start-left-pos: 0;
-        --end-left-pos: -5%;
-        animation: bounce 3000ms infinite linear;
-      }
-
-      .logo {
-        width: 50%;
-        height: 50%;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        animation: rotate 13000ms infinite linear;
-      }
-
-      .hexa {
-        width: 25%;
-        height: 25%;
-        position: absolute;
-        right: 10%;
-        top: 10%;
-        --rotate-start: 0deg;
-        --rotate-end: 360deg;
-        animation: spin 13000ms infinite linear;
-      }
-
-      @keyframes image-move {
-        0% {
-          right: 0;
-          bottom: 0;
         }
-        25% {
-          right: 10px;
-          bottom: 10px;
+        main {
+          grid-column: 1;
+          grid-row: 3;
+          background-color: var(--purple2);
         }
-        75% {
-          right: -15px;
-          bottom: -15px;
+        .image-container {
+          position: relative;
+          width: 25em;
+          height: 28em;
         }
-        100% {
-          right: 0;
-          bottom: 0;
-        }
-      }
-      @keyframes lua-peep {
-        0% {
-          bottom: -100%;
-        }
-        50% {
-          bottom: -50%;
-        }
-        60% {
-          bottom: -50%;
-        }
-        75% {
-          bottom: -30%;
-        }
-        85% {
-          bottom: -30%;
-        }
-        100% {
-          bottom: -100%;
-        }
-      }
-      @keyframes rotate {
-        0% {
-          transform: rotate(-45deg);
-        }
-        50%{
-          transform: rotate(45deg);
-        }
-        100%{
-          transform: rotate(-45deg);
+        .marquee {
+          grid-column: 1 / span 1;
+          grid-row: 2;
+          background-color: black;
         }
       }
     </style>

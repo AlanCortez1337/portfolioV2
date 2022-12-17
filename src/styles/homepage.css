@@ -1,0 +1,279 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0fr;
+    overflow: hidden;
+}
+
+header {
+    position: relative;
+    z-index: 2;
+    grid-column: 1;
+    grid-row: 1;
+    background-color: var(--cyan);
+    border-right: black 8px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wave {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    --start-bot-pos: -55px;
+    --end-bot-pos: -15px;
+    animation: bounce 4500ms infinite linear;
+}
+
+.project-title {
+    position: absolute;
+    z-index: 2;
+    bottom: 1%;
+    right: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px 0;
+}
+
+.hero-text h2 {
+    font-size: 2em;
+    width: fit-content;
+}
+
+.hero-text h1 {
+    font-size: 6em;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 6px 6px black;
+    font-weight: 800;
+}
+
+.hero-text h1 .text-hover:hover {
+    text-shadow: 12px 12px black;
+}
+
+.hero-text p {
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 2.5em;
+}
+
+main {
+    overflow: hidden;
+    grid-column: 2;
+    background-color: var(--purple2);
+}
+/* Marquee styles */
+.marquee {
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    height: 50px;
+    grid-column: 1 / span 2;
+    grid-row: 3;
+    background-color: black;
+}
+
+
+.marquee ul {
+
+    position: absolute;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+    animation: slide 25s infinite linear;
+}
+
+.marquee ul a {
+    text-decoration: none;
+}
+
+.marquee ul:hover {
+    animation-play-state: paused;
+}
+
+.marquee li {
+    width: max-content;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+@keyframes slide {
+    from {
+        left: 100vw;
+    }
+    to {
+        left: calc(0vw + var(--marquee-length))  ;
+    }
+}
+
+/* Main Info */
+main {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.image-container {
+    position: relative;
+    width: 30em;
+    height: 32em;
+}
+
+.me {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    border: black 8px solid;
+    box-shadow: 6px 6px black;
+    border-radius: 35px;
+    animation: image-move 3000ms infinite linear;
+    transition: all 200ms ease-in-out;
+}
+
+.me:hover {
+    animation-play-state: paused;
+    box-shadow: 18px 18px black;
+    border-radius: 0px;
+}
+
+main a {
+    width: max-content;
+    position: absolute;
+    left: -10%;
+    bottom: -7%;
+    z-index: 3;
+}
+
+.lua {
+    width: 677px;
+    height: 700px;
+    position: absolute;
+    left: 30%;
+    bottom: -200%;
+    z-index: 4;
+    animation: lua-peep 15s 1 linear;
+    animation-delay: 40s;
+}
+
+.wave2 {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    /* overflow-x: hidden; */
+    --start-left-pos: 0;
+    --end-left-pos: -5%;
+    animation: bounce 3000ms infinite linear;
+}
+
+.logo {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    animation: rotate 13000ms infinite linear;
+}
+
+.hexa {
+    width: 25%;
+    height: 25%;
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    --rotate-start: 0deg;
+    --rotate-end: 360deg;
+    animation: spin 13000ms infinite linear;
+}
+
+.jax {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    animation: rotate 13000ms infinite linear;
+}
+
+.square {
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    --rotate-start: 0deg;
+    --rotate-end: 360deg;
+    animation: spin 13000ms infinite linear;
+}
+
+@keyframes image-move {
+    0% {
+        right: 0;
+        bottom: 0;
+    }
+    25% {
+        right: 10px;
+        bottom: 10px;
+    }
+    75% {
+        right: -15px;
+        bottom: -15px;
+    }
+    100% {
+        right: 0;
+        bottom: 0;
+    }
+}
+@keyframes lua-peep {
+    0% {
+        bottom: -100%;
+    }
+    50% {
+        bottom: -50%;
+    }
+    60% {
+        bottom: -50%;
+    }
+    75% {
+        bottom: -30%;
+    }
+    85% {
+        bottom: -30%;
+    }
+    100% {
+        bottom: -100%;
+    }
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(-45deg);
+    }
+    50%{
+        transform: rotate(45deg);
+    }
+    100%{
+        transform: rotate(-45deg);
+    }
+}
