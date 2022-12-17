@@ -55,10 +55,17 @@ const projects = await Astro.glob("./project/*.md");
       <svg class="wave2" viewBox="0 0 340 793" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 793H213C213 793 309.685 703.518 333 627C380.281 471.827 168.449 410.125 163 248C159.681 149.257 213 0 213 0H0V793Z" fill="#2F7483"/>
       </svg>
+      <!-- funny shapes -->
+      <svg class="logo" viewBox="0 0 178 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M71.405 10.2927C79.0874 -3.12061 98.4326 -3.12064 106.115 10.2927L174.838 130.282C180.792 140.678 176.333 153.94 165.308 158.628L96.5851 187.845C91.5849 189.971 85.9351 189.971 80.935 187.845L12.2118 158.628C1.18662 153.94 -3.27233 140.678 2.68181 130.282L71.405 10.2927Z" fill="#2D5B7D"/>
+      </svg>
+      <svg class="hexa" viewBox="0 0 193 182" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M96.5 0L192.081 69.4438L155.572 181.806H37.4276L0.918823 69.4438L96.5 0Z" fill="#2D5B7D"/>
+        </svg>
       <img class="lua" src="/assets/lua.png" alt="image of lua looking all cute and such">
     </main>
 
-    <script >
+    <script>
       const marqueeProjects = document.getElementById("projects");
       const width = document.getElementById("projects").offsetWidth;
       const widthPX = `-${width.toString()}px`
@@ -126,7 +133,7 @@ const projects = await Astro.glob("./project/*.md");
       }
 
       .hero-text h1 {
-        font-size: 5em;
+        font-size: 6em;
         -webkit-text-stroke: 2px black;
         text-shadow: 6px 6px black;
         font-weight: 800;
@@ -139,7 +146,7 @@ const projects = await Astro.glob("./project/*.md");
 
       .hero-text p {
         font-weight: 700;
-        font-size: 1.5em;
+        font-size: 2.5em;
       }
 
       main {
@@ -207,8 +214,8 @@ const projects = await Astro.glob("./project/*.md");
       .me {
         position: relative;
         z-index: 2;
-        width: 23rem;
-        height: 23rem;
+        width: 55%;
+        height: 60%;
         border: black 8px solid;
         box-shadow: 6px 6px black;
         border-radius: 35px;
@@ -250,6 +257,26 @@ const projects = await Astro.glob("./project/*.md");
         animation: bounce 3000ms infinite linear;
       }
 
+      .logo {
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        animation: rotate 13000ms infinite linear;
+      }
+
+      .hexa {
+        width: 25%;
+        height: 25%;
+        position: absolute;
+        right: 10%;
+        top: 10%;
+        --rotate-start: 0deg;
+        --rotate-end: 360deg;
+        animation: spin 13000ms infinite linear;
+      }
+
       @keyframes image-move {
         0% {
           right: 0;
@@ -286,6 +313,17 @@ const projects = await Astro.glob("./project/*.md");
         }
         100% {
           bottom: -100%;
+        }
+      }
+      @keyframes rotate {
+        0% {
+          transform: rotate(-45deg);
+        }
+        50%{
+          transform: rotate(45deg);
+        }
+        100%{
+          transform: rotate(-45deg);
         }
       }
     </style>
