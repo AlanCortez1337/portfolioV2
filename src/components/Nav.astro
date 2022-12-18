@@ -1,16 +1,17 @@
 ---
 import Hamburger from "./hamburger";
+import Icons from "./icons.jsx"
 ---
 
 <nav>
   <div class="nav-items">
     <!-- logo -->
-    <a href="/" class="home"><button>Home</button></a>
+    <a href="/" class="home"><button><Icons iconName={"home"} size="1em"/>Home</button></a>
     <div class="nav-items-buttons">
-      <a href="/about/"><button>About</button></a>
-      <a href="/projects/"><button>Work</button></a>
-      <a href="/contact/"><button>Connect</button></a>
-      <a href="/"><button>Resume</button></a>
+      <a href="/about/"><button><Icons iconName={"abt"} size="1em"/>About</button></a>
+      <a href="/projects/"><button><Icons iconName={"work"} size="1em"/>Work</button></a>
+      <a href="/contact/"><button><Icons iconName={"chat"} size="1em"/>Connect</button></a>
+      <a href="/"><button><Icons iconName={"resume"} size="1em"/>Resume</button></a>
     </div>
     <div class="hamburger">
       <Hamburger client:load/>
@@ -50,6 +51,10 @@ import Hamburger from "./hamburger";
   .home button {
     padding: 5px 35px;
     height: calc(100% - 10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     background-color: var(--cyan);
     color: var(--text-color);
     font-weight: 700;
@@ -65,7 +70,6 @@ import Hamburger from "./hamburger";
 
   .nav-items-buttons {
     display: flex;
-    /* gap: 50px; */
     justify-content: center;
     align-items: center;
   }
@@ -85,6 +89,10 @@ import Hamburger from "./hamburger";
   }
 
   .nav-items-buttons a button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     background-color: var(--green3);
     color: var(--text-color);
     font-weight: 700;
