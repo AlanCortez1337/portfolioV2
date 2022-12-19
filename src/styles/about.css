@@ -1,0 +1,358 @@
+body {
+    background-color: var(--green0);
+  }
+  .title {
+    width: fit-content;
+    font-size: var(--title-text);
+    -webkit-text-stroke: 3px black;
+    text-shadow: 6px 6px black;
+    font-weight: 800;
+    transition: all 250ms ease-out;
+  }
+  .title:hover {
+    text-shadow: 12px 12px black;
+  }
+  /* header */
+  header {
+    position: relative;
+    overflow: hidden;
+    padding: 0 0 0 10%;
+    height: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "title title"
+      "blurb graphics";
+    gap: 20px;
+    justify-items: start;
+    align-items: flex-start;
+  }
+  header h1 {
+    position: relative;
+    z-index: 3;
+    padding: 5% 0 0 0;
+    grid-area: title;
+  }
+  header p {
+    position: relative;
+    z-index: 3;
+    grid-area: blurb;
+    width: 400px;
+    padding: 1.5em;
+    background-color: var(--purple3);
+    border: black 10px solid;
+    border-radius: 50px;
+    box-shadow: 5px 5px black;
+    font-size: var(--med-text);
+    font-weight: 500;
+    transition: all 350ms ease-in-out;
+    text-align: center;
+  }
+  header p:hover {
+    box-shadow: 15px 15px black;
+    transform: scale(1.07);
+  }
+  header .graphic {
+    position: relative;
+    z-index: 2;
+    grid-area: graphics;
+    position: relative;
+    bottom: 0;
+  }
+  header .graphic img {
+    position: relative;
+    z-index: 2;
+    bottom: 0;
+    width: 700px;
+    height: 680px;
+  }
+
+  .funny-shapes {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .funny-shapes:nth-child(odd) {
+    --rotate-start: 0deg;
+    --rotate-end: 360deg;
+    width: 190px;
+    height: 190px;
+    transition: all 350ms ease-in-out;
+    animation: spin 4500ms infinite linear;
+  }
+
+  .funny-shapes:nth-child(even) {
+    --rotate-start: 360deg;
+    --rotate-end: 0deg;
+    width: 160px;
+    height: 160px;
+    animation: spin 4500ms infinite linear;
+  }
+
+  .logo {
+    left: -10px;
+    bottom: 650px;
+  }
+
+  .square-circle {
+    left: 500px;
+    bottom: 250px;
+  }
+
+  .star {
+    left: 400px;
+    bottom: 550px;
+  }
+
+  .hexagon {
+    left: -100px;
+    bottom: 300px;
+  }
+
+  .diamond {
+    left: -200px;
+    bottom: 130px;
+  }
+
+  .background-svg {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    left: 0;
+    --start-left-pos: -55px;
+    --end-left-pos: -15px;
+    animation: bounce 4500ms infinite ease-in-out;
+  }
+
+  /* SKills */
+  .skill-section {
+    overflow: hidden;
+    position: relative;
+    background-color: var(--purple3);
+    border-top: 8px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10% 5% 10%;
+  }
+  .skill-section h1 {
+    padding-top: 5%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .skill-section ul {
+    padding: 0;
+    position: relative;
+    z-index: 2;
+    margin-top: 3%;
+    width: 100%;
+    list-style: none;
+    display: flex;
+    gap: 6%;
+    flex-wrap: wrap;
+  }
+  .skill-item {
+    margin: 30px 0;
+    position: relative;
+    z-index: 2;
+    background-color: var(--green0);
+    border: black 6px solid;
+    box-shadow: 4px 4px black;
+    color: black;
+    font-size: var(--ml-text);
+    font-weight: 600;
+    padding: 8px 12px;
+    transition: all 500ms ease-in-out;
+  }
+  .skill-item:hover {
+    border: var() 6px solid;
+    box-shadow: 8px 8px black;
+    border-radius: 10px;
+    transform: scale(1.3);
+  }
+  .skill-item:active {
+    transform: rotate(180deg) scale(0.8);
+  }
+  .skills-wave {
+    height: 100%;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    --start-left-pos: -55px;
+    --end-left-pos: -15px;
+    animation: right-bounce 4500ms infinite ease-in-out;
+  }
+  /* Experiences */
+  .experience {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--purple2);
+    border-top: 8px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "title title"
+      "one two";
+    column-gap: 5%;
+    padding: 0 10% 5% 10%;
+  }
+  .experience h1 {
+    grid-area: title;
+    padding-top: 5%;
+    position: relative;
+    z-index: 2;
+  }
+  .exp-card {
+    position: relative;
+    z-index: 2;
+    min-height: 400px;
+    width: calc(100% - 19px);
+    margin-top: 8%;
+    border: black 9px solid;
+    border-radius: 25px;
+    box-shadow: 6px 6px black;
+    display: flex;
+    flex-direction: column;
+    transition: all 300ms ease-in-out;
+  }
+  .exp-card:nth-child(n + 1) {
+    background-color: var(--cyan);
+  }
+  .exp-card:nth-child(2n + 1) {
+    background-color: var(--purple3);
+  }
+  .exp-card:nth-child(3n + 1) {
+    background-color: var(--purple2);
+  }
+  .exp-card:hover {
+    transform: scale(1.05);
+    box-shadow: 12px 12px black;
+  }
+  .exp-card h3 {
+    padding: 4% 10% 0 10%;
+    text-align: center;
+    font-size: var(--ml-text);
+    border-radius: 15px 15px 0 0;
+  }
+  .exp-card p {
+    text-align: center;
+  }
+  .exp-card ul {
+    height: 100%;
+    padding: 0 10% 4% 10%;
+    font-size: var(--tiny-text);
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 15px 15px;
+    gap: 30px;
+    text-align: center;
+  }
+  .exp-card button {
+    background-color: var(--green0);
+    border: black 6px solid;
+    color: black;
+    font-size: var(--micro-text);
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: all 300ms ease-in-out;
+  }
+  .exp-card button:hover {
+    border-radius: 0px;
+    transform: scale(1.1);
+  }
+  .exp-card button:active {
+    transform: scale(0.8);
+  }
+  .exp-wave {
+    width: 100%;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    --start-bot-pos: -55px;
+    --end-bot-pos: -15px;
+    animation: bounce 4500ms infinite ease-in-out;
+  }
+  /* Hobbies */
+  .hobbies {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    background-color: var(--purple1);
+    border-top: 8px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "title title title"
+      "one two three";
+    column-gap: 5%;
+    padding: 0 10% 5% 10%;
+  }
+  .hobbies h1 {
+    grid-area: title;
+    padding-top: 5%;
+    position: relative;
+    z-index: 3;
+  }
+  .hobby-card {
+    margin-top: 8%;
+    position: relative;
+    justify-self: center;
+    width: 250px;
+    height: 250px;
+    transition: all 350ms ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 8px solid black;
+    box-shadow: 6px 6px black;
+    background-color: var(--purple0);
+  }
+  .hobby-card p {
+    text-align: center;
+    padding: 5% 10%;
+    font-size: var(--ml-text);
+    font-weight: 700;
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    z-index: 3;
+    transition: all 350ms ease-in-out;
+  }
+  .hobby-card img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: all 350ms ease-in-out;
+  }
+  .hobby-card:hover {
+    transform: scale(1.1);
+    border-radius: 25px;
+  }
+  .hobby-card:hover p {
+    opacity: 1;
+  }
+  .hobby-card:hover img {
+    opacity: 0.5;
+    border-radius: 15px;
+  }
+  .hobby-wave {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    top: 0;
+    --start-bot-pos: -55px;
+    --end-bot-pos: -15px;
+    animation: top-bounce 4500ms infinite ease-in-out;
+  }

@@ -29,11 +29,13 @@
 	--rotate-start: 0deg;
 	--rotate-end: 360deg;
 	/* font size */
-	--huge-text: 8em;
+	--title-text: 8em;
 	--big-text: 6em;
+	--ml-text: 2.75em;
 	--med-text: 2em;
 	--small-text: 1.75em;
 	--tiny-text: 1.5em;
+	--micro-text: 1em;
 }
 
 h1, h2, h3, ul, li, body, svg {
