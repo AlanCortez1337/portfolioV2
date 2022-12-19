@@ -33,7 +33,7 @@
 }
 
 h1 {
-    font-size: 64px;
+    font-size: var(--big-text);
 }
 
 .modal a, .modal p {
@@ -41,4 +41,19 @@ h1 {
     gap: 30px;
     justify-content: center;
     align-items: center;
+}
+
+.🍔 {
+    padding: 5px 15px;
+    height: calc(100% - 10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--green2);
+    color: var(--text-color);
+    font-weight: 700;
+    border: none;
+    font-size: 32px;
+
 }

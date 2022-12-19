@@ -28,6 +28,12 @@
 	--marquee-length: 0;
 	--rotate-start: 0deg;
 	--rotate-end: 360deg;
+	/* font size */
+	--huge-text: 8em;
+	--big-text: 6em;
+	--med-text: 2em;
+	--small-text: 1.75em;
+	--tiny-text: 1.5em;
 }
 
 h1, h2, h3, ul, li, body, svg {

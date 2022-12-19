@@ -7,6 +7,7 @@ import "../styles/homepage.css"
 
 // Data Fetching: List all Markdown posts in the repo.
 const projects = await Astro.glob("./project/*.md");
+[{}, {}, {}]
 ---
 
 <html lang="en">
@@ -39,7 +40,7 @@ const projects = await Astro.glob("./project/*.md");
         <rect width="246" height="246" rx="52" fill="#1A8384"/>
       </svg>
       <div class="project-title text-hover-scale">
-        <DownArrow iconName={"downArrow"} size={"5em"}/>
+        <DownArrow iconName={"downArrow"} size={"var(--med-text)"}/>
         <h1>PROJECTS</h1>
       </div>
     </header>
@@ -56,6 +57,7 @@ const projects = await Astro.glob("./project/*.md");
 
     <main>
       <div class="image-container">
+        <h3>wooow look at pretty ol' me</h3>
         <img class="me" src="/assets/alanHeadshot.png" alt="picture of alan cortez">
         <a href="/about/" class="cta-btn"><button>more me</button></a>
       </div>
@@ -81,6 +83,45 @@ const projects = await Astro.glob("./project/*.md");
     </script>
 
     <style>
+      @media screen and (max-width: 1380px) {
+        body {
+          --big-text: 5em;
+          --med-text: 2.25em;
+          --small-text: 2em;
+        }
+      }
+      @media screen and (max-width: 700px) {
+        body {
+          --huge-text: 8em;
+          --big-text: 4em;
+          --med-text: 1.75em;
+          --small-text: 1.5em;
+          --tiny-text: 1.25em;
+        }
+        .image-container {
+            position: relative;
+            width: 20em;
+            height: 22em;
+        }
+      }
+      @media screen and (max-width: 450px) {
+        body {
+          --big-text: 3.25em;
+          --med-text: 1.5em;
+          --small-text: 1em;
+        }
+        .hero-text {
+          padding: 50px 20px;
+        }
+        .image-container {
+            position: relative;
+            width: 18em;
+            height: 20em;
+        }
+        .text-hover {
+          text-shadow: 3px 3px black;
+        }
+      }
       @media screen and (orientation:portrait) {
         body {
           grid-template-columns: 1fr;
@@ -94,22 +135,44 @@ const projects = await Astro.glob("./project/*.md");
           grid-column: 1;
           grid-row: 1;
           border-right: none;
-
         }
         main {
           grid-column: 1;
           grid-row: 3;
           background-color: var(--purple2);
         }
-        .image-container {
-          position: relative;
-          width: 25em;
-          height: 28em;
-        }
         .marquee {
           grid-column: 1 / span 1;
           grid-row: 2;
           background-color: black;
+        }
+        .alt-text {
+          -webkit-text-stroke: 0px;
+          text-shadow: 0px 0px;
+        }
+        .hero-text {
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .hero-text h1 span:nth-child(1) {
+          font-size: 1.75em;
+        }
+        .hero-text h1 span:nth-child(3) {
+          font-size: 1.5em;
+        }
+        .hero-text h2 {
+          font-weight: 400;
+
+        }
+        .hero-text p {
+            margin-top: 0;
+            font-weight: 300;
+            font-size: var(--med-text);
+        }
+        .name-text {
+          font-weight: 500;
         }
       }
     </style>

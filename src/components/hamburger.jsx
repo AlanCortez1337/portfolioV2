@@ -15,7 +15,7 @@ export default function Hamburger() {
 
     return (
         <>
-            <button onClick={()=>{setOpenModal((previous)=>!previous)}}><Icons iconName={"menu"} size="3em"/></button>
+            <button className="🍔" onClick={()=>{setOpenModal((previous)=>!previous)}}><Icons iconName={"menu"} size="1em"/> Stuff</button>
             <div  className={!openModal ? "background" : "background active"}>
                 <div className="modal">
                     <div className="modal-text">

@@ -25,7 +25,7 @@ header {
     z-index: 1;
     bottom: 0;
     width: 100%;
-    --start-bot-pos: -55px;
+    --start-bot-pos: -45px;
     --end-bot-pos: -15px;
     animation: bounce 4500ms infinite linear;
 }
@@ -41,6 +41,10 @@ header {
     gap: 10px;
 }
 
+.project-title h1 {
+    font-size: var(--med-text);
+}
+
 .hero-text {
     position: relative;
     z-index: 2;
@@ -51,12 +55,12 @@ header {
 }
 
 .hero-text h2 {
-    font-size: 2em;
+    font-size: var(--med-text);
     width: fit-content;
 }
 
 .hero-text h1 {
-    font-size: 6em;
+    font-size: var(--big-text);
     -webkit-text-stroke: 2px black;
     text-shadow: 6px 6px black;
     font-weight: 800;
@@ -69,7 +73,7 @@ header {
 .hero-text p {
     margin-top: 30px;
     font-weight: 700;
-    font-size: 2.5em;
+    font-size: var(--small-text);
 }
 
 main {
@@ -110,7 +114,7 @@ main {
 
 .marquee li {
     width: max-content;
-    font-size: 24px;
+    font-size: var(--tiny-text);
     flex-shrink: 0;
 }
 
@@ -135,9 +139,21 @@ main {
 }
 
 .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     width: 30em;
     height: 32em;
+}
+
+.image-container h3 {
+    position: absolute;
+    z-index: 2;
+    top: -5%;
+    font-style: italic;
+    font-size: var(--small-text);
+    color: rgba(248, 248, 248, 0.05);
 }
 
 .me {
@@ -277,3 +293,14 @@ main a {
         transform: rotate(-45deg);
     }
 }
+
+@media screen and (max-width: 700px) {
+    .image-container h3 {
+        font-size: var(--small-text)
+    }
+    .lua {
+        left: -30%;
+        width: 577px;
+        height: 600px;
+    }
+  }
