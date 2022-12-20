@@ -55,5 +55,18 @@ h1 {
     font-weight: 700;
     border: none;
     font-size: 32px;
+}
 
+@media screen and (max-height: 900px) {
+    .modal {
+        --big-text: 4em;
+        gap: 10px;
+    }
+    .modal-text {
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+    }
 }

@@ -10,13 +10,13 @@ import Icons from "./icons";
         <a
           href="https://docs.google.com/document/d/1WgFxvm5z1IBIdMeri4NDSyZzI855fQZRAZP5GZUopmc/edit"
           target="_blank"
-          ><Icons iconName={"resume"} size="3em"/>
+          ><Icons iconName={"resume"} size="var(--footer-icons)"/>
         </a>
         <a href="https://github.com/AlanCortez1337" target="_blank"
-          ><Icons iconName={"github"} size="3em"/>
+          ><Icons iconName={"github"} size="var(--footer-icons)"/>
         </a>
         <a href="https://www.linkedin.com/in/alancortez1337/" target="_blank"
-          ><Icons iconName={"linkedIn"} size="3em"/>
+          ><Icons iconName={"linkedIn"} size="var(--footer-icons)"/>
         </a>
       </div>
     </div>
@@ -61,5 +61,28 @@ import Icons from "./icons";
 
   a:hover {
     color: var(--green1);
+  }
+  @media screen and (max-width: 800px) {
+    footer {
+      --footer-icons: 2em;
+
+    }
+    h3 {
+      font-size: 16px;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    footer {
+      --footer-icons: 2em;
+    }
+    h3 {
+      font-size: 12px;
+    }
+    .footer-wrapper {
+      justify-content: center;
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 10px;
+    }
   }
 </style>
