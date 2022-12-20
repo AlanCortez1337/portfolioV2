@@ -1,0 +1,193 @@
+body {
+    background-color: var(--purple0);
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  .proj-hero {
+    margin-top: 56px;
+    position: relative;
+    background-color: var(--purple2);
+    border-bottom: black 8px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .proj-hero h1 {
+    position: relative;
+    font-size: var(--title-text);
+    padding: 45px 0;
+    z-index: 1;
+  }
+  .project {
+    height: 550px;
+    border-bottom: black 8px solid;
+    display: flex;
+  }
+  .project:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+  .project:nth-child(odd) .display {
+    border-left: black 8px solid;
+  }
+  .project:nth-child(even) .display {
+    border-right: black 8px solid;
+  }
+  .hero-wave {
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    --start-bot-pos: -15px;
+    --end-bot-pos: -55px;
+    animation: top-bounce 3500ms infinite ease-in-out;
+  }
+  /* Project Section Demo */
+  .display {
+    position: relative;
+    z-index: 0;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--purple1);
+  }
+  .display-wrapper {
+    position: relative;
+    width: 600px;
+    height: 425px;
+  }
+  .display img {
+    position: relative;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    border: black 10px solid;
+    border-radius: 25px;
+    box-shadow: 5px 5px black;
+    transition: all 350ms ease-in-out;
+  }
+  .display img:hover {
+    border-radius: 40px;
+    box-shadow: 8px 8px black;
+  }
+  .github-badge-wrapper {
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+    right: -15%;
+    bottom: -25%;
+  }
+  .github-badge {
+    overflow: hidden;
+    width: 250px;
+    height: 250px;
+    animation: spin 35s infinite linear;
+  }
+  .demo-text {
+    position: absolute;
+    z-index: 1;
+    left: -5%;
+    top: -5%;
+    background-color: var(--green2);
+    padding: 8px 12px;
+    border: 5px solid black;
+    box-shadow: 5px 5px black;
+    animation: bulb 3500ms infinite linear;
+    cursor: pointer;
+    user-select: none;
+    transition: all 450ms ease-in-out;
+  }
+  .demo-text:hover {
+    animation-play-state: paused;
+    border-radius: 15px;
+  }
+  /* Project Section Info */
+  .info {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .info h3 {
+    font-size: var(--big-text);
+  }
+  .tag-container {
+    display: flex;
+    gap: 30px;
+  }
+  .tag-card {
+    cursor: default;
+    user-select: none;
+    padding: 8px 12px;
+    border: 5px black solid;
+    font-weight: 500;
+    transition: all 350ms ease-in-out;
+  }
+  .tag-card:hover {
+    transform: scale(1.2);
+  }
+  .tag-card:active {
+    transform: scale(0.8)
+  }
+  .tag-card:nth-child(n + 1) {
+    background-color: var(--green3);
+  }
+  .tag-card:nth-child(2n) {
+    background-color: var(--cyan);
+  }
+  .tag-card:nth-child(3n + 1) {
+    background-color: var(--purple3);
+  }
+  .info a {
+    text-decoration: none;
+    transition: all 350ms ease-in-out;
+  }
+  .info a:hover {
+    transform:scale(1.2);
+    border-radius: 0;
+    box-shadow: 5px 5px black;
+  }
+  .info a:hover button {
+    border-radius: 0;
+  }
+  .info a:active {
+    transform: scale(0.8);
+  }
+  .info button {
+    text-decoration: none;
+    padding: 8px 12px;
+    font-weight: 600;
+    font-size: var(--med-text);
+    border: 5px black solid;
+    border-radius: 10px;
+    background-color: var(--purple2);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 350ms ease-in-out;
+  }
+  .text-wave {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    width: 100%;
+  }  
+  .project:nth-child(odd) .text-wave {
+    transform: scaleX(-1);
+    --start-bot-pos: -15px;
+    --end-bot-pos: -55px;
+    animation: bounce 3500ms infinite ease-in-out;
+  }
+  .project:nth-child(even) .text-wave {
+    transform: scaleX(1);
+    --start-bot-pos: -55px;
+    --end-bot-pos: -15px;
+    animation: bounce 4500ms infinite ease-in-out;
+  }

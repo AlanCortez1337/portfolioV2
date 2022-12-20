@@ -4,6 +4,7 @@ import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import Icon from "../components/icons.jsx"
+import "../styles/projects.css"
 
 // Data Fetching: List all Markdown posts in the repo.
 const projects = await Astro.glob("./project/*.md");
@@ -17,192 +18,7 @@ const projects = await Astro.glob("./project/*.md");
     />
   </head>
   <body>
-    <style>
-      body {
-        background-color: var(--purple0);
-      }
-      main {
-        display: flex;
-        flex-direction: column;
-      }
-      .proj-hero {
-        margin-top: 56px;
-        position: relative;
-        background-color: var(--purple2);
-        border-bottom: black 8px solid;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 88px;
-      }
-      .proj-hero h1 {
-        position: relative;
-        font-size: 120px;
-        padding: 45px 0;
-        z-index: 1;
-      }
-      .project {
-        height: 550px;
-        border-bottom: black 8px solid;
-        display: flex;
-      }
-      .project:nth-child(odd) {
-        flex-direction: row-reverse;
-      }
-      .project:nth-child(odd) .display {
-        border-left: black 8px solid;
-      }
-      .project:nth-child(even) .display {
-        border-right: black 8px solid;
-      }
-      .hero-wave {
-        width: 100%;
-        position: absolute;
-        z-index: 0;
-        top: 0;
-        --start-bot-pos: -15px;
-        --end-bot-pos: -55px;
-        animation: top-bounce 3500ms infinite ease-in-out;
-      }
-      /* Project Section Demo */
-      .display {
-        position: relative;
-        z-index: 0;
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--purple1);
-      }
-      .display img {
-        width: 600px;
-        height: 425px;
-        border: black 10px solid;
-        border-radius: 25px;
-        box-shadow: 5px 5px black;
-        transition: all 350ms ease-in-out;
-      }
-      .display img:hover {
-        border-radius: 40px;
-        box-shadow: 8px 8px black;
-      }
-      .github-badge {
-        position: absolute;
-        z-index: 1;
-        right: 60px;
-        bottom: -30px;
-        width: 250px;
-        height: 250px;
-        animation: spin 35s infinite linear;
-      }
-      .demo-text {
-        position: absolute;
-        z-index: 1;
-        left: 10%;
-        top: 5%;
-        background-color: var(--green2);
-        padding: 8px 12px;
-        border: 5px solid black;
-        box-shadow: 5px 5px black;
-        animation: bulb 3500ms infinite linear;
-        cursor: pointer;
-        user-select: none;
-        transition: all 450ms ease-in-out;
-      }
-      .demo-text:hover {
-        animation-play-state: paused;
-        border-radius: 50px;
-      }
-      /* Project Section Info */
-      .info {
-        position: relative;
-        width: 50%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      .info h3 {
-        font-size: 72px;
-      }
-      .tag-container {
-        display: flex;
-        gap: 30px;
-      }
-      .tag-card {
-        cursor: default;
-        user-select: none;
-        padding: 8px 12px;
-        border: 5px black solid;
-        font-weight: 500;
-        transition: all 350ms ease-in-out;
-      }
-      .tag-card:hover {
-        transform: scale(1.2);
-      }
-      .tag-card:active {
-        transform: scale(0.8)
-      }
-      .tag-card:nth-child(n + 1) {
-        background-color: var(--green3);
-      }
-      .tag-card:nth-child(2n) {
-        background-color: var(--cyan);
-      }
-      .tag-card:nth-child(3n + 1) {
-        background-color: var(--purple3);
-      }
-      .info a {
-        text-decoration: none;
-        transition: all 350ms ease-in-out;
-      }
-      .info a:hover {
-        transform:scale(1.2);
-        border-radius: 0;
-        box-shadow: 5px 5px black;
-      }
-      .info a:hover button {
-        border-radius: 0;
-      }
-      .info a:active {
-        transform: scale(0.8);
-      }
-      .info button {
-        text-decoration: none;
-        padding: 8px 12px;
-        font-weight: 600;
-        font-size: 24px;
-        border: 5px black solid;
-        border-radius: 10px;
-        background-color: var(--purple2);
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        cursor: pointer;
-        transition: all 350ms ease-in-out;
-      }
-      .text-wave {
-        position: absolute;
-        z-index: -1;
-        bottom: 0;
-        width: 100%;
-      }  
-      .project:nth-child(odd) .text-wave {
-        transform: scaleX(-1);
-        --start-bot-pos: -15px;
-        --end-bot-pos: -55px;
-        animation: bounce 3500ms infinite ease-in-out;
-      }
-      .project:nth-child(even) .text-wave {
-        transform: scaleX(1);
-        --start-bot-pos: -55px;
-        --end-bot-pos: -15px;
-        animation: bounce 4500ms infinite ease-in-out;
-      }
-    </style>
+    
     <Nav />
     <!-- dividing wave -->
     <main>
@@ -214,22 +30,24 @@ const projects = await Astro.glob("./project/*.md");
       </section>
       {
         projects.map((project) => (
-          <section class="project">
+        <section class="project">
             <div class="display">
-              {project.frontmatter.demoLink !== "N/A" && 
-                <a href={project.frontmatter.demoLink} target="_blank">
-                  <h2 class="demo-text">Click here for live demo!</h2>
+              <div class="display-wrapper">
+                {project.frontmatter.demoLink !== "N/A" && 
+                  <a href={project.frontmatter.demoLink} target="_blank">
+                    <h2 class="demo-text">Click here for live demo!</h2>
+                  </a>
+                }
+                <a href={project.url}>
+                  <img src={project.frontmatter.gif} alt={`${project.frontmatter.title} demo display`}/>
                 </a>
-              }
-              <a href={project.url}>
-                <img src={project.frontmatter.gif} alt={`${project.frontmatter.title} demo display`}>
-              </a>
-              <a href={project.frontmatter.githubLink} target="_blank">
-                <svg class="github-badge" viewBox="0 0 179 179" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M74.1841 46.3795C72.4176 52.5693 66.0583 56.2408 59.8145 54.6757C44.2715 50.7797 33.353 69.6911 44.4986 81.2037C48.9759 85.8285 48.9759 93.1715 44.4986 97.7963C33.353 109.309 44.2715 128.22 59.8145 124.324C66.0583 122.759 72.4176 126.431 74.1841 132.621C78.5815 148.029 100.419 148.029 104.816 132.621C106.582 126.431 112.942 122.759 119.186 124.324C134.728 128.22 145.647 109.309 134.501 97.7963C130.024 93.1715 130.024 85.8285 134.501 81.2037C145.647 69.6911 134.728 50.7797 119.185 54.6757C112.942 56.2408 106.582 52.5693 104.816 46.3795C100.419 30.9708 78.5815 30.9708 74.1841 46.3795Z" fill="#02F1BD" stroke="black" stroke-width="4"/>
-                  <path d="M74.7708 62.5507C60.0944 70.4788 54.7894 89.1158 62.9162 104.16C69.4215 116.202 82.5504 122.291 95.0581 120.194C95.2236 120.146 95.3834 120.08 95.5346 119.998C96.5194 119.466 96.5081 118.537 96.1684 117.908C95.8159 117.256 94.8692 115.56 93.6268 113.288C92.859 113.969 92.0177 114.563 91.1185 115.057C86.0049 117.819 82.6951 114.473 82.6951 114.473C79.7865 111.983 77.5874 112.082 77.5874 112.082C74.3957 111.707 76.6718 110.416 76.8498 110.32L76.8617 110.313C79.6593 109.109 82.4566 110.939 82.4566 110.939C85.0416 112.546 87.1737 112.238 88.7636 111.379C89.8035 110.79 90.7074 109.988 91.4163 109.026C90.7051 107.142 90.7459 105.572 91.1335 104.474C84.8651 106.971 77.3974 107.986 71.7573 97.5448C70.1486 94.5668 69.8669 91.577 70.5381 88.7621C69.8935 88.2214 67.4802 85.9386 66.9024 81.4075C67.0714 81.2562 67.2602 81.1284 67.4635 81.0278C68.4246 80.5086 70.7944 79.7035 75.7234 80.2595C79.4191 76.6895 84.0236 74.2022 89.0354 73.0684C91.2725 68.6413 93.2451 67.1006 94.2061 66.5815C94.4018 66.4666 94.6121 66.3788 94.8313 66.3204C98.3041 69.2876 98.8903 72.5574 98.9891 73.393C101.718 74.3866 104.064 76.2613 105.666 79.2274C111.319 89.6918 106.345 95.352 100.79 99.2264C102.194 99.5561 103.946 100.756 105.318 103.295C107.285 106.937 108.839 109.899 109.32 110.788C109.666 111.429 110.425 111.954 111.409 111.422C111.569 111.337 111.72 111.235 111.858 111.118C120.481 101.801 122.568 87.4775 116.069 75.4469C107.942 60.4027 89.4471 54.6226 74.7708 62.5507Z" fill="black"/>
-                </svg>
-              </a>
+                <a class="github-badge-wrapper" href={project.frontmatter.githubLink} target="_blank">
+                  <svg class="github-badge" viewBox="0 0 179 179" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M74.1841 46.3795C72.4176 52.5693 66.0583 56.2408 59.8145 54.6757C44.2715 50.7797 33.353 69.6911 44.4986 81.2037C48.9759 85.8285 48.9759 93.1715 44.4986 97.7963C33.353 109.309 44.2715 128.22 59.8145 124.324C66.0583 122.759 72.4176 126.431 74.1841 132.621C78.5815 148.029 100.419 148.029 104.816 132.621C106.582 126.431 112.942 122.759 119.186 124.324C134.728 128.22 145.647 109.309 134.501 97.7963C130.024 93.1715 130.024 85.8285 134.501 81.2037C145.647 69.6911 134.728 50.7797 119.185 54.6757C112.942 56.2408 106.582 52.5693 104.816 46.3795C100.419 30.9708 78.5815 30.9708 74.1841 46.3795Z" fill="#02F1BD" stroke="black" stroke-width="4"/>
+                    <path d="M74.7708 62.5507C60.0944 70.4788 54.7894 89.1158 62.9162 104.16C69.4215 116.202 82.5504 122.291 95.0581 120.194C95.2236 120.146 95.3834 120.08 95.5346 119.998C96.5194 119.466 96.5081 118.537 96.1684 117.908C95.8159 117.256 94.8692 115.56 93.6268 113.288C92.859 113.969 92.0177 114.563 91.1185 115.057C86.0049 117.819 82.6951 114.473 82.6951 114.473C79.7865 111.983 77.5874 112.082 77.5874 112.082C74.3957 111.707 76.6718 110.416 76.8498 110.32L76.8617 110.313C79.6593 109.109 82.4566 110.939 82.4566 110.939C85.0416 112.546 87.1737 112.238 88.7636 111.379C89.8035 110.79 90.7074 109.988 91.4163 109.026C90.7051 107.142 90.7459 105.572 91.1335 104.474C84.8651 106.971 77.3974 107.986 71.7573 97.5448C70.1486 94.5668 69.8669 91.577 70.5381 88.7621C69.8935 88.2214 67.4802 85.9386 66.9024 81.4075C67.0714 81.2562 67.2602 81.1284 67.4635 81.0278C68.4246 80.5086 70.7944 79.7035 75.7234 80.2595C79.4191 76.6895 84.0236 74.2022 89.0354 73.0684C91.2725 68.6413 93.2451 67.1006 94.2061 66.5815C94.4018 66.4666 94.6121 66.3788 94.8313 66.3204C98.3041 69.2876 98.8903 72.5574 98.9891 73.393C101.718 74.3866 104.064 76.2613 105.666 79.2274C111.319 89.6918 106.345 95.352 100.79 99.2264C102.194 99.5561 103.946 100.756 105.318 103.295C107.285 106.937 108.839 109.899 109.32 110.788C109.666 111.429 110.425 111.954 111.409 111.422C111.569 111.337 111.72 111.235 111.858 111.118C120.481 101.801 122.568 87.4775 116.069 75.4469C107.942 60.4027 89.4471 54.6226 74.7708 62.5507Z" fill="black"/>
+                  </svg>
+                </a>
+              </div>
             </div>
             <div class="info">
               <h3>{project.frontmatter.title}</h3>
@@ -251,6 +69,93 @@ const projects = await Astro.glob("./project/*.md");
       }
     </main>
     <Footer />
-    
+    <style>
+      @media screen and (max-width: 1400px) {
+        body {
+          --big-text: 4em;
+          --med-text: 1.5em;
+        }
+        .display-wrapper {
+          width: 500px;
+          height: 325px;
+        }
+        .github-badge {
+          width: 175px;
+          height: 175px;
+        }
+        .demo-text {
+          left: -3%;
+          top: -5%;
+        }
+      }
+      @media screen and (max-width: 1200px) {
+        body {
+          --title-text: 6em;
+        }
+        .project {
+          flex-direction: column-reverse;
+          height: auto;
+        }
+        .project:nth-child(odd) {
+          flex-direction: column-reverse;
+        }
+        .project:nth-child(odd) .display {
+            border-left: 0;
+          }
+          .project:nth-child(even) .display {
+            border-right: 0;
+          }
+        .display {
+          border-top: black 8px solid;
+          padding: 75px 0;
+          width: 100%;
+        }
+        .info {
+          padding: 50px 0;
+          width: 100%;
+        }
+        .display-wrapper {
+          width: 500px;
+          height: 350px;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        body {
+          --title-text: 4em;
+          --big-text: 2.5em;
+          --med-text: 1em;
+        }
+        .display-wrapper {
+          width: 400px;
+          height: 300px;
+        }
+        .demo-text {
+          font-size: 12px;
+        }
+        .github-badge-wrapper {
+          right: -5%;
+          bottom: -15%;
+        }
+        .github-badge {
+          width: 100px;
+          height: 100px;
+        }
+      }
+      @media screen and (max-width: 430px) {
+        body {
+          --title-text: 4em;
+          --big-text: 2.5em;
+          --med-text: 1em;
+        }
+        .display-wrapper {
+          width: 325px;
+          height: 235px;
+        }
+        .display img {
+          border-radius: 15px;
+          box-shadow: 2px 2px black;
+        }
+      }
+    </style>
   </body>
 </html>
