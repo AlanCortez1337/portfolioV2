@@ -12,10 +12,10 @@ demoLink: https://acmcsuf.com/quiz
 funFact: I farted
 ---
 
-# Description
+## Description
 
 So Yeah this is a project I made that is pretty cool and all
 
-# Challenges
+## Challenges
 
 I never face challenges

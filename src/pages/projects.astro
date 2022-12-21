@@ -106,7 +106,7 @@ const projects = await Astro.glob("./project/*.md");
             border-right: 0;
           }
         .display {
-          border-top: black 8px solid;
+          border-top: black 4px solid;
           padding: 75px 0;
           width: 100%;
         }
@@ -124,6 +124,9 @@ const projects = await Astro.glob("./project/*.md");
           --title-text: 4em;
           --big-text: 2.5em;
           --med-text: 1em;
+        }
+        .title {
+          -webkit-text-stroke: 1.5px black;
         }
         .display-wrapper {
           width: 400px;

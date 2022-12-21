@@ -1,5 +1,6 @@
 body {
     background-color: var(--purple0);
+    --ml-text: 1.75em;
   }
   main {
     display: flex;
@@ -46,7 +47,7 @@ body {
   /* Project Section Demo */
   .display {
     position: relative;
-    z-index: 0;
+    z-index: 1;
     width: 50%;
     display: flex;
     justify-content: center;
@@ -105,6 +106,7 @@ body {
   /* Project Section Info */
   .info {
     position: relative;
+    z-index: -1;
     width: 50%;
     height: 100%;
     display: flex;
@@ -141,6 +143,9 @@ body {
   }
   .tag-card:nth-child(3n + 1) {
     background-color: var(--purple3);
+  }
+  .info p {
+    margin: 16px 0;
   }
   .info a {
     text-decoration: none;

@@ -2,6 +2,7 @@
 import MainHead from "../components/MainHead.astro";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
+import "../styles/project-layout.css"
 
 const { content } = Astro.props;
 ---
@@ -9,200 +10,6 @@ const { content } = Astro.props;
 <html lang={content.lang || "en"}>
   <head>
     <MainHead title={`Project | ${content.title}`} description={content.blurb} />
-    <style>
-      body {
-        background-color: var(--cyan);
-      }
-      header {
-        width: 100%;
-        height: 500px;
-        position: relative;
-        border-bottom: 8px solid black;
-        background-color: var(--purple2);
-        z-index: 3;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 30px;
-      }
-      .title {
-        position: relative;
-        z-index: 2;
-        width: fit-content;
-        font-size: 96px;
-        -webkit-text-stroke: 3px black;
-        text-shadow: 6px 6px black;
-        font-weight: 800;
-        transition: all 250ms ease-out;
-      }
-      .title:hover {
-        text-shadow: 12px 12px black;
-      }
-      .buttons {
-        display: flex;
-        gap: 30px;
-      }
-      .buttons a button {
-        position: relative;
-        z-index: 2;
-        background-color: var(--green0);
-        border: black 6px solid;
-        box-shadow: 1px 1px black;
-        color: black;
-        font-size: 24px;
-        font-weight: 600;
-        padding: 8px 12px;
-        border-radius: 10px;
-        transition: all 300ms ease-in-out;
-      }
-      .buttons a button:hover {
-        border-radius: 0px;
-        transform: scale(1.1);
-        box-shadow: 4px 4px black;
-      }
-      .buttons a button:active {
-        transform: scale(0.8);
-      }
-      .header-wave {
-        position: absolute;
-        z-index: 1;
-        width: 100%;
-        top: 0;
-        --start-bot-pos: -55px;
-        --end-bot-pos: -15px;
-        animation: top-bounce 4500ms infinite ease-in-out;
-      }
-      /* Content */
-      .layout {
-        position: relative;
-        width: 100%;
-        padding: 100px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-      }
-      .info {
-        position: relative;
-        z-index: 2;
-        width: 600px;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-      }
-      .img-container {
-        widows: 100%;
-        height: 400px;
-        overflow: hidden;
-        border: 8px black solid;
-        box-shadow: 6px 6px black;
-        transition: all 350ms ease-in-out;
-      }
-      .info img {
-        width: 100%;
-        height: 100%;
-        transition: all 350ms ease-in-out;
-      }
-      .img-container:hover img {
-        transform: scale(1.1);
-      }
-      .img-container:hover {
-        box-shadow: 10px 10px black;
-      }
-      .fun-fact {
-        width: calc(100% - 80px);
-        background-color: var(--green0);
-        border: 8px black solid;
-        border-radius: 40px;
-        box-shadow: 6px 6px black;
-        padding: 25px 40px;
-        transition: all 350ms ease-in-out;
-      }
-      .fun-fact:hover {
-        transform: scale(1.1);
-        box-shadow: 12px 12px black;
-      }
-      .fun-fact h3 {
-        color: black;
-        font-size: 32px;
-      }
-      .fun-fact p {
-        color: black;
-        font-size: 16px;
-      }
-      .tag-card {
-        cursor: default;
-        user-select: none;
-        padding: 8px 12px;
-        border: 5px black solid;
-        font-weight: 500;
-        transition: all 350ms ease-in-out;
-      }
-      .tag-container {
-        display: flex;
-        font-size: 24px;
-        gap: 30px;
-        justify-content: center;
-        align-items: center;
-      }
-      .tag-card:hover {
-        box-shadow: 4px 4px black;
-        transform: scale(1.2);
-      }
-      .tag-card:active {
-        transform: scale(0.8);
-      }
-      .tag-card:nth-child(n + 1) {
-        background-color: var(--green3);
-      }
-      .tag-card:nth-child(2n) {
-        background-color: var(--cyan);
-      }
-      .tag-card:nth-child(3n + 1) {
-        background-color: var(--purple3);
-      }
-      .view-more {
-        margin-top: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-      }
-      .view-more button {
-        font-size: 18px;
-        background-color: var(--green0);
-        padding: 8px 12px;
-        border: 5px black solid;
-        font-weight: 500;
-        transition: all 350ms ease-in-out;
-      }
-      .view-more button:hover {
-        box-shadow: 4px 4px black;
-        transform: scale(1.1);
-      }
-      .view-more button:active {
-        transform: scale(0.8);
-      }
-      .layout-wave {
-        width: 100%;
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        --start-bot-pos: -55px;
-        --end-bot-pos: -15px;
-        animation: top-bounce 4500ms infinite ease-in-out;
-      }
-      .bottom-wave {
-        width: 100%;
-        position: absolute;
-        z-index: 1;
-        bottom: 0;
-        --start-bot-pos: -15px;
-        --end-bot-pos: -55px;
-        animation: bounce 4900ms infinite ease-in-out;
-      }
-    </style>
   </head>
   <body>
     <Nav />
@@ -215,7 +22,7 @@ const { content } = Astro.props;
         {
           content.demoLink !== "N/A" && (
             <a href={content.demoLink} target="_blank">
-              <button class="demo-text">live demo!</button>
+              <button class="demo-text">Live Demo!</button>
             </a>
           )
         }
@@ -233,9 +40,9 @@ const { content } = Astro.props;
       >
         <path
           d="M0 0H1512V279C1512 279 1301.83 315.432 1166 314.5C1011.8 313.442 928.693 260.916 774.5 263C593.406 265.448 499.391 356.42 318.5 347.5C191.428 341.234 0 279 0 279V0Z"
-          fill="#2F7483"></path>
+          fill="#2F7483"></path>  
       </svg>
-      <div class="info">
+      <div class="layout-info">
         <div class="img-container">
           <img src={content.gif} alt={`${content.title} demo display`} />
         </div>
@@ -245,7 +52,7 @@ const { content } = Astro.props;
 
         <slot />
         <div class="fun-fact">
-          <h3>Fun Fact</h3>
+          <h2>Fun Fact</h2>
           <p>{content.funFact}</p>
         </div>
         <a href="/projects/" class="view-more"><button>view more</button></a>
@@ -255,5 +62,52 @@ const { content } = Astro.props;
       </svg>
     </main>
     <Footer />
+    <style>
+      @media screen and (max-width: 1000px) {
+        body {
+          --title-text: 6em;
+          --ml-text: 2em;
+          --tiny-text: 1.25em;
+        }
+      }
+      @media screen and (max-width: 700px) {
+        body {
+          --title-text: 4em;
+          --ml-text: 1.75em;
+          --tiny-text: 1em;
+        }
+        header {
+          height: 300px;
+        }
+        .layout-info {
+          width: 400px;
+        }
+        .img-container {
+          height: 275px;
+        }
+      }
+      @media screen and (max-width: 470px) {
+        body {
+          --title-text: 3em;
+          --ml-text: 1.75em;
+          --tiny-text: 1em;
+        }
+        header {
+          height: 300px;
+        }
+        .buttons a button {
+          border: black 4px solid;
+        }
+        .layout-info {
+          width: 300px;
+        }
+        .img-container {
+          height: 225px;
+        }
+        .img-container img {
+          transform: scale(1.1);
+        }
+      }
+    </style>
   </body>
 </html>
