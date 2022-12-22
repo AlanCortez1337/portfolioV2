@@ -11,9 +11,9 @@ const { content } = Astro.props;
   <head>
     <MainHead title={`Project | ${content.title}`} description={content.blurb} />
   </head>
-  <body>
+  <body class="project-body">
     <Nav />
-    <header>
+    <header class="project-header">
       <h1 class="title">{content.title}</h1>
       <div class="buttons">
         <a href={content.githubLink} target="_blank">
@@ -64,48 +64,69 @@ const { content } = Astro.props;
     <Footer />
     <style>
       @media screen and (max-width: 1000px) {
-        body {
+        .project-body {
           --title-text: 6em;
           --ml-text: 2em;
           --tiny-text: 1.25em;
         }
       }
       @media screen and (max-width: 700px) {
-        body {
+        .project-body {
           --title-text: 4em;
           --ml-text: 1.75em;
           --tiny-text: 1em;
         }
-        header {
+        .project-header {
           height: 300px;
         }
-        .layout-info {
+        .project-body .layout-info {
           width: 400px;
         }
-        .img-container {
+        .project-body .img-container {
           height: 275px;
         }
       }
       @media screen and (max-width: 470px) {
-        body {
-          --title-text: 3em;
+        .project-body {
+          --title-text: 3.5em;
           --ml-text: 1.75em;
           --tiny-text: 1em;
         }
-        header {
-          height: 300px;
+        .project-header {
+          height: 250px;
         }
-        .buttons a button {
+        .project-body .buttons a button {
           border: black 4px solid;
         }
-        .layout-info {
+        .project-body .layout-info {
           width: 300px;
         }
-        .img-container {
+        .project-body .img-container {
           height: 225px;
         }
-        .img-container img {
+        .project-body .img-container img {
           transform: scale(1.1);
+        }
+      }
+      @media screen and (max-width: 370px) {
+        .project-body {
+          --title-text: 2.75em;
+          --ml-text: 1.75em;
+        }
+        .project-header {
+          height: 175px;
+        }
+        .project-body .title {
+          -webkit-text-stroke: 2px black;
+        }
+        .project-body .layout-info {
+          width: 250px;
+        }
+        .project-body .img-container {
+          height: 200px;
+        }
+        .project-body .img-container img {
+          transform: scale(1.2);
         }
       }
     </style>
