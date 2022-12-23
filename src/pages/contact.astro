@@ -23,18 +23,44 @@ import Icons from "../components/icons.jsx"
     </header>
     <main>
         <div class="info-wrapper">
-            <p class="notice-box">Below are a few ways you can reach out to me. Whether it is to talk about a cool project or tell me how my text is slightly unaligned, feel free to reach out to me.</p>
-            <p>Click on the socials to zoom on over there!</p>
+            <p class="notice-box">Whether it is to talk about a cool project or tell me how my text is slightly unaligned, feel free to reach out to me by one of the ways below.</p>
+            <p class="small-text">Click on the socials to zoom on over there!</p>
             <div class="socials">
-                <button><Icons iconName={"github"} size={"16em"}/></button>
-                <button><Icons iconName={"linkedin"} size={"16em"}/></button>
-                <button>
-                    <h4>cortez.alan060@gmail.com</h4>
-                    <Icons iconName={"linkedin"} size={"6em"}/>
-                </button>
+                <a href="https://github.com/AlanCortez1337" target="_blank">
+                    <button>
+                        <Icons iconName={"github"} size={"16em"}/>
+                    </button>
+                </a>
+                <a href="https://www.linkedin.com/in/alancortez1337/" target="_blank">
+                    <button>
+                        <Icons iconName={"linkedin"} size={"16em"}/>
+                    </button>
+                </a>
+                <a href="mailto:cortez.alan060@gmail.com" target="_blank">
+                    <button>
+                        <h4>cortez.alan060@gmail.com</h4>
+                        <Icons iconName={"mail"} size={"7em"}/>
+                    </button>
+                </a>
             </div>
         </div>
-        <p>Designed and Developed by Alan Cortez</p>
+        <p class="small-text">Designed and Developed by Alan Cortez</p>
+        <!-- Star -->
+        <svg class="shape1 shape" viewBox="0 0 595 581" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M285.772 5.70747C291.777 -1.82336 303.223 -1.82336 309.228 5.70747L387.124 103.394C389.97 106.963 394.287 109.042 398.852 109.042L523.793 109.037C533.425 109.036 540.561 117.985 538.418 127.375L510.611 249.183C509.595 253.633 510.661 258.305 513.507 261.874L591.411 359.554C597.417 367.084 594.87 378.243 586.191 382.421L473.621 436.627C469.508 438.607 466.52 442.354 465.505 446.804L437.708 568.614C435.565 578.005 425.253 582.971 416.575 578.791L304.009 524.577C299.896 522.596 295.104 522.596 290.991 524.577L178.425 578.791C169.747 582.971 159.435 578.005 157.292 568.614L129.495 446.804C128.48 442.354 125.492 438.607 121.379 436.627L8.80852 382.421C0.130235 378.243 -2.41661 367.084 3.58914 359.554L81.4926 261.874C84.3392 258.305 85.4054 253.633 84.3893 249.183L56.5824 127.375C54.4387 117.985 61.5748 109.036 71.2068 109.037L196.148 109.042C200.713 109.042 205.03 106.963 207.876 103.394L285.772 5.70747Z" fill="#197D7E"/>
+        </svg>
+        <!-- hexagon -->
+        <svg class="shape2 shape" viewBox="0 0 313 302" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M124.76 11.0608C143.686 -2.69002 169.314 -2.69002 188.24 11.0608L289.768 84.8248C308.694 98.5756 316.614 122.949 309.385 145.199L270.604 264.551C263.375 286.801 242.642 301.864 219.247 301.864H93.7526C70.3583 301.864 49.6247 286.801 42.3955 264.551L3.61545 145.199C-3.61376 122.949 4.30578 98.5756 23.2321 84.8248L124.76 11.0608Z" fill="#197D7E"/>
+        </svg>
+        <!-- square -->
+        <svg class="shape3 shape" viewBox="0 0 439 439" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="81.6724" y="-9" width="377.831" height="377.831" rx="47" transform="rotate(13.8854 81.6724 -9)" fill="#197D7E"/>
+        </svg>
+        <!-- wave -->
+        <svg class="footer-wave" viewBox="0 0 1511 131" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 31.0001C0 31.0001 137.584 18.5313 226 16.0001C434.049 10.0441 550.062 57.0404 758 48.0001C912.447 41.2854 996.42 2.53897 1151 0.50013C1292.08 -1.36065 1511 31.0001 1511 31.0001V131H0V31.0001Z" fill="#266D7C"/>
+        </svg>
     </main>
     <style>
         body {
@@ -46,6 +72,7 @@ import Icons from "../components/icons.jsx"
         }
         header {
             position: relative;
+            z-index: 1;
             padding: 35px 0;
             display: flex;
             justify-content: center;
@@ -73,6 +100,8 @@ import Icons from "../components/icons.jsx"
             color: var(--text-color);
         }
         main {
+            overflow: hidden;
+            position: relative;
             padding: 40px 0;
             display: flex;
             justify-content: space-between;
@@ -102,7 +131,30 @@ import Icons from "../components/icons.jsx"
             transition: all 350ms ease-in-out;
             text-align: center;
         }
+        .notice-box:hover {
+            transform: scale(0.9);
+            box-shadow: 1px 1px black;
+        }
+        .notice-box:active {
+            transform: scale(1.1);
+            box-shadow: 10px 10px black;
+        }
+        .small-text {
+            z-index: 1;
+            font-weight: 700;
+            font-size: var(--tiny-text);
+            transition: all 350ms ease-in-out;
+        }
+        .small-text:hover {
+            color: var(--text-highlight);
+            transform: scale(1.1);
+        }
+        .small-text:active {
+            transform: scale(0.9);
+        }
         .socials {
+            position: relative;
+            z-index: 1;
             width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -110,42 +162,109 @@ import Icons from "../components/icons.jsx"
             "github linkedin"
             "email email";
             row-gap: 50px;
-            
+            transition: all 350ms ease-in-out;
         }
-        .socials button {
+        .socials a {
+            transition: all 350ms ease-in-out;
+        }
+        .socials a button {
+            padding: 0;
             width: 250px;
             height: 250px;
             align-self: center;
             border: black 10px solid;
             box-shadow: 5px 5px black;
             background-color: var(--purple3);
+            transition: all 350ms ease-in-out;
         }
-        .socials button:nth-child(1) {
+        .socials a:nth-child(1) {
             grid-area: github;
             justify-self: start;
 
         }
-        .socials button:nth-child(2) {
+        .socials a:nth-child(2) {
             grid-area: linkedin;
             justify-self: end;
 
         }
-        .socials button:nth-child(3) {
-            background-color: var(--green2);
+        .socials a:nth-child(3) {
+            grid-area: email;
             height: 175px;
             width: unset;
             justify-self: unset;
             align-self: unset;
-            grid-area: email;
+            
+        }
+
+        .socials a:nth-child(3) button {
+            background-color: var(--green2);
+            width: calc(100% - 20px);
+            height: calc(100% - 20px);
+            justify-self: unset;
+            align-self: unset;
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 20px;
         }
 
-        .socials button:nth-child(3) h4 {
+        .socials a:nth-child(3) button h4 {
             color: var(--text-color);
-            font-size: var(--ml-text);
+            font-size: var(--med-text);
+        }
+
+        .socials a:hover {
+            transform: scale(0.9);
+        }
+        .socials a:active {
+            transform: scale(1.1);
+        }
+        .socials a:hover button {
+            box-shadow: 1px 1px black;
+        }
+        .socials a:active button {
+            box-shadow: 10px 10px black;
+        }
+        /* Shapes */
+        .shape {
+            overflow: hidden;
+            position: absolute;
+            z-index: 0;
+            --rotate-start: 0deg;
+            --rotate-end: 360deg;
+            animation: spin 14500ms infinite linear;
+        }
+        .shape:nth-child(odd) {
+            --rotate-start: 360deg;
+            --rotate-end: 0deg;
+            animation: spin 20500ms infinite linear;
+        }
+        .shape1 {
+            width: 750px;
+            height: 750px;
+            top: 10%;
+            left: 5%;
+        }
+        .shape2 {
+            width: 350px;
+            height: 350px;
+            top: 0%;
+            left: 65%;
+        }
+        .shape3 {
+            width: 450px;
+            height: 450px;
+            top: 50%;
+            left: 70%;
+        }
+        .footer-wave {
+            position: absolute;
+            z-index: 0;
+            width: 100%;
+            bottom: 0;
+            --start-bot-pos: -35px;
+            --end-bot-pos: -5px;
+            animation: bounce 4500ms infinite ease-in-out;
         }
     </style>
   </body>
