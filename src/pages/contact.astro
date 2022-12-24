@@ -3,7 +3,7 @@
 import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.astro";
 import Icons from "../components/icons.jsx"
-// import "../styles/contact.css"
+import "../styles/contact.css"
 ---
 
 <html lang="en">
@@ -28,18 +28,18 @@ import Icons from "../components/icons.jsx"
             <div class="socials">
                 <a href="https://github.com/AlanCortez1337" target="_blank">
                     <button>
-                        <Icons iconName={"github"} size={"16em"}/>
+                        <Icons iconName={"github"} size={"var(--icon-size)"}/>
                     </button>
                 </a>
                 <a href="https://www.linkedin.com/in/alancortez1337/" target="_blank">
                     <button>
-                        <Icons iconName={"linkedin"} size={"16em"}/>
+                        <Icons iconName={"linkedin"} size={"var(--icon-size)"}/>
                     </button>
                 </a>
                 <a href="mailto:cortez.alan060@gmail.com" target="_blank">
                     <button>
                         <h4>cortez.alan060@gmail.com</h4>
-                        <Icons iconName={"mail"} size={"7em"}/>
+                        <Icons iconName={"mail"} size={"var(--icon2-size)"}/>
                     </button>
                 </a>
             </div>
@@ -58,213 +58,131 @@ import Icons from "../components/icons.jsx"
             <rect x="81.6724" y="-9" width="377.831" height="377.831" rx="47" transform="rotate(13.8854 81.6724 -9)" fill="#197D7E"/>
         </svg>
         <!-- wave -->
-        <svg class="footer-wave" viewBox="0 0 1511 131" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 31.0001C0 31.0001 137.584 18.5313 226 16.0001C434.049 10.0441 550.062 57.0404 758 48.0001C912.447 41.2854 996.42 2.53897 1151 0.50013C1292.08 -1.36065 1511 31.0001 1511 31.0001V131H0V31.0001Z" fill="#266D7C"/>
+        <svg class="footer-wave" viewBox="0 0 1511 246" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 57.6058C0 57.6058 137.584 34.1153 226 29.3467C434.049 18.1259 550.062 106.664 758 89.6328C912.447 76.9827 996.42 3.98664 1151 0.145588C1292.08 -3.36002 1511 57.6058 1511 57.6058V246H0V57.6058Z" fill="#266D7C"/>
         </svg>
     </main>
     <style>
-        body {
-            background-color: var(--cyan);
+        @media screen and (max-width: 1100px) {
+            .shape1 {
+                width: 650px;
+                height: 650px;
+                top: 20%;
+                left: -20%;
+            }
+            .shape3 {
+                width: 550px;
+                height: 550px;
+                top: 70%;
+                left: 70%;
+            }
         }
-        .contact-svg {
-            position: absolute;
-            width: 100%;
+        @media screen and (max-width: 700px) {
+            body {
+                --title-text: 5em;
+                --med-text: 1.5em;
+                --small-text: 1.25em;
+                --tiny-text: 1em;
+                --icon-size: 18em;
+                --icon2-size: 16em;
+            }
+            .shape1 {
+                width: 650px;
+                height: 650px;
+                top: 30%;
+                left: -20%;
+            }
+            .info-wrapper {
+                width: 400px;
+            }
+            .socials {
+                grid-template-columns: 1fr;
+                grid-template-areas: 
+                "github"
+                "linkedin"
+                "email";
+                align-items: center;
+                justify-content: center;
+            }
+            .socials a {
+                height: 325px;
+                width: 325px;
+            }
+            .socials a button {
+                width: calc(100% - 20px);
+                height: calc(100% - 20px);
+            }
+            .socials a:nth-child(1) {
+                justify-self: center;
+            }
+            .socials a:nth-child(2) {
+                justify-self: center;
+            }
+            .socials a:nth-child(3) {
+                justify-self: center;
+                height: 325px;
+                width: 325px;
+            }
+            .socials a:nth-child(3) button {
+                padding: 20px 0;
+                height: calc(100% - 60px);
+                flex-direction: column-reverse;
+                gap: 0;
+            }
+            .socials a:nth-child(3) button h4 {
+                font-weight: 500;
+            }
         }
-        header {
-            position: relative;
-            z-index: 1;
-            padding: 35px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: var(--purple1);
-            border-bottom: 8px solid black;
-        }
-        header h1 {
-            position: relative;
-            font-size: 120px;
-            z-index: 2;
-        }
-        .header-wave {
-            z-index: 1;
-            top: 0;
-            --start-bot-pos: -55px;
-            --end-bot-pos: 0px;
-            animation: top-bounce 10500ms infinite ease-in-out;
-        }
-        h2 {
-            font-size: var(--big-text);
-            -webkit-text-stroke: 3px black;
-            text-shadow: 6px 6px black;
-            animation: slide 4500ms infinite linear;
-            color: var(--text-color);
-        }
-        main {
-            overflow: hidden;
-            position: relative;
-            padding: 40px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-direction: column;
-            gap: 80px;
-        }
-        .info-wrapper {
-            width: 600px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            gap: 40px;
-        }
-        .notice-box {
-            width: calc(100% - 3em - 20px);
-            position: relative;
-            z-index: 3;
-            padding: 1.5em;
-            background-color: var(--purple2);
-            border: black 10px solid;
-            box-shadow: 5px 5px black;
-            border-radius: 50px;
-            font-size: var(--small-text);
-            font-weight: 500;
-            transition: all 350ms ease-in-out;
-            text-align: center;
-        }
-        .notice-box:hover {
-            transform: scale(0.9);
-            box-shadow: 1px 1px black;
-        }
-        .notice-box:active {
-            transform: scale(1.1);
-            box-shadow: 10px 10px black;
-        }
-        .small-text {
-            z-index: 1;
-            font-weight: 700;
-            font-size: var(--tiny-text);
-            transition: all 350ms ease-in-out;
-        }
-        .small-text:hover {
-            color: var(--text-highlight);
-            transform: scale(1.1);
-        }
-        .small-text:active {
-            transform: scale(0.9);
-        }
-        .socials {
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-areas: 
-            "github linkedin"
-            "email email";
-            row-gap: 50px;
-            transition: all 350ms ease-in-out;
-        }
-        .socials a {
-            transition: all 350ms ease-in-out;
-        }
-        .socials a button {
-            padding: 0;
-            width: 250px;
-            height: 250px;
-            align-self: center;
-            border: black 10px solid;
-            box-shadow: 5px 5px black;
-            background-color: var(--purple3);
-            transition: all 350ms ease-in-out;
-        }
-        .socials a:nth-child(1) {
-            grid-area: github;
-            justify-self: start;
-
-        }
-        .socials a:nth-child(2) {
-            grid-area: linkedin;
-            justify-self: end;
-
-        }
-        .socials a:nth-child(3) {
-            grid-area: email;
-            height: 175px;
-            width: unset;
-            justify-self: unset;
-            align-self: unset;
-            
-        }
-
-        .socials a:nth-child(3) button {
-            background-color: var(--green2);
-            width: calc(100% - 20px);
-            height: calc(100% - 20px);
-            justify-self: unset;
-            align-self: unset;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .socials a:nth-child(3) button h4 {
-            color: var(--text-color);
-            font-size: var(--med-text);
-        }
-
-        .socials a:hover {
-            transform: scale(0.9);
-        }
-        .socials a:active {
-            transform: scale(1.1);
-        }
-        .socials a:hover button {
-            box-shadow: 1px 1px black;
-        }
-        .socials a:active button {
-            box-shadow: 10px 10px black;
-        }
-        /* Shapes */
-        .shape {
-            overflow: hidden;
-            position: absolute;
-            z-index: 0;
-            --rotate-start: 0deg;
-            --rotate-end: 360deg;
-            animation: spin 14500ms infinite linear;
-        }
-        .shape:nth-child(odd) {
-            --rotate-start: 360deg;
-            --rotate-end: 0deg;
-            animation: spin 20500ms infinite linear;
-        }
-        .shape1 {
-            width: 750px;
-            height: 750px;
-            top: 10%;
-            left: 5%;
-        }
-        .shape2 {
-            width: 350px;
-            height: 350px;
-            top: 0%;
-            left: 65%;
-        }
-        .shape3 {
-            width: 450px;
-            height: 450px;
-            top: 50%;
-            left: 70%;
-        }
-        .footer-wave {
-            position: absolute;
-            z-index: 0;
-            width: 100%;
-            bottom: 0;
-            --start-bot-pos: -35px;
-            --end-bot-pos: -5px;
-            animation: bounce 4500ms infinite ease-in-out;
+        @media screen and (max-width: 460px) {
+            body {
+                --title-text: 3em;
+                --med-text: 1em;
+                --small-text: 1em;
+                --tiny-text: 0.8em;
+                --icon-size: 16em;
+                --icon2-size: 14em;
+            }
+            .shape1 {
+                top: 30%;
+                left: -80%;
+            }
+            .info-wrapper {
+                width: 300px;
+            }
+            .notice-box {
+                border: black 8px solid;
+                border-radius: 30px;
+                font-size: var(--small-text);
+                font-weight: 500;
+            }
+            .socials a {
+                height: 250px;
+                width: 250px;
+            }
+            .socials a button {
+                width: calc(100% - 20px);
+                height: calc(100% - 20px);
+            }
+            .socials a:nth-child(1) {
+                justify-self: center;
+            }
+            .socials a:nth-child(2) {
+                justify-self: center;
+            }
+            .socials a:nth-child(3) {
+                justify-self: center;
+                height: 250px;
+                width: 250px;
+            }
+            .socials a:nth-child(3) button {
+                padding: 20px 0;
+                height: calc(100% - 60px);
+                flex-direction: column-reverse;
+                gap: 0;
+            }
+            .socials a:nth-child(3) button h4 {
+                font-weight: 500;
+            }
         }
     </style>
   </body>
