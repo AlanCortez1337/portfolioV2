@@ -16,9 +16,20 @@ const { content } = Astro.props;
     <header class="project-header">
       <h1 class="title">{content.title}</h1>
       <div class="buttons">
-        <a href={content.githubLink} target="_blank">
-          <button>GitHub</button>
-        </a>
+        {
+          content.figmaLink !== "N/A" && (
+            <a href={content.figmaLink} target="_blank">
+              <button>ProtoType</button>
+            </a>
+          )
+        }
+        {
+          content.githubLink !== "N/A" && (
+            <a href={content.githubLink} target="_blank">
+              <button>GitHub</button>
+            </a>
+          )
+        }
         {
           content.demoLink !== "N/A" && (
             <a href={content.demoLink} target="_blank">
@@ -55,7 +66,7 @@ const { content } = Astro.props;
           <h2>Fun Fact</h2>
           <p>{content.funFact}</p>
         </div>
-        <a href="/projects/" class="view-more"><button>view more</button></a>
+        <a href={`/projects/#${content.title}`} class="view-more"><button>view more</button></a>
       </div>
       <svg class="bottom-wave" viewBox="0 0 1512 239" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 34.5728C0 34.5728 457.163 0.159884 751.5 0.000559518C1049.34 -0.160661 1512 34.5728 1512 34.5728V239H0V34.5728Z" fill="#0DAF94"/>

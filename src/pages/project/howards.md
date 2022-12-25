@@ -1,14 +1,13 @@
 ---
 layout: ../../layouts/project-layout.astro
-title: Food Tinder
+title: ARSE Mockup
 gif: /assets/demos/foodTinderDemo.gif
 blurb: stuff
 tags:
-  - Svelte
-  - CSS
-githubLink: https://github.com/acmCSUFDev/Food-Tinder
-demoLink: N/A
-figmaLink: N/A
+  - Figma
+githubLink: N/A
+demoLink: https://www.figma.com/proto/IDqGP9aFZh96hn4aBDPlYw/ARSE?node-id=12%3A3&scaling=scale-down&page-id=0%3A1&starting-point-node-id=12%3A3
+figmaLink: test
 funFact: I farted
 ---
 

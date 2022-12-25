@@ -1,0 +1,93 @@
+---
+import MainHead from "../components/MainHead.astro";
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
+import "../styles/experience-layout.css"
+
+const { content } = Astro.props;
+---
+
+<html lang={content.lang || "en"}>
+  <head>
+    <MainHead title={`Project | ${content.title}`} description={content.blurb} />
+  </head>
+  <body class="exp-body">
+    <Nav />
+    <header class="exp-header">
+      <h1 class="title">{content.title}</h1>
+      <p>{content.time}</p>
+      <svg class="header-wave" viewBox="0 0 1512 203" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1512 190L1247 203L835.5 149.5L290 203L0 190V0L1512 0V190Z" fill="#248889"/>
+      </svg>
+    </header>
+    <main class="layout">
+        <svg class="layout-wave" viewBox="0 0 1512 239" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1512 204.427C1512 204.427 1054.84 238.84 760.5 238.999C462.659 239.161 0 204.427 0 204.427V-5.14386e-06L1512 -5.14386e-06V204.427Z" fill="#315773"/>
+        </svg>
+        <div class="layout-info">
+            <slot/>
+            <div class="fun-fact">
+                <h2>Fun Fact</h2>
+                <p class="time">{content.funFact}</p>
+            </div>
+            <a href="/about/#exp-section" class="view-more"><button>view more</button></a>
+        </div>
+        <svg class="bottom-wave" viewBox="0 0 1512 349" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1512 348.115L0 348.115V69.1152C0 69.1152 210.172 32.6835 346 33.6152C500.204 34.673 583.307 87.1994 737.5 85.1152C918.594 82.6674 1012.61 -8.3046 1193.5 0.615234C1320.57 6.88121 1512 69.1152 1512 69.1152V348.115Z" fill="#464D77"/>
+        </svg>
+    </main>
+    <Footer />
+    <style>
+      @media screen and (max-width: 1000px) {
+        .exp-body {
+          --title-text: 6em;
+          --ml-text: 2em;
+          --tiny-text: 1.25em;
+        }
+      }
+      @media screen and (max-width: 700px) {
+        .exp-body {
+          --title-text: 4em;
+          --ml-text: 1.75em;
+          --med-text: 1.5em;
+          --tiny-text: 1em;
+        }
+        .exp-header {
+          height: 300px;
+        }
+        .exp-body .layout-info {
+          width: 400px;
+        }
+      }
+      @media screen and (max-width: 470px) {
+        .exp-body {
+          --title-text: 3.5em;
+          --ml-text: 1.75em;
+          --med-text: 1em;
+          --tiny-text: 1em;
+        }
+        .exp-header {
+          height: 250px;
+        }
+        .exp-body .layout-info {
+          width: 300px;
+        }
+      }
+      @media screen and (max-width: 370px) {
+        .exp-body {
+          --title-text: 2.75em;
+          --ml-text: 1.75em;
+        }
+        .exp-header {
+          height: 225px;
+        }
+        .exp-body .title {
+          -webkit-text-stroke: 2px black;
+        }
+        .exp-body .layout-info {
+          width: 250px;
+        }
+      }
+    </style>
+  </body>
+</html>

@@ -198,7 +198,6 @@ main a {
     left: 0;
     z-index: 1;
     height: 100%;
-    /* overflow-x: hidden; */
     --start-left-pos: 0;
     --end-left-pos: -5%;
     animation: bounce 3000ms infinite linear;

@@ -9,6 +9,7 @@ tags:
   - CSS
 githubLink: https://github.com/EthanThatOneKid/acmcsuf.com
 demoLink: https://acmcsuf.com/quiz
+figmaLink: N/A
 funFact: I farted
 ---
 

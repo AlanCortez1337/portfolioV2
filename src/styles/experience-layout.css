@@ -1,12 +1,12 @@
-  .project-body {
-    background-color: var(--cyan);
+  .exp-body {
+    background-color: var(--purple2);
   }
-  .project-header {
+  .exp-header {
     width: 100%;
     height: 500px;
     position: relative;
     border-bottom: 8px solid black;
-    background-color: var(--purple2);
+    background-color: var(--purple3);
     z-index: 3;
     display: flex;
     justify-content: center;
@@ -15,17 +15,17 @@
     gap: 30px;
   }
   /* Slot Stuff */
-  .project-body h2 {
+  .exp-body h2 {
     font-size: var(--ml-text);
   }
 
-  .project-body p {
+  .exp-body p {
     margin: 0;
     font-size: var(--tiny-text);
   }
 
   /* Not Slot Stuff */
-  .project-body .title {
+  .exp-body .title {
     text-align: center;
     position: relative;
     z-index: 2;
@@ -36,35 +36,14 @@
     font-weight: 800;
     transition: all 250ms ease-out;
   }
-  .project-body .title:hover {
+  .exp-body .title:hover {
     text-shadow: 12px 12px black;
   }
-  .project-body .buttons {
-    display: flex;
-    gap: 30px;
+  .exp-body .exp-header p {
+    font-size: var(--med-text);
+    font-weight: 500;
   }
-  .project-body .buttons a button {
-    position: relative;
-    z-index: 2;
-    background-color: var(--green0);
-    border: black 6px solid;
-    box-shadow: 1px 1px black;
-    color: black;
-    font-size: var(--tiny-text);
-    font-weight: 600;
-    padding: 8px 12px;
-    border-radius: 10px;
-    transition: all 300ms ease-in-out;
-  }
-  .project-body .buttons a button:hover {
-    border-radius: 0px;
-    transform: scale(1.1);
-    box-shadow: 4px 4px black;
-  }
-  .project-body .buttons a button:active {
-    transform: scale(0.8);
-  }
-  .project-body .header-wave {
+  .exp-body .header-wave {
     position: absolute;
     z-index: 1;
     width: 100%;
@@ -74,7 +53,7 @@
     animation: top-bounce 4500ms infinite ease-in-out;
   }
   /* Content */
-  .project-body .layout {
+  .exp-body .layout {
     position: relative;
     width: 100%;
     padding: 100px 0;
@@ -83,7 +62,7 @@
     align-items: center;
     flex-direction: column;
   }
-  .project-body .layout-info {
+  .exp-body .layout-info {
     position: relative;
     z-index: 2;
     width: 600px;
@@ -91,26 +70,26 @@
     flex-direction: column;
     gap: 40px;
   }
-  .project-body .img-container {
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
+  .exp-body img {
+    object-fit: cover;
+    object-position: 0% 10%;
+    width: calc(100% - 16px);
+    height: 300px;
     border: 8px black solid;
     box-shadow: 6px 6px black;
     transition: all 350ms ease-in-out;
   }
-  .project-body .layout-info img {
-    width: 100%;
-    height: 100%;
-    transition: all 350ms ease-in-out;
-  }
-  .project-body .img-container:hover img {
-    transform: scale(1.1);
-  }
-  .project-body .img-container:hover {
+  .exp-body img:hover {
     box-shadow: 10px 10px black;
+    transform: scale(0.9);
+    border-radius: 50px;
   }
-  .project-body .fun-fact {
+  .exp-body img:active {
+    box-shadow: 10px 10px black;
+    transform: scale(1.05);
+    border-radius: 50px;
+  }
+  .exp-body .fun-fact {
     width: calc(100% - 80px);
     background-color: var(--green0);
     border: 8px black solid;
@@ -119,60 +98,27 @@
     padding: 25px 40px;
     transition: all 350ms ease-in-out;
   }
-  .project-body .fun-fact:hover {
+  .exp-body .fun-fact:hover {
     transform: scale(1.1);
     box-shadow: 12px 12px black;
   }
-  .project-body .fun-fact h2 {
+  .exp-body .fun-fact h2 {
     color: black;
     font-size: var(--ml-text);
   }
-  .project-body .fun-fact p {
+  .exp-body .fun-fact p {
     margin-top: 24px;
     color: black;
     font-size: var(--micro-text);
   }
-  .project-body .tag-card {
-    cursor: default;
-    user-select: none;
-    padding: 8px 12px;
-    border: 5px black solid;
-    font-weight: 500;
-    transition: all 350ms ease-in-out;
-  }
-  .project-body .tag-container {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
-  }
-  .project-body .tag-container p {
-    font-size: var(--tiny-text);
-  }
-  .project-body .tag-card:hover {
-    box-shadow: 4px 4px black;
-    transform: scale(1.2);
-  }
-  .project-body .tag-card:active {
-    transform: scale(0.8);
-  }
-  .project-body .tag-card:nth-child(n + 1) {
-    background-color: var(--green3);
-  }
-  .project-body .tag-card:nth-child(2n) {
-    background-color: var(--cyan);
-  }
-  .project-body .tag-card:nth-child(3n + 1) {
-    background-color: var(--purple3);
-  }
-  .project-body .view-more {
+  .exp-body .view-more {
     margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
   }
-  .project-body .view-more button {
+  .exp-body .view-more button {
     font-size: var(--tiny-text);
     background-color: var(--green0);
     padding: 8px 12px;
@@ -180,14 +126,14 @@
     font-weight: 500;
     transition: all 350ms ease-in-out;
   }
-  .project-body .view-more button:hover {
+  .exp-body .view-more button:hover {
     box-shadow: 4px 4px black;
     transform: scale(1.1);
   }
-  .project-body .view-more button:active {
+  .exp-body .view-more button:active {
     transform: scale(0.8);
   }
-  .project-body .layout-wave {
+  .exp-body .layout-wave {
     width: 100%;
     position: absolute;
     z-index: 1;
@@ -196,7 +142,7 @@
     --end-bot-pos: -15px;
     animation: top-bounce 4500ms infinite ease-in-out;
   }
-  .project-body .bottom-wave {
+  .exp-body .bottom-wave {
     width: 100%;
     position: absolute;
     z-index: 1;

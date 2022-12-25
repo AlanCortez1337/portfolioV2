@@ -8,6 +8,7 @@ tags:
   - Regex
 githubLink: https://github.com/AlanCortez1337/Discord-Bot-Python
 demoLink: N/A
+figmaLink: N/A
 funFact: I farted
 ---
 
