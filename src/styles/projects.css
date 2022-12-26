@@ -112,9 +112,17 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
   }
   .info h3 {
     font-size: var(--big-text);
+  }
+  .info-blurb {
+    margin: 25px 0;
+    text-align: center;
+    max-width: 450px;
+    font-size: var(--tiny-text);
+    font-weight: 400;
   }
   .tag-container {
     display: flex;

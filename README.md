@@ -1,29 +1,10 @@
-# Astro Starter Kit: Portfolio
+# My Very Own Portfolio _v2 | Blazingly Fast | \[Buzzwords\]_
 
-```
-npm create astro@latest -- --template portfolio
-```
+I did it once again, this time making a way more responsive and scalable website that properly display all my projects and skills. Feel free to browse the source code, and if you have and questions you can always contact me via my website.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/portfolio)
+## The Tech
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![portfolio](https://user-images.githubusercontent.com/4677417/186189473-03dda103-65d3-4220-8b60-180ccaee5939.png)
-
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:3000`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- React ⚛️
+- Astro 🚀
+- React Icons ❤️
+- Netlify paper 🧾

@@ -24,6 +24,10 @@
     font-size: var(--tiny-text);
   }
 
+  .project-body ul {
+    font-size: var(--micro-text);
+  }
+
   /* Not Slot Stuff */
   .project-body .title {
     text-align: center;

@@ -19,7 +19,7 @@ const { content } = Astro.props;
         {
           content.figmaLink !== "N/A" && (
             <a href={content.figmaLink} target="_blank">
-              <button>ProtoType</button>
+              <button>Mockup</button>
             </a>
           )
         }
@@ -74,6 +74,11 @@ const { content } = Astro.props;
     </main>
     <Footer />
     <style>
+      @media screen and (min-width: 1100px) {
+        .project-body {
+          --micro-text: 1.1em;
+        }
+      }
       @media screen and (max-width: 1000px) {
         .project-body {
           --title-text: 6em;
