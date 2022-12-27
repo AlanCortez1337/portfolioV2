@@ -8,15 +8,15 @@ import Icons from "./icons";
       <h3>Designed and developed by Alan Cortez</h3>
       <div class="icons">
         <a
-          href="https://docs.google.com/document/d/1WgFxvm5z1IBIdMeri4NDSyZzI855fQZRAZP5GZUopmc/edit"
+          href="/resume.pdf"
           target="_blank"
-          ><Icons iconName={"resume"} size="var(--footer-icons)"/>
+          ><Icons iconName={"resume"} size={"2em"}/>
         </a>
         <a href="https://github.com/AlanCortez1337" target="_blank"
-          ><Icons iconName={"github"} size="var(--footer-icons)"/>
+          ><Icons iconName={"github"} size={"2em"}/>
         </a>
         <a href="https://www.linkedin.com/in/alancortez1337/" target="_blank"
-          ><Icons iconName={"linkedIn"} size="var(--footer-icons)"/>
+          ><Icons iconName={"linkedIn"} size={"2em"}/>
         </a>
       </div>
     </div>
@@ -24,17 +24,22 @@ import Icons from "./icons";
 </footer>
 <style>
   footer {
+    height: 90px;
     overflow: hidden;
     position: relative;
     z-index: 10;
     width: 100%;
     background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .footer-items {
+    width: 80%;
     padding: 15px 10%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
   }
   .footer-wrapper {
@@ -63,18 +68,11 @@ import Icons from "./icons";
     color: var(--green1);
   }
   @media screen and (max-width: 800px) {
-    footer {
-      --footer-icons: 2em;
-
-    }
     h3 {
       font-size: 16px;
     }
   }
   @media screen and (max-width: 800px) {
-    footer {
-      --footer-icons: 2em;
-    }
     h3 {
       font-size: 12px;
     }

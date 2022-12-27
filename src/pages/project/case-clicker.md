@@ -33,9 +33,8 @@ I like to think that in the time frame I set myself for that I achieved all of t
 
 It goes without saying that learning React was a challenge during this time but I think a particular thing that stumped me was Hooks. At a surface are built-in React tools to help manage state and all that gross stuff. I felt really accomplished when it clicked how useState and useEffect works, especially when combining these two in order to create my own custom Hook. These were some fun challenges I faced and I think the best part of this project was that it was a gift which motivates me to build more radical things for people.
 
-Some other minor challenges I faced were:
+Some other _minor challenges_ I faced were:
 
 - The logic of a universal timer to handle: affection meter, perk countdown, and the literal timer
-- The logic of the reaction waterfall with the emojis.
-  - The way I implemented this was to push a new emoji into a vector and have that animate shortly. I feel like there might be a better solution upon further consideration.
+- The logic of the reaction waterfall with the emojis was trick. The way I implemented this was to push a new emoji into a vector and have that animate for a short time. I feel like there might be a better solution upon further consideration.
 - How state interacts with setTimeout() in JavaScript. (It did not help that I was stubborn enough to try and create my own timer without too much research)

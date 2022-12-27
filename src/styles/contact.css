@@ -141,6 +141,7 @@ main {
 
 .socials a:nth-child(3) button h4 {
   margin: 0;
+  padding-left: 20px;
   color: var(--text-color);
   font-size: var(--med-text);
 }

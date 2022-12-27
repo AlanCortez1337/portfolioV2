@@ -1,5 +1,5 @@
   .project-body {
-    background-color: var(--cyan);
+    background-color: var(--purple3);
   }
   .project-header {
     width: 100%;
@@ -24,8 +24,18 @@
     font-size: var(--tiny-text);
   }
 
-  .project-body ul {
-    font-size: var(--micro-text);
+  .project-body ul > * {
+    font-size: calc(var(--tiny-text) - 0.25em);
+  }
+  .project-body li {
+    margin: 10px 0;
+  }
+
+  .project-body h4 {
+    margin: 0;
+    font-size: calc(var(--med-text) - 0.25em);
+    font-style: italic;
+    font-weight: 500;
   }
 
   /* Not Slot Stuff */
@@ -96,14 +106,17 @@
     gap: 40px;
   }
   .project-body .img-container {
-    width: 100%;
-    height: 400px;
+    width: calc(100% - 12px);
+    height: auto;
     overflow: hidden;
     border: 8px black solid;
     box-shadow: 6px 6px black;
     transition: all 350ms ease-in-out;
   }
   .project-body .layout-info img {
+    object-fit: contain;
+    transform: scaleY(1.02);
+    background-color: black;
     width: 100%;
     height: 100%;
     transition: all 350ms ease-in-out;

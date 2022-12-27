@@ -15,7 +15,7 @@ funFact: I came up with this idea in the morning after having a random dream abo
 
 ## Purpose
 
-As the name entails, this is an interactive quiz to determine which team you loosely fit based on some silly little questions. After filling out the questions, the user would be faced with the results with visual percentages about which team they might enjoy more. Additionally, if the user tapped on a particular team then they would be directed to a place where they can find more info about the team.
+As the name entails, this is an _interactive quiz_ to determine which team you loosely fit based on some silly little questions. After filling out the questions, the user would be faced with the results with visual percentages about which team they might enjoy more. Additionally, if the user tapped on a particular team then they would be directed to a place where they can find more info about the team.
 
 ## Lore
 
@@ -23,9 +23,9 @@ In the ACM club I am a part of a common struggle in the beginning was that there
 
 ## Challenges
 
-I think the biggest challenge that arose was definitely the overall time frame. Originally, I was going to take my time developing this silly little page but that soon changed. Someone suggested that this could potentially be finished for a club event happening in less than a week. I was a bit hesitant at first but I accepted the challenge and faced the crunch.
+I think the biggest challenge that arose was definitely the overall time frame. Originally, I was going to take my time developing this silly little page but that soon changed. Someone suggested that this could potentially be finished for a club event happening in _less than a week_. I was a bit hesitant at first but I accepted the challenge and faced the crunch.
 
-Some minor challenges that rose were:
+Some _minor challenges_ that rose were:
 
 - Being exposed to TypeScript for the first real time
 - Going back to play with Svelte after being brainwashed by the all-mighty React structure

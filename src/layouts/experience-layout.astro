@@ -30,14 +30,15 @@ const { content } = Astro.props;
                 <h2>Fun Fact</h2>
                 <p class="time">{content.funFact}</p>
             </div>
-            <a href="/about/#exp-section" class="view-more"><button>view more</button></a>
         </div>
+        <a href="/about/#exp-section" class="view-more"><button>view more</button></a>
         <svg class="bottom-wave" viewBox="0 0 1512 349" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1512 348.115L0 348.115V69.1152C0 69.1152 210.172 32.6835 346 33.6152C500.204 34.673 583.307 87.1994 737.5 85.1152C918.594 82.6674 1012.61 -8.3046 1193.5 0.615234C1320.57 6.88121 1512 69.1152 1512 69.1152V348.115Z" fill="#464D77"/>
         </svg>
     </main>
     <Footer />
     <style>
+
       @media screen and (max-width: 1000px) {
         .exp-body {
           --title-text: 6em;

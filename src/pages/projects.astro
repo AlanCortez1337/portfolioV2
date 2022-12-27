@@ -39,7 +39,7 @@ const projects = await Astro.glob("./project/*.md");
                   </a>
                 }
                 <a href={project.url}>
-                  <img src={project.frontmatter.gif} alt={`${project.frontmatter.title} demo display`}/>
+                  <img src={project.frontmatter.gif} loading="lazy" alt={`${project.frontmatter.title} demo display`}/>
                 </a>
                 {
                   project.frontmatter.figmaLink !== "N/A" && (
@@ -152,6 +152,8 @@ const projects = await Astro.glob("./project/*.md");
           height: 300px;
         }
         .demo-text {
+          border: 4px solid black;
+          left: 0%;
           font-size: 12px;
         }
         .info-blurb {

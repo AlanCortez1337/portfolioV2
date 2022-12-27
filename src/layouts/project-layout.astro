@@ -51,11 +51,11 @@ const { content } = Astro.props;
       >
         <path
           d="M0 0H1512V279C1512 279 1301.83 315.432 1166 314.5C1011.8 313.442 928.693 260.916 774.5 263C593.406 265.448 499.391 356.42 318.5 347.5C191.428 341.234 0 279 0 279V0Z"
-          fill="#2F7483"></path>  
+          fill="#248889"></path>  
       </svg>
       <div class="layout-info">
         <div class="img-container">
-          <img src={content.gif} alt={`${content.title} demo display`} />
+          <img src={content.gif} loading="lazy" alt={`${content.title} demo display`} />
         </div>
         <div class="tag-container">
           {content.tags.map((tag) => <p class="tag-card">{tag}</p>)}
@@ -69,7 +69,7 @@ const { content } = Astro.props;
         <a href={`/projects/#${content.title}`} class="view-more"><button>view more</button></a>
       </div>
       <svg class="bottom-wave" viewBox="0 0 1512 239" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 34.5728C0 34.5728 457.163 0.159884 751.5 0.000559518C1049.34 -0.160661 1512 34.5728 1512 34.5728V239H0V34.5728Z" fill="#0DAF94"/>
+        <path d="M0 34.5728C0 34.5728 457.163 0.159884 751.5 0.000559518C1049.34 -0.160661 1512 34.5728 1512 34.5728V239H0V34.5728Z" fill="#3B617D"/>
       </svg>
     </main>
     <Footer />
@@ -98,8 +98,8 @@ const { content } = Astro.props;
         .project-body .layout-info {
           width: 400px;
         }
-        .project-body .img-container {
-          height: 275px;
+        .project-body ul > * {
+          font-size: var(--tiny-text);
         }
       }
       @media screen and (max-width: 470px) {
@@ -114,14 +114,9 @@ const { content } = Astro.props;
         .project-body .buttons a button {
           border: black 4px solid;
         }
+        
         .project-body .layout-info {
           width: 300px;
-        }
-        .project-body .img-container {
-          height: 225px;
-        }
-        .project-body .img-container img {
-          transform: scale(1.1);
         }
       }
       @media screen and (max-width: 370px) {
@@ -137,12 +132,6 @@ const { content } = Astro.props;
         }
         .project-body .layout-info {
           width: 250px;
-        }
-        .project-body .img-container {
-          height: 200px;
-        }
-        .project-body .img-container img {
-          transform: scale(1.2);
         }
       }
     </style>

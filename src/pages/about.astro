@@ -57,6 +57,7 @@ const hobbies = [
       <div class="graphic">
         <img
           src="/assets/headerPic.webp"
+          loading="lazy"
           alt="myself looking up and pointing in a power stance"
         />
         <!-- logo shape -->
@@ -189,7 +190,7 @@ const hobbies = [
         hobbies.map((hobby) => (
           <div class="hobby-card">
             <p>{hobby.title}</p>
-            <img src={hobby.url} alt={hobby.description} />
+            <img src={hobby.url} loading="lazy" alt={hobby.description} />
           </div>
         ))
       }

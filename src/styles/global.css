@@ -36,8 +36,6 @@
 	--small-text: 1.75em;
 	--tiny-text: 1.5em;
 	--micro-text: 1em;
-
-	--footer-icons: 3em;
 }
 
 h1, h2, h3, ul, li, body, svg {
@@ -69,6 +67,10 @@ a {
 }
 ::-webkit-scrollbar-thumb {
 	background-color: var(--scrollBarThumb);
+}
+
+strong, em {
+	color: var(--text-highlight);
 }
 
 /* Buttons */
