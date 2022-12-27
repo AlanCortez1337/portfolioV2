@@ -208,3 +208,14 @@ text-shadow: 12px 12px black;
 		transform: scale(1);
 	}
   }
+
+
+  @media screen and (orientation:portrait) {
+	.alt-text {
+	  -webkit-text-stroke: 0px;
+	  text-shadow: 0px 0px;
+	}
+	.name-text {
+	  font-weight: 500;
+	}
+  }
