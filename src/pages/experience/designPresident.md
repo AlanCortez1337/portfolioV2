@@ -3,8 +3,8 @@ layout: ../../layouts/experience-layout.astro
 title: ACM Design President
 time: May 2022 - Present
 highlights:
-  - Communicated complex C++ concepts to students with varying levels of understanding
-  - Constructed engaging exercises for students to comprehend object-oriented concepts
+  - Organize a team to develop and communicate instructional workshops on UI/UX concepts and front-end web development.
+  - Produce and design mockups, prototypes and weekly promotional content using Figma.
 funFact: Joining this club is what motivated me to pursue a career in web development.
 ---
 
