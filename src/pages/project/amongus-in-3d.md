@@ -5,7 +5,7 @@ gif: /assets/demos/amongus3D.gif
 blurb: A small project demonstrating the power of Spline
 tags:
   - React
-  - NextJS
+  - NextJS 12
   - Spline
 githubLink: https://github.com/AlanCortez1337/amongus-in-3d
 demoLink: https://amongus-in-3d.netlify.app/

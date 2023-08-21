@@ -1,20 +1,30 @@
 ---
 import Hamburger from "./hamburger";
-import Icons from "./icons.jsx"
+import Icons from "./icons.jsx";
 ---
 
 <nav>
   <div class="nav-items">
     <!-- logo -->
-    <a href="/" class="home"><button><Icons iconName={"home"} size="1em"/>Home</button></a>
+    <a href="/" class="home"
+      ><button><Icons iconName={"home"} size="1em" />Home</button>
+    </a>
     <div class="nav-items-buttons">
-      <a href="/about/"><button><Icons iconName={"abt"} size="1em"/>About</button></a>
-      <a href="/projects/"><button><Icons iconName={"work"} size="1em"/>Work</button></a>
-      <a href="/contact/"><button><Icons iconName={"chat"} size="1em"/>Connect</button></a>
-      <a href="/resume.pdf" target="_blank"><button><Icons iconName={"resume"} size="1em"/>Resume</button></a>
+      <a href="/about/"
+        ><button><Icons iconName={"abt"} size="1em" />About</button>
+      </a>
+      <a href="/projects/"
+        ><button><Icons iconName={"work"} size="1em" />Projects</button>
+      </a>
+      <a href="/contact/"
+        ><button><Icons iconName={"chat"} size="1em" />Connect</button>
+      </a>
+      <a href="/resume.pdf" target="_blank"
+        ><button><Icons iconName={"resume"} size="1em" />Resume</button>
+      </a>
     </div>
     <div class="hamburger">
-      <Hamburger client:load/>
+      <Hamburger client:load />
     </div>
   </div>
 </nav>
@@ -119,11 +129,9 @@ import Icons from "./icons.jsx"
 
   .nav-items-buttons a:nth-child(4):hover {
     background-color: var(--green3);
-
   }
   .nav-items-buttons a:nth-child(4):hover button {
     background-color: var(--green3);
-
   }
 
   @media screen and (max-width: 1000px) {

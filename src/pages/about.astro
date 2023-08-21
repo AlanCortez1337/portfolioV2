@@ -2,7 +2,7 @@
 import MainHead from "../components/MainHead.astro";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
-import "../styles/about.css"
+import "../styles/about.css";
 
 const experiences = await Astro.glob("./experience/*.md");
 
@@ -17,6 +17,7 @@ const skills = [
   "Astro",
   "Git",
   "Figma",
+  "Prisma",
 ];
 
 const hobbies = [
@@ -43,7 +44,10 @@ const hobbies = [
 
 <html lang="en">
   <head>
-    <MainHead title="Alan Cortez | About" description="The ins and outs of Alan Cortez"/>
+    <MainHead
+      title="Alan Cortez | About"
+      description="The ins and outs of Alan Cortez"
+    />
   </head>
   <body>
     <Nav />
@@ -51,8 +55,8 @@ const hobbies = [
       <h1 class="title">About Me</h1>
       <p>
         How's it going, I am Alan Cortez a web developer based in Southern
-        California. My goal is to make your web experience easier and an amusing
-        adventure.
+        California. I am here to make your web experience a fun yet silly
+        eyesore.
       </p>
       <div class="graphic">
         <img
