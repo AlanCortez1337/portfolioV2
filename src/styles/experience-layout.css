@@ -1,164 +1,169 @@
-  .exp-body {
-    background-color: var(--purple2);
-  }
-  .exp-header {
-    width: 100%;
-    height: 500px;
-    position: relative;
-    border-bottom: 8px solid black;
-    background-color: var(--purple3);
-    z-index: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 30px;
-  }
-  /* Slot Stuff */
-  .exp-body h2 {
-    font-size: var(--ml-text);
-  }
+.exp-body {
+  background-color: var(--purple2);
+}
+.exp-header {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  border-bottom: 8px solid black;
+  background-color: var(--purple3);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+/* Slot Stuff */
+.exp-body h2 {
+  font-size: var(--ml-text);
+}
 
-  .exp-body h4 {
-    margin: 0;
-    font-size: calc(var(--ml-text) - 0.5em);
-    font-style: italic;
-    font-weight: 500;
-  }
+.exp-body h4 {
+  margin: 0;
+  font-size: calc(var(--ml-text) - 0.5em);
+  font-style: italic;
+  font-weight: 500;
+}
 
-  .exp-body p {
-    margin: 0;
-    font-size: var(--tiny-text);
-  }
+.exp-body li {
+  margin: 0;
+  font-size: var(--tiny-text);
+}
 
-  .exp-body .layout-info a {
-    color: var(--text-highlight);
-    text-decoration: underline;
-  }
+.exp-body p {
+  margin: 0;
+  font-size: var(--tiny-text);
+}
 
-  /* Not Slot Stuff */
-  .exp-body .title {
-    text-align: center;
-    position: relative;
-    z-index: 2;
-    width: fit-content;
-    font-size: var(--title-text);
-    -webkit-text-stroke: 3px black;
-    text-shadow: 6px 6px black;
-    font-weight: 800;
-    transition: all 250ms ease-out;
-  }
-  .exp-body .title:hover {
-    text-shadow: 12px 12px black;
-  }
-  .exp-body .exp-header p {
-    font-size: var(--med-text);
-    font-weight: 500;
-  }
-  .exp-body .header-wave {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    top: 0;
-    --start-bot-pos: -55px;
-    --end-bot-pos: -15px;
-    animation: top-bounce 4500ms infinite ease-in-out;
-  }
-  /* Content */
-  .exp-body .layout {
-    position: relative;
-    width: 100%;
-    padding: 100px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  .exp-body .layout-info {
-    position: relative;
-    z-index: 2;
-    width: 600px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-  }
-  .exp-body img {
-    object-fit: cover;
-    object-position: 0% 10%;
-    width: calc(100% - 16px);
-    border: 8px black solid;
-    box-shadow: 6px 6px black;
-    transition: all 350ms ease-in-out;
-  }
-  .exp-body img:hover {
-    box-shadow: 10px 10px black;
-    transform: scale(0.9);
-    border-radius: 50px;
-  }
-  .exp-body img:active {
-    box-shadow: 10px 10px black;
-    transform: scale(1.05);
-    border-radius: 50px;
-  }
-  .exp-body .fun-fact {
-    width: calc(100% - 80px);
-    background-color: var(--green0);
-    border: 8px black solid;
-    border-radius: 40px;
-    box-shadow: 6px 6px black;
-    padding: 25px 40px;
-    transition: all 350ms ease-in-out;
-  }
-  .exp-body .fun-fact:hover {
-    transform: scale(1.1);
-    box-shadow: 12px 12px black;
-  }
-  .exp-body .fun-fact h2 {
-    color: black;
-    font-size: var(--ml-text);
-  }
-  .exp-body .fun-fact p {
-    margin-top: 24px;
-    color: black;
-    font-size: var(--micro-text);
-  }
-  .exp-body .view-more {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-  }
-  .exp-body .view-more button {
-    font-size: var(--tiny-text);
-    background-color: var(--green0);
-    padding: 8px 12px;
-    border: 5px black solid;
-    font-weight: 500;
-    transition: all 350ms ease-in-out;
-  }
-  .exp-body .view-more button:hover {
-    box-shadow: 4px 4px black;
-    transform: scale(1.1);
-  }
-  .exp-body .view-more button:active {
-    transform: scale(0.8);
-  }
-  .exp-body .layout-wave {
-    width: 100%;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    --start-bot-pos: -55px;
-    --end-bot-pos: -15px;
-    animation: top-bounce 4500ms infinite ease-in-out;
-  }
-  .exp-body .bottom-wave {
-    width: 100%;
-    position: absolute;
-    z-index: 1;
-    bottom: 0;
-    --start-bot-pos: -15px;
-    --end-bot-pos: -55px;
-    animation: bounce 4900ms infinite ease-in-out;
-  }
+.exp-body .layout-info a {
+  color: var(--text-highlight);
+  text-decoration: underline;
+}
+
+/* Not Slot Stuff */
+.exp-body .title {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  width: fit-content;
+  font-size: var(--title-text);
+  -webkit-text-stroke: 3px black;
+  text-shadow: 6px 6px black;
+  font-weight: 800;
+  transition: all 250ms ease-out;
+}
+.exp-body .title:hover {
+  text-shadow: 12px 12px black;
+}
+.exp-body .exp-header p {
+  font-size: var(--med-text);
+  font-weight: 500;
+}
+.exp-body .header-wave {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  --start-bot-pos: -55px;
+  --end-bot-pos: -15px;
+  animation: top-bounce 4500ms infinite ease-in-out;
+}
+/* Content */
+.exp-body .layout {
+  position: relative;
+  width: 100%;
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.exp-body .layout-info {
+  position: relative;
+  z-index: 2;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.exp-body img {
+  object-fit: cover;
+  object-position: 0% 10%;
+  width: calc(100% - 16px);
+  border: 8px black solid;
+  box-shadow: 6px 6px black;
+  transition: all 350ms ease-in-out;
+}
+.exp-body img:hover {
+  box-shadow: 10px 10px black;
+  transform: scale(0.9);
+  border-radius: 50px;
+}
+.exp-body img:active {
+  box-shadow: 10px 10px black;
+  transform: scale(1.05);
+  border-radius: 50px;
+}
+.exp-body .fun-fact {
+  width: calc(100% - 80px);
+  background-color: var(--green0);
+  border: 8px black solid;
+  border-radius: 40px;
+  box-shadow: 6px 6px black;
+  padding: 25px 40px;
+  transition: all 350ms ease-in-out;
+}
+.exp-body .fun-fact:hover {
+  transform: scale(1.1);
+  box-shadow: 12px 12px black;
+}
+.exp-body .fun-fact h2 {
+  color: black;
+  font-size: var(--ml-text);
+}
+.exp-body .fun-fact p {
+  margin-top: 24px;
+  color: black;
+  font-size: var(--tiny-text);
+}
+.exp-body .view-more {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.exp-body .view-more button {
+  font-size: var(--tiny-text);
+  background-color: var(--green0);
+  padding: 8px 12px;
+  border: 5px black solid;
+  font-weight: 500;
+  transition: all 350ms ease-in-out;
+}
+.exp-body .view-more button:hover {
+  box-shadow: 4px 4px black;
+  transform: scale(1.1);
+}
+.exp-body .view-more button:active {
+  transform: scale(0.8);
+}
+.exp-body .layout-wave {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  --start-bot-pos: -55px;
+  --end-bot-pos: -15px;
+  animation: top-bounce 4500ms infinite ease-in-out;
+}
+.exp-body .bottom-wave {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  --start-bot-pos: -15px;
+  --end-bot-pos: -55px;
+  animation: bounce 4900ms infinite ease-in-out;
+}

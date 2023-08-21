@@ -2,14 +2,17 @@
 import MainHead from "../components/MainHead.astro";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
-import "../styles/project-layout.css"
+import "../styles/project-layout.css";
 
 const { content } = Astro.props;
 ---
 
 <html lang={content.lang || "en"}>
   <head>
-    <MainHead title={`Project | ${content.title}`} description={content.blurb} />
+    <MainHead
+      title={`Project | ${content.title}`}
+      description={content.blurb}
+    />
   </head>
   <body class="project-body">
     <Nav />
@@ -38,8 +41,15 @@ const { content } = Astro.props;
           )
         }
       </div>
-      <svg class="header-wave" viewBox="0 0 1512 187" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 0H1512V153.813C1512 153.813 1386 179.318 1301 178.749C1187.33 177.988 1142.82 125.601 1029.5 129.809C926.851 133.62 898.837 184.43 796 186.906C702.565 189.155 663.55 150.478 570 149.851C506.821 149.427 474.676 164.469 411.5 164.999C307.66 165.871 259.952 125.539 156.5 129.809C92.4096 132.454 0 153.813 0 153.813V0Z" fill="#2F5978"/>
+      <svg
+        class="header-wave"
+        viewBox="0 0 1512 187"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0H1512V153.813C1512 153.813 1386 179.318 1301 178.749C1187.33 177.988 1142.82 125.601 1029.5 129.809C926.851 133.62 898.837 184.43 796 186.906C702.565 189.155 663.55 150.478 570 149.851C506.821 149.427 474.676 164.469 411.5 164.999C307.66 165.871 259.952 125.539 156.5 129.809C92.4096 132.454 0 153.813 0 153.813V0Z"
+          fill="#2F5978"></path>
       </svg>
     </header>
     <main class="layout">
@@ -51,11 +61,16 @@ const { content } = Astro.props;
       >
         <path
           d="M0 0H1512V279C1512 279 1301.83 315.432 1166 314.5C1011.8 313.442 928.693 260.916 774.5 263C593.406 265.448 499.391 356.42 318.5 347.5C191.428 341.234 0 279 0 279V0Z"
-          fill="#248889"></path>  
+          fill="#248889"></path>
       </svg>
       <div class="layout-info">
         <div class="img-container">
-          <img src={content.gif} loading="lazy" alt={`${content.title} demo display`} />
+          <img
+            src={content.gif}
+            loading="lazy"
+            alt={`${content.title} demo display`}
+            class="alt-img"
+          />
         </div>
         <div class="tag-container">
           {content.tags.map((tag) => <p class="tag-card">{tag}</p>)}
@@ -66,10 +81,19 @@ const { content } = Astro.props;
           <h2>Fun Fact</h2>
           <p>{content.funFact}</p>
         </div>
-        <a href={`/projects/#${content.title}`} class="view-more"><button>view more</button></a>
+        <a href={`/projects/#${content.title}`} class="view-more"
+          ><button>view more</button>
+        </a>
       </div>
-      <svg class="bottom-wave" viewBox="0 0 1512 239" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 34.5728C0 34.5728 457.163 0.159884 751.5 0.000559518C1049.34 -0.160661 1512 34.5728 1512 34.5728V239H0V34.5728Z" fill="#3B617D"/>
+      <svg
+        class="bottom-wave"
+        viewBox="0 0 1512 239"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 34.5728C0 34.5728 457.163 0.159884 751.5 0.000559518C1049.34 -0.160661 1512 34.5728 1512 34.5728V239H0V34.5728Z"
+          fill="#3B617D"></path>
       </svg>
     </main>
     <Footer />
@@ -108,13 +132,14 @@ const { content } = Astro.props;
           --ml-text: 1.75em;
           --tiny-text: 1em;
         }
+
         .project-header {
           height: 250px;
         }
         .project-body .buttons a button {
           border: black 4px solid;
         }
-        
+
         .project-body .layout-info {
           width: 300px;
         }
