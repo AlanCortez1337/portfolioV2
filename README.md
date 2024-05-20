@@ -7,4 +7,3 @@ I did it once again, this time making a way more responsive and scalable website
 - React ⚛️
 - Astro 🚀
 - React Icons ❤️
-- Netlify paper 🧾
