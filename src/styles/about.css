@@ -1,16 +1,16 @@
-body {
-    background-color: var(--green0);
+  body {
+    background: linear-gradient(to right, var(--green1) 40%, var(--green0));
   }
   .title {
     width: fit-content;
     font-size: var(--title-text);
-    -webkit-text-stroke: 3px black;
-    text-shadow: 6px 6px black;
+    -webkit-text-stroke: 3px #0C0C0C;
+    text-shadow: 6px 6px #0C0C0C;
     font-weight: 800;
     transition: all 250ms ease-out;
   }
   .title:hover {
-    text-shadow: 12px 12px black;
+    text-shadow: 12px 12px #0C0C0C;
   }
   /* header */
   header {
@@ -39,17 +39,17 @@ body {
     grid-area: blurb;
     width: 400px;
     padding: 1.5em;
-    background-color: var(--purple3);
-    border: black 10px solid;
+    background: linear-gradient(to top, var(--purple1) 40%, var(--purple2));
+    border: #0C0C0C 10px solid;
     border-radius: 50px;
-    box-shadow: 5px 5px black;
+    box-shadow: 5px 5px #0C0C0C;
     font-size: var(--med-text);
     font-weight: 500;
     transition: all 350ms ease-in-out;
     text-align: center;
   }
   header p:hover {
-    box-shadow: 15px 15px black;
+    box-shadow: 15px 15px #0C0C0C;
     transform: scale(1.07);
   }
   header .graphic {
@@ -131,8 +131,8 @@ body {
   .skill-section {
     overflow: hidden;
     position: relative;
-    background-color: var(--purple3);
-    border-top: 8px solid black;
+    background: linear-gradient(to top, var(--purple3) 10%, var(--purple2));
+    border-top: 8px solid #0C0C0C;
     display: flex;
     flex-direction: column;
     padding: 0 10% 5% 10%;
@@ -158,18 +158,24 @@ body {
     margin: 30px 0;
     position: relative;
     z-index: 2;
-    background-color: var(--green0);
-    border: black 6px solid;
-    box-shadow: 4px 4px black;
-    color: black;
+    background: linear-gradient(to left, var(--green0) 40%, var(--green1));
+    border: #0C0C0C 6px solid;
+    box-shadow: 4px 4px #0C0C0C;
+    color: #0C0C0C;
     font-size: var(--ml-text);
     font-weight: 600;
     padding: 8px 12px;
-    transition: all 500ms ease-in-out;
+    transition: all 250ms ease-in-out;
+  }
+  .skill-item:nth-child(n + 1) {
+    background: linear-gradient(to right, var(--green3) 30%, var(--green1));
+  }
+  .skill-item:nth-child(n + 2) {
+    background: linear-gradient(to top, var(--green2) 10%, var(--green1));
   }
   .skill-item:hover {
     border: var() 6px solid;
-    box-shadow: 8px 8px black;
+    box-shadow: 8px 8px #0C0C0C;
     border-radius: 10px;
     transform: scale(1.3);
   }
@@ -191,8 +197,8 @@ body {
     height: 100%;
     overflow: hidden;
     position: relative;
-    background-color: var(--purple2);
-    border-top: 8px solid black;
+    background: linear-gradient(to left, var(--purple2) 20%, var(--cyan));
+    border-top: 8px solid #0C0C0C;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
@@ -213,9 +219,9 @@ body {
     min-height: 400px;
     width: calc(100% - 19px);
     margin-top: 8%;
-    border: black 9px solid;
+    border: #0C0C0C 9px solid;
     border-radius: 25px;
-    box-shadow: 6px 6px black;
+    box-shadow: 6px 6px #0C0C0C;
     display: flex;
     flex-direction: column;
     transition: all 300ms ease-in-out;
@@ -231,7 +237,7 @@ body {
   }
   .exp-card:hover {
     transform: scale(1.05);
-    box-shadow: 12px 12px black;
+    box-shadow: 12px 12px #0C0C0C;
   }
   .exp-card h3 {
     padding: 4% 10% 0 10%;
@@ -258,8 +264,8 @@ body {
   }
   .exp-card button {
     background-color: var(--green0);
-    border: black 6px solid;
-    color: black;
+    border: #0C0C0C 6px solid;
+    color: #0C0C0C;
     font-size: var(--micro-text);
     font-weight: 600;
     padding: 8px 12px;
@@ -290,7 +296,7 @@ body {
     position: relative;
     z-index: 0;
     background-color: var(--purple1);
-    border-top: 8px solid black;
+    border-top: 8px solid #0C0C0C;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
@@ -315,8 +321,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 8px solid black;
-    box-shadow: 6px 6px black;
+    border: 8px solid #0C0C0C;
+    box-shadow: 6px 6px #0C0C0C;
     background-color: var(--purple0);
   }
   .hobby-card p {

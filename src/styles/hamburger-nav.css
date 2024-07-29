@@ -21,7 +21,7 @@
     flex-direction: column;
     gap: 20px;
     background-color: var(--green2);
-    border-bottom: 8px solid black;
+    border-bottom: 8px solid #0C0C0C;
 }
 
 .modal-text {

@@ -5,7 +5,7 @@
   width: 100%;
   height: 500px;
   position: relative;
-  border-bottom: 8px solid black;
+  border-bottom: 8px solid #0C0C0C;
   background-color: var(--purple3);
   z-index: 3;
   display: flex;
@@ -48,13 +48,13 @@
   z-index: 2;
   width: fit-content;
   font-size: var(--title-text);
-  -webkit-text-stroke: 3px black;
-  text-shadow: 6px 6px black;
+  -webkit-text-stroke: 3px #0C0C0C;
+  text-shadow: 6px 6px #0C0C0C;
   font-weight: 800;
   transition: all 250ms ease-out;
 }
 .exp-body .title:hover {
-  text-shadow: 12px 12px black;
+  text-shadow: 12px 12px #0C0C0C;
 }
 .exp-body .exp-header p {
   font-size: var(--med-text);
@@ -91,40 +91,40 @@
   object-fit: cover;
   object-position: 0% 10%;
   width: calc(100% - 16px);
-  border: 8px black solid;
-  box-shadow: 6px 6px black;
+  border: 8px #0C0C0C solid;
+  box-shadow: 6px 6px #0C0C0C;
   transition: all 350ms ease-in-out;
 }
 .exp-body img:hover {
-  box-shadow: 10px 10px black;
+  box-shadow: 10px 10px #0C0C0C;
   transform: scale(0.9);
   border-radius: 50px;
 }
 .exp-body img:active {
-  box-shadow: 10px 10px black;
+  box-shadow: 10px 10px #0C0C0C;
   transform: scale(1.05);
   border-radius: 50px;
 }
 .exp-body .fun-fact {
   width: calc(100% - 80px);
   background-color: var(--green0);
-  border: 8px black solid;
+  border: 8px #0C0C0C solid;
   border-radius: 40px;
-  box-shadow: 6px 6px black;
+  box-shadow: 6px 6px #0C0C0C;
   padding: 25px 40px;
   transition: all 350ms ease-in-out;
 }
 .exp-body .fun-fact:hover {
   transform: scale(1.1);
-  box-shadow: 12px 12px black;
+  box-shadow: 12px 12px #0C0C0C;
 }
 .exp-body .fun-fact h2 {
-  color: black;
+  color: #0C0C0C;
   font-size: var(--ml-text);
 }
 .exp-body .fun-fact p {
   margin-top: 24px;
-  color: black;
+  color: #0C0C0C;
   font-size: var(--tiny-text);
 }
 .exp-body .view-more {
@@ -138,12 +138,12 @@
   font-size: var(--tiny-text);
   background-color: var(--green0);
   padding: 8px 12px;
-  border: 5px black solid;
+  border: 5px #0C0C0C solid;
   font-weight: 500;
   transition: all 350ms ease-in-out;
 }
 .exp-body .view-more button:hover {
-  box-shadow: 4px 4px black;
+  box-shadow: 4px 4px #0C0C0C;
   transform: scale(1.1);
 }
 .exp-body .view-more button:active {

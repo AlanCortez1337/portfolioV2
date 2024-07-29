@@ -22,16 +22,16 @@ const projects = await Astro.glob("./project/*.md");
       
     <header>
       <div class="hero-text">
-        <h2 class="text-hover alt-text">I am <span class="name-text">Alan Cortez</span>, a</h2>
+        <h2 class="text-hover alt-text p-alt">I am <span class="name-text">Alan Cortez</span>, a</h2>
         <h1>
           <span class="text-hover">UI/UX</span><br>
           <span class="text-hover">FullStack</span><br>
           <span class="text-hover">Web Developer</span> 
         </h1>
-        <p class="text-hover alt-text">Here to be the <span class="name-text">unicorn</span>  for your next project.</p>
+        <p class="text-hover alt-text p-alt">Here to be the <span class="name-text">unicorn</span>  for your next project.</p>
       </div>
       <svg class="wave" viewBox="0 0 816 169" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path xmlns="http://www.w3.org/2000/svg" d="M0 69.1204C0 69.1204 177.676 58.2568 290.889 45.6487C409.474 32.4423 474.41 -10.0802 593.111 2.20104C684.055 11.6104 816 69.1204 816 69.1204V169H0V69.1204Z" fill="#464D77"/>
+        <path xmlns="http://www.w3.org/2000/svg" d="M0 69.1204C0 69.1204 177.676 58.2568 290.889 45.6487C409.474 32.4423 474.41 -10.0802 593.111 2.20104C684.055 11.6104 816 69.1204 816 69.1204V169H0V69.1204Z" fill="#1A8384"/>
       </svg>
       <svg class="jax" viewBox="0 0 456 403" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M202.083 18.3856C211.57 -4.81829 244.43 -4.8183 253.917 18.3856L327.117 197.409C328.075 199.753 329.347 201.956 330.898 203.958L449.337 356.862C464.688 376.681 448.259 405.138 423.42 401.752L231.781 375.633C229.272 375.291 226.728 375.291 224.219 375.633L32.5804 401.752C7.74144 405.138 -8.68813 376.681 6.66321 356.862L125.102 203.958C126.653 201.956 127.925 199.753 128.883 197.409L202.083 18.3856Z" fill="#1A8384"/>
@@ -158,15 +158,19 @@ const projects = await Astro.glob("./project/*.md");
         .hero-text h1 span:nth-child(3) {
           font-size: 1.5em;
         }
+        .hero-text h1 span:nth-child(5) {
+          -webkit-text-stroke: 1px black;
+
+        }
         .hero-text h2 {
           font-weight: 400;
-          text-shadow: 1.5px 1.5px black;
+          text-shadow: 0px 0px black;
           font-size: var(--ml-text);
         }
         .hero-text p {
             margin-top: 0;
-            font-weight: 400;
-            text-shadow: 1px 1px black;
+            font-weight: 300;
+            text-shadow: 0px 0px black;
             font-size: var(--med-text);
         }
       }
