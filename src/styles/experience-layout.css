@@ -1,5 +1,5 @@
 .exp-body {
-  background-color: var(--purple2);
+  background: linear-gradient(to top, var(--purple2) 40%, var(--purple0));
 }
 .exp-header {
   width: 100%;

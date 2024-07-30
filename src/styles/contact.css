@@ -3,7 +3,7 @@
   --icon2-size: 7em;
 }
 body {
-  background-color: var(--cyan);
+  background: linear-gradient(to bottom, var(--purple3) 40%, var(--cyan));
 }
 .contact-svg {
   position: absolute;
@@ -16,7 +16,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--purple1);
+  background: linear-gradient(to bottom, var(--purple1) 40%, var(--purple2));
   border-bottom: 8px solid #0C0C0C;
 }
 header h1 {
@@ -54,7 +54,7 @@ main {
   position: relative;
   z-index: 3;
   padding: 1.5em;
-  background-color: var(--purple2);
+  background: linear-gradient(to bottom, var(--purple3) 40%, var(--purple2));
   border: #0C0C0C 10px solid;
   box-shadow: 5px 5px #0C0C0C;
   border-radius: 50px;
@@ -106,7 +106,7 @@ main {
   align-self: center;
   border: #0C0C0C 10px solid;
   box-shadow: 5px 5px #0C0C0C;
-  background-color: var(--purple3);
+  background: linear-gradient(to bottom, var(--purple3) 40%, var(--cyan));
   transition: all 350ms ease-in-out;
 }
 .socials a:nth-child(1) {
@@ -128,7 +128,7 @@ main {
 }
 
 .socials a:nth-child(3) button {
-  background-color: var(--green2);
+  background: linear-gradient(to left, var(--green1), var(--green3) 90%);
   width: calc(100% - 20px);
   height: calc(100% - 20px);
   justify-self: unset;
