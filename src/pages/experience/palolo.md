@@ -3,8 +3,8 @@ layout: ../../layouts/experience-layout.astro
 title: Palolo Inc.
 time: May 2023 - August 2023
 highlights:
-  - Commmit 239 times across 10 unique pull requests relating to frontend and backend development
   - Collaborate with the marketing team and other developers via pull requests and meetings
+  - Commmit 239 times across 10 unique pull requests relating to frontend and backend development
 funFact: This is was my first internship and I was technically the first actual intern this company had hired.
 ---
 

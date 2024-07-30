@@ -158,20 +158,21 @@
     margin: 30px 0;
     position: relative;
     z-index: 2;
-    background: linear-gradient(to left, var(--green0) 40%, var(--green1));
+    background-color: var(--green0);
     border: #0C0C0C 6px solid;
     box-shadow: 4px 4px #0C0C0C;
     color: #0C0C0C;
-    font-size: var(--ml-text);
+    font-size: var(--med-text);
     font-weight: 600;
     padding: 8px 12px;
     transition: all 250ms ease-in-out;
   }
-  .skill-item:nth-child(n + 1) {
-    background: linear-gradient(to right, var(--green3) 30%, var(--green1));
+  .skill-item:nth-child(odd) {
+    background-color: var(--green0);
   }
-  .skill-item:nth-child(n + 2) {
-    background: linear-gradient(to top, var(--green2) 10%, var(--green1));
+  .skill-item:nth-child(even) {
+    background-color: var(--purple1);
+    color: var(--text-color);
   }
   .skill-item:hover {
     border: var() 6px solid;
@@ -216,7 +217,7 @@
   .exp-card {
     position: relative;
     z-index: 2;
-    min-height: 400px;
+    min-height: 200px;
     width: calc(100% - 19px);
     margin-top: 8%;
     border: #0C0C0C 9px solid;
@@ -227,13 +228,13 @@
     transition: all 300ms ease-in-out;
   }
   .exp-card:nth-child(n + 1) {
-    background-color: var(--cyan);
+    background: linear-gradient(to right, var(--purple2) 20%, var(--purple1));
   }
   .exp-card:nth-child(2n + 1) {
-    background-color: var(--purple3);
+    background: linear-gradient(to top, var(--purple0) 20%, var(--purple2));
   }
   .exp-card:nth-child(3n + 1) {
-    background-color: var(--purple2);
+    background: linear-gradient(to left, var(--purple2) 20%, var(--purple1));
   }
   .exp-card:hover {
     transform: scale(1.05);
@@ -241,26 +242,21 @@
   }
   .exp-card h3 {
     padding: 4% 10% 0 10%;
-    text-align: center;
+    /* text-align: center; */
     font-size: var(--ml-text);
     border-radius: 15px 15px 0 0;
   }
-  .exp-card p {
-    text-align: center;
-  }
   .exp-card ul {
     height: 100%;
-    padding: 0 10% 4% 10%;
+    padding: 3% 10% 4% 10%;
     font-size: var(--tiny-text);
     font-weight: 400;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     list-style: none;
-    justify-content: center;
-    align-items: center;
     border-radius: 0 0 15px 15px;
     gap: 30px;
-    text-align: center;
   }
   .exp-card button {
     background-color: var(--green0);
@@ -295,7 +291,7 @@
     overflow: hidden;
     position: relative;
     z-index: 0;
-    background-color: var(--purple1);
+    background: linear-gradient(to left, var(--purple0) 20%, var(--purple2));
     border-top: 8px solid #0C0C0C;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

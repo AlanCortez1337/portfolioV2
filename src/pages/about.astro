@@ -12,7 +12,9 @@ const skills = [
   "TailwindCSS",
   "C++",
   "JavaScript",
+  "TypeScript",
   "React",
+  "NextJS",
   "Svelte",
   "Astro",
   "Git",
@@ -165,10 +167,8 @@ const hobbies = [
         experiences.map((exp) => (
           <div class="exp-card">
             <h3>{exp.frontmatter.title}</h3>
-            <p>{exp.frontmatter.time}</p>
             <ul>
               <li>{exp.frontmatter.highlights[0]}</li>
-              <li>{exp.frontmatter.highlights[1]}</li>
               <a href={exp.url}>
                 <button>Learn More</button>
               </a>
