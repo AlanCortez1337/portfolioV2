@@ -1,5 +1,5 @@
 .project-body {
-  background-color: var(--purple3);
+  background: linear-gradient(to bottom, var(--purple2) 40%, var(--cyan));
 }
 .project-header {
   width: 100%;
