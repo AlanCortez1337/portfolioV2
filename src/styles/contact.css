@@ -102,7 +102,6 @@ main {
 .socials a button {
   padding: 0;
   width: 250px;
-  height: 250px;
   align-self: center;
   border: #0C0C0C 10px solid;
   box-shadow: 5px 5px #0C0C0C;
@@ -118,15 +117,16 @@ main {
   grid-area: linkedin;
   justify-self: end;
 }
+.socials a:nth-child(2) button {
+  background: linear-gradient(to left, var(--green3), var(--cyan) 90%);
+}
 .socials a:nth-child(3) {
   grid-area: email;
   height: 175px;
   width: unset;
   justify-self: unset;
   align-self: unset;
-  
 }
-
 .socials a:nth-child(3) button {
   background: linear-gradient(to left, var(--green1), var(--green3) 90%);
   width: calc(100% - 20px);
@@ -158,6 +158,11 @@ main {
 .socials a:active button {
   box-shadow: 10px 10px #0C0C0C;
 }
+.socials a p {
+  color: var(--text-color);
+  font-size: var(--small-text);
+}
+
 /* Shapes */
 .shape {
   overflow: hidden;
