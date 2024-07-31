@@ -3,8 +3,8 @@ layout: ../../layouts/experience-layout.astro
 title: Supplemental Instruction
 time: August 2022 - Present
 highlights:
-  - Communicated complex C++ concepts to students with varying levels of understanding
-  - Constructed engaging exercises for students to comprehend object-oriented concepts
+  - Communicated complex C++ concepts to students with varying levels of understanding.
+  - Constructed engaging exercises for students to comprehend object-oriented concepts.
 funFact: The first course I was a SI leader for was CPSC 121A which is better known as C++ Object Oriented Programming.
 ---
 

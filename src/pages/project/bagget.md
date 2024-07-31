@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/project-layout.astro
-title: Bag/get
+title: Bag/Get
 gif: /assets/demos/Bagget.io.webp
 blurb: The future of alleviating food insecurity
 tags:
