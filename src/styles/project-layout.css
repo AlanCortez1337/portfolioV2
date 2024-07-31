@@ -157,7 +157,8 @@
 }
 .project-body .fun-fact {
   width: calc(100% - 80px);
-  background-color: var(--green0);
+  background: linear-gradient(to right, var(--cyan) 40%, var(--purple3));
+  color: var(--text-color);
   border: 8px #0C0C0C solid;
   border-radius: 40px;
   box-shadow: 6px 6px #0C0C0C;
@@ -169,13 +170,11 @@
   box-shadow: 12px 12px #0C0C0C;
 }
 .project-body .fun-fact h2 {
-  color: #0C0C0C;
   font-size: var(--ml-text);
 }
 .project-body .fun-fact p {
   margin-top: 24px;
-  color: #0C0C0C;
-  font-size: var(--micro-text);
+  font-size: var(--tiny-text);
 }
 .project-body .tag-card {
   cursor: default;

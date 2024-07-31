@@ -107,7 +107,8 @@
 }
 .exp-body .fun-fact {
   width: calc(100% - 80px);
-  background-color: var(--green0);
+  background: linear-gradient(to left, var(--cyan) 40%, var(--purple3));
+  color: var(--text-color);
   border: 8px #0C0C0C solid;
   border-radius: 40px;
   box-shadow: 6px 6px #0C0C0C;
@@ -119,16 +120,17 @@
   box-shadow: 12px 12px #0C0C0C;
 }
 .exp-body .fun-fact h2 {
-  color: #0C0C0C;
+  
   font-size: var(--ml-text);
 }
 .exp-body .fun-fact p {
   margin-top: 24px;
-  color: #0C0C0C;
   font-size: var(--tiny-text);
 }
 .exp-body .view-more {
-  margin-top: 30px;
+  position: relative;
+  z-index: 10;
+  margin-top: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
