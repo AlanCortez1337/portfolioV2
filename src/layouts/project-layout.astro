@@ -21,21 +21,21 @@ const { content } = Astro.props;
       <div class="buttons">
         {
           content.figmaLink !== "N/A" && (
-            <a href={content.figmaLink} target="_blank">
+            <a href={content.figmaLink} target="_blank" title={`Opens New Tab to the ${content.title} Figma Mockup Page`}>
               <button>Mockup</button>
             </a>
           )
         }
         {
           content.githubLink !== "N/A" && (
-            <a href={content.githubLink} target="_blank">
+            <a href={content.githubLink} target="_blank" title={`Opens New Tab to the ${content.title} GitHub Repository`}>
               <button>GitHub</button>
             </a>
           )
         }
         {
           content.demoLink !== "N/A" && (
-            <a href={content.demoLink} target="_blank">
+            <a href={content.demoLink} target="_blank" title={`Opens New Tab to a ${content.title} Live Prototype`}>
               <button class="demo-text">Live Demo!</button>
             </a>
           )
@@ -81,7 +81,7 @@ const { content } = Astro.props;
           <h2>Fun Fact</h2>
           <p>{content.funFact}</p>
         </div>
-        <a href={`/projects/#${content.title}`} class="view-more"
+        <a href={`/projects/#${content.title}`} class="view-more" title={`Redirects to ${content.title} Blog Page`}
           ><button>view more</button>
         </a>
       </div>

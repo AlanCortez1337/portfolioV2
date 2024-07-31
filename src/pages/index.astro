@@ -48,7 +48,7 @@ const projects = await Astro.glob("./project/*.md");
     <section class="marquee">
       <ul id="projects">
         {projects.map((project) => (
-          <a href={project.url}><li>{project.frontmatter.title}</li></a>
+          <a href={project.url} title={`Redirects to ${project.frontmatter.title} Project Blog Page`}><li>{project.frontmatter.title}</li></a>
           <li>•</li>
         ))}
         <li>[REDACTED]</li> 
@@ -59,7 +59,7 @@ const projects = await Astro.glob("./project/*.md");
       <div class="image-container">
         <h3>wooow look at pretty ol' me</h3>
         <img class="me" loading="lazy" src="/assets/alanHeadshot.webp" alt="picture of alan cortez">
-        <a href="/about/" class="cta-btn"><button>more me</button></a>
+        <a href="/about/" title="Redirects to About Page" class="cta-btn"><button>more me</button></a>
       </div>
       <svg class="wave2" viewBox="0 0 340 793" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 793H213C213 793 309.685 703.518 333 627C380.281 471.827 168.449 410.125 163 248C159.681 149.257 213 0 213 0H0V793Z" fill="#2F7483"/>
