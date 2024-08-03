@@ -298,19 +298,19 @@
     z-index: 0;
     background: linear-gradient(to left, var(--purple0) 20%, var(--purple2));
     border-top: 8px solid #0C0C0C;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
-      "title title title"
-      "one two three";
-    column-gap: 5%;
     padding: 0 10% 5% 10%;
   }
   .hobbies h1 {
-    grid-area: title;
     padding-top: 5%;
     position: relative;
     z-index: 3;
+  }
+  .hobby-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15%;
   }
   .hobby-card {
     margin-top: 8%;

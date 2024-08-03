@@ -154,14 +154,16 @@ const experiences = await Astro.glob("./experience/*.md");
 
     <section class="hobbies">
       <h1 class="title">Humble Hobbies</h1>
-      {
-        hobbies.map((hobby) => (
-          <div class="hobby-card">
-            <p>{hobby.title}</p>
-            <img src={hobby.url} loading="lazy" alt={hobby.description} />
-          </div>
-        ))
-      }
+      <div class="hobby-cards">
+        {
+          hobbies.map((hobby) => (
+            <div class="hobby-card">
+              <p>{hobby.title}</p>
+              <img src={hobby.url} loading="lazy" alt={hobby.description} />
+            </div>
+          ))
+        }
+      </div>
       <svg
         class="hobby-wave"
         viewBox="0 0 1512 488"
@@ -224,30 +226,13 @@ const experiences = await Astro.glob("./experience/*.md");
           justify-content: center;
           align-items: center;
         }
-        .experience {
-          grid-template-columns: 1fr;
-          grid-template-areas:
-            "title"
-            "one"
-            "two";
-          column-gap: 5%;
-        }
         .experience h1 {
           text-align: center;
         }
         .hobbies h1 {
           text-align: center;
         }
-        .hobbies {
-          grid-template-columns: 1fr 1fr;
-          grid-template-areas:
-            "title title"
-            "one two"
-            "three three";
-        }
-        .hobby-card:nth-child(2),
-        .hobby-card:nth-child(3),
-        .hobby-card:nth-child(4) {
+        .hobby-card:nth-child(odd) {
           border-radius: 25px;
         }
         .hobby-card img {
@@ -256,9 +241,6 @@ const experiences = await Astro.glob("./experience/*.md");
         }
         .hobby-card p {
           opacity: 1;
-        }
-        .hobby-card:nth-child(4) {
-          grid-area: three;
         }
       }
       @media screen and (max-width: 650px) {
