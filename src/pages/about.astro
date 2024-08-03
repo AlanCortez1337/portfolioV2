@@ -3,45 +3,9 @@ import MainHead from "../components/MainHead.astro";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
 import "../styles/about.css";
+import { skills, hobbies } from "../data/about-data";
 
 const experiences = await Astro.glob("./experience/*.md");
-
-const skills = [
-  "HTML5",
-  "CSS3",
-  "TailwindCSS",
-  "C++",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "NextJS",
-  "Svelte",
-  "Astro",
-  "Git",
-  "Figma",
-  "Prisma",
-];
-
-const hobbies = [
-  {
-    title: "Baking Bread",
-    url: "/assets/hobbies/bread.webp",
-    description:
-      "image of baked bread which Alan created to represent that baking is a hobby.",
-  },
-  {
-    title: "Partying with Parrot",
-    url: "/assets/hobbies/lua.webp",
-    description:
-      "image of my lovebird extending her neck, trying to bite the camera.",
-  },
-  {
-    title: "Dungeonin' some Dragons",
-    url: "/assets/hobbies/dnd.webp",
-    description:
-      "image of #0C0C0C twenty sided dice meant to play dungeons and dragons.",
-  },
-];
 ---
 
 <html lang="en">
