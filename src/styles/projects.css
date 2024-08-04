@@ -60,6 +60,7 @@ body {
     height: 425px;
   }
   .display img {
+    background-color: var(--green0);
     position: relative;
     width: calc(100% - 16px);
     height: calc(100% - 16px);

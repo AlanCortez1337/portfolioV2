@@ -112,6 +112,7 @@
   gap: 40px;
 }
 .project-body .layout-info p:has(img) {
+  background-color: var(--green0);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -129,6 +130,7 @@
 }
 /* images */
 .project-body img {
+  background-color: var(--green0);
   object-fit: contain;
   object-position: 0% 10%;
   max-height: 400px;
@@ -149,6 +151,7 @@
 
 /* thumbnail image */
 .project-body .img-container {
+  background-color: var(--green0);
   width: calc(100% - 12px);
   height: auto;
   overflow: hidden;
