@@ -60,7 +60,6 @@
     bottom: 0;
   }
   header .graphic img {
-    background-color: var(--green0);
     position: relative;
     z-index: 2;
     bottom: 0;
