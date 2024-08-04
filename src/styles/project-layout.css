@@ -40,7 +40,7 @@
 
 .project-body .layout-info a {
   color: var(--text-highlight);
-  font-style: italic;
+  text-decoration: underline;
 }
 
 /* Not Slot Stuff */
@@ -225,6 +225,9 @@
 }
 .project-body .tag-card:nth-child(3n + 1) {
   background-color: var(--purple3);
+}
+.project-body .view-more-container a {
+  text-decoration: none;
 }
 .project-body .view-more {
   margin-top: 30px;

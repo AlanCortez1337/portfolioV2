@@ -81,9 +81,11 @@ const { content } = Astro.props;
           <h2>Fun Fact</h2>
           <p>{content.funFact}</p>
         </div>
-        <a href={`/projects/#${content.title}`} class="view-more" title={`Redirects to ${content.title} Blog Page`}
-          ><button>view more</button>
-        </a>
+        <div class="view-more-container">
+          <a href={`/projects/#${content.title}`} class="view-more" title={`Redirects to ${content.title} Blog Page`}
+            ><button>view more</button>
+          </a>
+        </div>
       </div>
       <svg
         class="bottom-wave"
