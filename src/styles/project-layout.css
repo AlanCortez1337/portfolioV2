@@ -112,15 +112,23 @@
   gap: 40px;
 }
 .project-body .layout-info p:has(img) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-items: center;
+  align-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
 }
-
+@media screen and (max-width: 700px) {
+  .project-body .layout-info p:has(img) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 30px;
+  }
+}
 /* images */
 .project-body img {
-  margin: 2%;
   object-fit: contain;
   object-position: 0% 10%;
   max-height: 400px;
