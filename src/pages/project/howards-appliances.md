@@ -29,18 +29,7 @@ Just like all good projects, time is not on our side unfortunately. We were expe
 
 Below are some screenshots of how the product looked in the end using Xcode's simulator.
 
-**Homepage - Browse**
-
 ![Working UI of ARSE's homepage on the browse mode](/assets/demos/homepage.webp)
-
-**Homepage - Categorize**
-
 ![Working UI of ARSE's homepage on the categorize mode](/assets/demos/categorize.webp)
-
-**Search**
-
 ![Searching for a refrigerator product inside of the ARSE application](/assets/demos/search.webp)
-
-**Appliance Preview**
-
 ![Item preview UI when a user selects a product via search or the homepage](/assets/demos/item-preview.webp)

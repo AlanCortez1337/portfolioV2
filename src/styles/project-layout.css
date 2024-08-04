@@ -107,14 +107,23 @@
   z-index: 2;
   width: 600px;
   display: flex;
+  text-align: left;
   flex-direction: column;
   gap: 40px;
 }
+.project-body .layout-info p:has(img) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 /* images */
 .project-body img {
+  margin: 2%;
   object-fit: contain;
   object-position: 0% 10%;
-  max-height: 500px;
+  max-height: 400px;
   border: 8px #0C0C0C solid;
   box-shadow: 6px 6px #0C0C0C;
   transition: all 350ms ease-in-out;
