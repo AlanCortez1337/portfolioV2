@@ -21,21 +21,21 @@ const { content } = Astro.props;
       <div class="buttons">
         {
           content.figmaLink !== "N/A" && (
-            <a href={content.figmaLink} target="_blank">
+            <a href={content.figmaLink} target="_blank" title={`Opens New Tab to the ${content.title} Figma Mockup Page`}>
               <button>Mockup</button>
             </a>
           )
         }
         {
           content.githubLink !== "N/A" && (
-            <a href={content.githubLink} target="_blank">
+            <a href={content.githubLink} target="_blank" title={`Opens New Tab to the ${content.title} GitHub Repository`}>
               <button>GitHub</button>
             </a>
           )
         }
         {
           content.demoLink !== "N/A" && (
-            <a href={content.demoLink} target="_blank">
+            <a href={content.demoLink} target="_blank" title={`Opens New Tab to a ${content.title} Live Prototype`}>
               <button class="demo-text">Live Demo!</button>
             </a>
           )
@@ -61,7 +61,7 @@ const { content } = Astro.props;
       >
         <path
           d="M0 0H1512V279C1512 279 1301.83 315.432 1166 314.5C1011.8 313.442 928.693 260.916 774.5 263C593.406 265.448 499.391 356.42 318.5 347.5C191.428 341.234 0 279 0 279V0Z"
-          fill="#248889"></path>
+          fill="#2E5471"></path>
       </svg>
       <div class="layout-info">
         <div class="img-container">
@@ -81,9 +81,11 @@ const { content } = Astro.props;
           <h2>Fun Fact</h2>
           <p>{content.funFact}</p>
         </div>
-        <a href={`/projects/#${content.title}`} class="view-more"
-          ><button>view more</button>
-        </a>
+        <div class="view-more-container">
+          <a href={`/projects/#${content.title}`} class="view-more" title={`Redirects to ${content.title} Blog Page`}
+            ><button>view more</button>
+          </a>
+        </div>
       </div>
       <svg
         class="bottom-wave"
@@ -137,7 +139,7 @@ const { content } = Astro.props;
           height: 250px;
         }
         .project-body .buttons a button {
-          border: black 4px solid;
+          border: #0C0C0C 4px solid;
         }
 
         .project-body .layout-info {
@@ -153,7 +155,7 @@ const { content } = Astro.props;
           height: 175px;
         }
         .project-body .title {
-          -webkit-text-stroke: 2px black;
+          -webkit-text-stroke: 2px #0C0C0C;
         }
         .project-body .layout-info {
           width: 250px;

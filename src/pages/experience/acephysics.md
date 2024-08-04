@@ -3,8 +3,8 @@ layout: ../../layouts/experience-layout.astro
 title: ACE Physics
 time: January 2023 - May 2023
 highlights:
-  - Create dynamic and interactive learning activities to understand quantum physics
-  - Build reactive React type-safe components in NextJS 12
+  - Create dynamic and interactive learning activities to understand quantum physics.
+  - Build reactive React type-safe components in NextJS 12.
 funFact: This was my first frontend gig that I did ever!
 ---
 

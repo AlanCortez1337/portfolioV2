@@ -11,8 +11,8 @@ header {
   z-index: 2;
   grid-column: 1;
   grid-row: 1;
-  background-color: var(--cyan);
-  border-right: black 8px solid;
+  background: linear-gradient(to top, var(--green3) 20%, var(--cyan));
+  border-right: #0C0C0C 8px solid;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,13 +60,13 @@ header {
 
 .hero-text h1 {
   font-size: var(--big-text);
-  -webkit-text-stroke: 2px black;
-  text-shadow: 6px 6px black;
-  font-weight: 800;
+  -webkit-text-stroke: 2px #0C0C0C;
+  text-shadow: 6px 6px #0C0C0C;
+  font-weight: 500;
 }
 
 .hero-text h1 .text-hover:hover {
-  text-shadow: 12px 12px black;
+  text-shadow: 12px 12px #0C0C0C;
 }
 
 .hero-text p {
@@ -78,7 +78,7 @@ header {
 main {
   overflow: hidden;
   grid-column: 2;
-  background-color: var(--purple2);
+  background: linear-gradient(to right, var(--purple2) 20%, var(--purple1));
 }
 /* Marquee styles */
 .marquee {
@@ -88,7 +88,7 @@ main {
   height: 50px;
   grid-column: 1 / span 2;
   grid-row: 3;
-  background-color: black;
+  background-color: #0C0C0C;
 }
 
 .marquee ul {
@@ -158,8 +158,8 @@ main {
   z-index: 2;
   width: 100%;
   height: 100%;
-  border: black 8px solid;
-  box-shadow: 6px 6px black;
+  border: #0C0C0C 8px solid;
+  box-shadow: 6px 6px #0C0C0C;
   border-radius: 35px;
   animation: image-move 3000ms infinite linear;
   transition: all 200ms ease-in-out;
@@ -167,7 +167,7 @@ main {
 
 .me:hover {
   animation-play-state: paused;
-  box-shadow: 18px 18px black;
+  box-shadow: 18px 18px #0C0C0C;
   border-radius: 0px;
 }
 

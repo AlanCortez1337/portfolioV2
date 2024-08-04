@@ -20,8 +20,8 @@
     align-items: center;
     flex-direction: column;
     gap: 20px;
-    background-color: var(--green2);
-    border-bottom: 8px solid black;
+    background: linear-gradient(to top, var(--green2) 40%, var(--green1));
+    border-bottom: 8px solid #0C0C0C;
 }
 
 .modal-text {
@@ -59,7 +59,7 @@
 
 @media screen and (max-height: 900px) {
     .modal {
-        --big-text: 4em;
+        --big-text: 3em;
         gap: 10px;
     }
     .modal-text {
