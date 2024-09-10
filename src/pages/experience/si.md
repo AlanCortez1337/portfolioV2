@@ -16,7 +16,7 @@ In simple terms **Supplemental Instruction (SI)** is a glorified study group hos
 
 I knew going into this position that I did not want to lecture, I did not want to be another professor to students, I wanted to be a mentor. When hosting my two sessions I crafted them around a silly activity known as the **SUPER SUPREME ACTIVITY**. This essentially was a "real life" problem our school's mascot had that applied what was recently learned in class. Below is an image of one of the various activities I had prepared.
 
-![image text](/assets/demos/superActivity.webp)
+![Google slide of a Super Supreme Activity prompt given to Alan's students during Supplemental Instruction](/assets/demos/superActivity.webp)
 
 From this I would provide a link to a collaborative coding enviornment such as Replit with starter code to give them a head start. The goal behind this was to help them build the habbit of talking outloud and walking through their thought process. An additional benefit I strived for was to get them to code more because I felt that it was beyond necessary to learn how to code.
 
